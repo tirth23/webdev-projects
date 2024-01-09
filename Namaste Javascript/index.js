@@ -5,6 +5,7 @@
 // getName();
 // console.log(x);
 
+/* hoisting */
 // getName();
 // console.log(x);
 // var x = 7;
