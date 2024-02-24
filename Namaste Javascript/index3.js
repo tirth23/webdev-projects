@@ -6,7 +6,7 @@
 // console.log(window.b);
 // console.log(window.c);
 // console.log(window.d);
-// console.log(c);
+// // console.log(c);
 // let c = 30;
 
 // var a = 10;

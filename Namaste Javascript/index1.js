@@ -18,6 +18,7 @@
 // console.log(window.x);
 // console.log(this.x);
 // console.log(x);
+// /* non-esixting object returns undefined */
 // console.log(window.y);
 // console.log(this.y);
 // console.log(y);

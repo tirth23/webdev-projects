@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=hq, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.10.3/babel.min.js" crossorigin></script>
+</head>
+</head>
+
+<body>
+    <h1>JS Demoo</h1>
+    <div>
+        <h1>Javascript Clock</h1>
+        <div class="jsclock">
+        </div>
+        <h1>React Clock</h1>
+        <div class="rsclock">
+        </div>
+    </div>
+    <script type="text/babel">
+        const jsdiv = document.querySelector(".jsclock");
+        function updateJSClock() {
+            const time = new Date().toLocaleTimeString();
+            const clockTemplate = `
+            <div>
+                <span>${time}</span>
+            </div>
+            `;
+
+            jsdiv.innerHTML = clockTemplate;
+
+        }
+        setInterval(updateJSClock, 1000);
+
+        const rsdiv = document.querySelector(".rsclock");
+        const root = ReactDOM.createRoot(rsdiv);
+        function UpdateRSClock() {
+            const time = new Date().toLocaleTimeString();
+            const clockTemplate = <div><span>{time}</span></div>;
+
+            root.render(clockTemplate);
+        }
+
+        setInterval(UpdateRSClock, 1000);
+    </script>
+</body>
+
+</html>
