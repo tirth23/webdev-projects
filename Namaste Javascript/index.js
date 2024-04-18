@@ -23,6 +23,7 @@
 
 // function getName() {
 //     console.log("Namaste Javascript");
+//     // return 2;
 // }
 // console.log(getName());
 
@@ -102,6 +103,8 @@
 // }
 // console.log(getName);
 // getName();
+// // console.log(xyz);
+// // xyz();
 
 
 
