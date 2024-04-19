@@ -63,10 +63,13 @@
 //     var a = 20;
 // }
 
-// let a = 10;
-// function hello() {
-//     var a = 20;
-// }
+let a = 10;
+function hello() {
+    var a = 20;
+    {
+        let a = 20;
+    }
+}
 
 // const a = 100;
 // {
