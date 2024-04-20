@@ -1,3 +1,4 @@
+/* closure */
 // function x() {
 //     var a = 7;
 //     function y() {
@@ -121,11 +122,11 @@
 //     }
 //     return x;
 // }
-// let a = 30;
+// // let a = 30;
 // var z = outer()("Hello World");      //outer will return x => x("Hello World")
 // console.log(z);
 // z();
-// // var a = 30;
+// var a = 30;
 
 /* Data Hiding */
 // function counter() {
@@ -173,5 +174,6 @@
 // }
 // var data = a();  // z will be removed from memory by SGC
 // data();             
+
 
 

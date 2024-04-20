@@ -44,7 +44,7 @@
 //     return 2 * radius;
 // };
 
-// //calculate does what map function in js
+//calculate does what map function in js
 // const calculate = function(radius, logic) {
 //     const output = [];
 //     for (let i = 0; i < radius.length; i++) {
@@ -58,3 +58,15 @@
 // console.log(calculate(radius, diameter));
 
 // console.log(radius.map(area));
+
+//using Array.prototype allows us to use calculate similar to map and can work on all array
+//this refers to array to radius which is calling function
+// Array.prototype.calculatetwo = function(logic) {
+//     const output = [];
+//     for (let i = 0; i < this.length; i++) {
+//         output.push(logic(this[i]));
+//     }
+//     return output;
+// };
+
+// console.log(radius.calculatetwo(area));
