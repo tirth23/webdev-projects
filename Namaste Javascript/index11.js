@@ -1,6 +1,6 @@
 const arr = [3, 4, 6, 5, 2];
 
-/* MAP --- map method is used when we want transformation of whole array */
+/* MAP --- map method is used when we want transformation of whole array & returns arrays */
 
 // /* x is each value in arr */
 // function double(x) {
@@ -16,7 +16,7 @@ const arr = [3, 4, 6, 5, 2];
 // console.log(arr.map((x) => x * 3));
 
 
-/* FILTER --- filter is used when we want to filter the array to obtain required value */
+/* FILTER --- filter is used when we want to filter the array to obtain required value & returns filtered array*/
 
 // // filter odd value
 // function isOdd(x) {
