@@ -4,7 +4,7 @@
 // console.log(this);
 
 
-/* In non-strict, this is undefined in function. so replaced with global object */
+/* In non-strict, this is undefined in function. so replaced with global object - this substiution */
 // function x() {
 //     /* value depends on strict/non-strict mode */
 //     console.log(this);
@@ -24,13 +24,13 @@
 
 
 /* call apply bind methods */
-// const student = {
-//     name: "Tirth",
-//     printName: function () {
-//         console.log(this.name);
-//     },
-// };
-// student.printName();
+const student = {
+    name: "Tirth",
+    printName: function () {
+        console.log(this.name);
+    },
+};
+student.printName();
 
 // const student1 = {
 //     name: "Patel",
@@ -48,19 +48,41 @@ const student2 = {
     firstName: "Tirth",
     lastName: "Patel"
 };
-/* call */
-printName.call(student2, "Ahmedabad", "Gujarat");
+// /* call */
+// printName.call(student2, "Ahmedabad", "Gujarat");
 
-/* apply */
-printName.apply(student2, ["Ahmedabad", "Gujarat"]);
+// /* apply */
+// printName.apply(student2, ["Ahmedabad", "Gujarat"]);
 
-/* bind */ 
-const newPrintFun = printName.bind(student2, "Ahmedabad", "Gujarat");
-console.log(newPrintFun)
-newPrintFun();
+// /* bind */ 
+// const newPrintFun = printName.bind(student2, "Ahmedabad", "Gujarat");
+// console.log(newPrintFun)
+// newPrintFun();
 
-const student3 = {
-    firstName: "Xyz",
-    lastName: "Abc"
-};
-printName.call(student3);
+// const student3 = {
+//     firstName: "Xyz",
+//     lastName: "Abc"
+// };
+// printName.call(student3);
+
+
+/* this inside arrow function retains value of enclosing lexical context */
+// const obj = {
+//     a: 10,
+//     x: () => {
+//         console.log(this);
+//     },
+// };
+// obj.x();
+
+// const obj1 = {
+//     a: 10,
+//     y: function () {
+//         // console.log(this);
+//         const x = () => {
+//             console.log(this);
+//         }
+//         x();
+//     }
+// };
+// obj1.y();
