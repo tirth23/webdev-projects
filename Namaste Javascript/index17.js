@@ -1,4 +1,4 @@
-"use strict"
+// "use strict"
 
 /* this in global space */
 // console.log(this);
@@ -24,13 +24,13 @@
 
 
 /* call apply bind methods */
-const student = {
-    name: "Tirth",
-    printName: function () {
-        console.log(this.name);
-    },
-};
-student.printName();
+// const student = {
+//     name: "Tirth",
+//     printName: function () {
+//         console.log(this.name);
+//     },
+// };
+// student.printName();
 
 // const student1 = {
 //     name: "Patel",
@@ -40,14 +40,14 @@ student.printName();
 
 
 /* can be used by putting function outside object */
-let printName = function (homeTown, state) {
-    console.log(this.firstName + " " + this.lastName + " " +homeTown);
-}
+// let printName = function (homeTown, state) {
+//     console.log(this.firstName + " " + this.lastName + " " +homeTown);
+// }
 
-const student2 = {
-    firstName: "Tirth",
-    lastName: "Patel"
-};
+// const student2 = {
+//     firstName: "Tirth",
+//     lastName: "Patel"
+// };
 // /* call */
 // printName.call(student2, "Ahmedabad", "Gujarat");
 
