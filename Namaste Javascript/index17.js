@@ -14,13 +14,13 @@
 
 
 /* this inside object's method refers to object*/
-// const obj = {
+// const obj3 = {
 //     a: 10,
 //     x: function () {
 //         console.log(this, this.a);
 //     }
 // }
-// obj.x();
+// obj3.x();
 
 
 /* call apply bind methods */
