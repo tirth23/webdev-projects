@@ -36,3 +36,14 @@ console.log("result:"+opr(num1,num2))//opr(30,20)//600
 calculate(30,20,sub)//sub is a callback
 calculate(30,20,add)//add is a callback
 calculate(30,20,function(num1,num2){return num1*num2})
+
+/* by using function as constructor returns object */
+function newfun(firstName) {
+    this.firstName = firstName;
+    this.fun = () => {
+        console.log(this.firstName);
+    }
+}
+const functionConstructor = new newfun("Tirth");
+console.log(functionConstructor.firstName); 
+functionConstructor.fun(); 
