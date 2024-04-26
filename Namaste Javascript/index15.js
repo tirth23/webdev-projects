@@ -1,16 +1,16 @@
 /* Async/Await */
 
-// const p1 = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve("Promise Resolved");
-//     }, 5000);
-// });
+const p1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Promise Resolved");
+    }, 10000);
+});
 
-// const p2 = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve("Promise Resolved");
-//     }, 10000);
-// });
+const p2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Promise Resolved");
+    }, 1000);
+});
 
 
 /* async will always returns promise */
@@ -47,17 +47,18 @@
 
 
 /* real world use */
-// const GITHUB_AP = "https://api.github.com/users/tirth23";
+const GITHUB_AP = "https://api.github.com/users/tirth23";
 
-// /* using normal way */
+/* using normal way */
 // fetch(GITHUB_AP)
 //     .then((data) => data.json())
 //     .then((jsonValue) => console.log(jsonValue))
 //     .catch((err) => console.log(err));
 
 
-// /* using aysnc/await */
+// // /* using aysnc/await */
 // async function handlePro() {
+//     console.log("Check");
 //     try {
 //         const data = await fetch(GITHUB_AP);
 //         const jsonValue = await data.json();
@@ -68,6 +69,7 @@
 
 // }
 // handlePro();
+// console.log("Hi");
 
 /* either use try catch block or below statement */
 // handlePro().catch((err) => console.log(err));
