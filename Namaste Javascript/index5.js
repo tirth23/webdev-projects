@@ -173,7 +173,39 @@
 //     }
 // }
 // var data = a();  // z will be removed from memory by SGC
-// data();             
+// data();  
+
+
+/* Another Example:- */
+// Function to increment counter
+// function add() {
+//     let counter = 0;
+//     counter += 1;
+//     return counter;
+// }
+// // Call add() 3 times
+// add();
+// add();
+// add();
+// //The counter should now be 3. But it is 1.
+
+
+// function add() {
+//     let counter = 0;
+//     function plus() { counter += 1; }
+//     plus();
+//     return counter;
+// }
+
+
+// const add = (function () {
+//     let counter = 0;
+//     return function () { counter += 1; return counter }
+// })();
+// add();
+// add();
+// add();
+// // the counter is now 3
 
 
 
