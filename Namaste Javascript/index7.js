@@ -49,3 +49,9 @@
 //     }
 // }
 // console.log(b());   //prints returned  function
+
+
+// Immediately invoked function expression - IIFE
+// (function hey() {
+//     console.log("HI");
+// })();
