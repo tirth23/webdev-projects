@@ -18,7 +18,7 @@ const arr = [3, 4, 6, 5, 2];
 
 /* FILTER --- filter is used when we want to filter the array to obtain required value & returns filtered array*/
 
-// // filter odd value
+// filter odd value
 // function isOdd(x) {
 //     return x % 2 !== 0;
 // }
@@ -38,7 +38,7 @@ const arr = [3, 4, 6, 5, 2];
 
 /* REDUCE --- reduce is used when we want to reduce the array to single value eg (max, min, avg, sum, difference etc) */
 
-// // sum of arr
+/* sum of arr */
 // function findSum(arr) {
 //     let sum = 0;
 //     for (let i = 0; i < arr.length; i++) {
@@ -48,19 +48,19 @@ const arr = [3, 4, 6, 5, 2];
 // }
 // console.log(findSum(arr));
 
-// /*
-// reduce(function (accumulator, current) {}, init) 
-// accumulator = stores result
-// current = current value in arr while iterating
-// init = initial value of accumulator before iterating
-// */
+/*
+reduce(function (accumulator, current) {}, init) 
+accumulator = stores result
+current = current value in arr while iterating
+init = initial value of accumulator before iterating
+*/
 // console.log(arr.reduce(function (acc, curr) {
 //     acc = acc + curr;
 //     return acc;
 // }, 0));
 
 
-// // max in arr
+/* max in arr */
 // function findMax(arr) {
 //     let max = 0;
 //     for (let i = 0; i < arr.length; i++) {

@@ -13,7 +13,7 @@
 // window.x();
 
 
-/* this inside object's method refers to object*/
+// /* this inside object's method refers to object*/
 // const obj3 = {
 //     a: 10,
 //     x: function () {
@@ -24,12 +24,12 @@
 
 
 /* call apply bind methods */
-// const student = {
-//     name: "Tirth",
-//     printName: function () {
-//         console.log(this.name);
-//     },
-// };
+const student = {
+    name: "Tirth",
+    printName: function () {
+        console.log(this, this.name);
+    },
+};
 // student.printName();
 
 // const student1 = {
@@ -41,13 +41,13 @@
 
 /* can be used by putting function outside object */
 // let printName = function (homeTown, state) {
-//     console.log(this.firstName + " " + this.lastName + " " +homeTown);
+//     console.log(this.firstName + " " + this.lastName + " " + homeTown);
 // }
-
 // const student2 = {
 //     firstName: "Tirth",
 //     lastName: "Patel"
 // };
+
 // /* call */
 // printName.call(student2, "Ahmedabad", "Gujarat");
 
@@ -66,7 +66,7 @@
 // printName.call(student3);
 
 
-/* this inside arrow function retains value of enclosing lexical context */
+// /* this inside arrow function retains value of enclosing lexical context */
 // const obj = {
 //     a: 10,
 //     x: () => {
@@ -78,7 +78,7 @@
 // const obj1 = {
 //     a: 10,
 //     y: function () {
-//         // console.log(this);
+//         console.log(this);
 //         const x = () => {
 //             console.log(this);
 //         }

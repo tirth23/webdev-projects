@@ -1,16 +1,16 @@
 /* Async/Await */
 
-const p1 = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve("Promise Resolved");
-    }, 10000);
-});
+// const p1 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve("Promise Resolved");
+//     }, 10000);
+// });
 
-const p2 = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve("Promise Resolved");
-    }, 1000);
-});
+// const p2 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve("Promise Resolved");
+//     }, 5000);
+// });
 
 
 /* async will always returns promise */
@@ -56,7 +56,7 @@ const GITHUB_AP = "https://api.github.com/users/tirth23";
 //     .catch((err) => console.log(err));
 
 
-// // /* using aysnc/await */
+//* using aysnc/await */
 // async function handlePro() {
 //     console.log("Check");
 //     try {
@@ -66,7 +66,7 @@ const GITHUB_AP = "https://api.github.com/users/tirth23";
 //     } catch (err) {
 //         console.log(err);
 //     }
-
+//     console.log("stop execution till await is resolved");
 // }
 // handlePro();
 // console.log("Hi");

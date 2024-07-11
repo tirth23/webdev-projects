@@ -52,6 +52,6 @@
 
 
 // Immediately invoked function expression - IIFE
-// (function hey() {
-//     console.log("HI");
-// })();
+// (function hey(i) {
+//     console.log("HI" + i);
+// })(6);

@@ -18,6 +18,7 @@
 
 // function x() {
 //     for(var i = 1; i <= 5; i++ ) {
+//         console.log(i);
 //         setTimeout(function() {
 //             console.log(i);
 //         }, i * 1000);  
@@ -28,6 +29,7 @@
 
 // function x() {
 //     for(let i = 1; i <= 5; i++ ) {
+//         console.log(i);
 //         setTimeout(function() {
 //             console.log(i);
 //         }, i * 1000);  
@@ -44,6 +46,19 @@
 //             }, i * 1000);
 //         }  
 //         close(i);
+//     }                 
+//     console.log("Namaste Javascript");
+// }
+// x();
+
+// function x() {
+//     for(var i = 1; i <= 5; i++ ) {
+//         console.log(i);
+//         (function(i) {
+//             setTimeout(function() {
+//                 console.log(i);
+//             }, i * 1000);
+//         })(i);
 //     }                 
 //     console.log("Namaste Javascript");
 // }

@@ -5,10 +5,13 @@ returns another function until the final result is achieved */
 
 /* Currying with bind */
 // let multiply = function (x, y) {
+//     console.log(x);
+//     console.log(y);
 //     console.log(x * y);
 // }
 
 // let multiplyTwo = multiply.bind(this, 2);
+// console.log(multiplyTwo);
 // multiplyTwo(5);
 
 // let multiplyTwo2 = multiply.bind(this);

@@ -5,6 +5,7 @@
 // console.log("end");
 // // wait for 10 seconds to  block main thread
 // let startDate = new Date().getTime();
+// console.log(startDate);
 // endDate = startDate;
 // while (endDate < startDate + 10000) {
 //     endDate = new Date().getTime(); 
