@@ -24,12 +24,12 @@
 
 
 /* call apply bind methods */
-const student = {
-    name: "Tirth",
-    printName: function () {
-        console.log(this, this.name);
-    },
-};
+// const student = {
+//     name: "Tirth",
+//     printName: function () {
+//         console.log(this, this.name);
+//     },
+// };
 // student.printName();
 
 // const student1 = {

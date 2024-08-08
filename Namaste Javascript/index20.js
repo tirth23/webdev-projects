@@ -2,11 +2,11 @@
 
 let arry = ["Tirth", "Patel"];
 
-console.log(arry.__proto__)
-console.log(Array.prototype)
-console.log(arry.__proto__.__proto__)
-console.log(Object.prototype)
-console.log(arry.__proto__.__proto__.__proto__)
+// console.log(arry.__proto__)
+// console.log(Array.prototype)
+// console.log(arry.__proto__.__proto__)
+// console.log(Object.prototype)
+// console.log(arry.__proto__.__proto__.__proto__)
 
 
 // let obj = {
