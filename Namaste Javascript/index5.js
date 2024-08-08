@@ -14,7 +14,7 @@
 //         console.log(a);
 //     }
 //     return y;
-//  }
+// }
 // var z = x();
 // console.log(z);
 // z();
@@ -25,7 +25,7 @@
 //         console.log(a);
 //     }
 //     return y;
-//  }
+// }
 // x()();      //means we are calling inner function of x using ()(): x() returns y -> y();
 
 // function x() {
@@ -55,7 +55,7 @@
 //     }
 //     a = 100;
 //     return y;
-//  }
+// }
 // var z = x();
 // console.log(z);
 // z();
@@ -68,7 +68,7 @@
 //             console.log(a, b);
 //         }
 //         y();
-//      }
+//     }
 //     x();
 // }
 // z();
@@ -79,7 +79,7 @@
 //     }
 //     let a = 100;
 //     return y;
-//  }
+// }
 // var z = x();
 // console.log(z);
 // z();
@@ -207,4 +207,4 @@
 // add();
 // add();
 // console.log(add());
-// // the counter is now 3
+// the counter is now 3

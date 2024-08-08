@@ -21,7 +21,7 @@ check in browser console
 // const cart = ["shoes", "kurta", "pants"];
 
 // api.createOrder(cart, function() {
-//     api.proceedToPayment(function() {
+//     api.proceedToPayment(function() {s
 //         api.showOrderSummary(function() {
 //             api.walletSummary();
 //         });

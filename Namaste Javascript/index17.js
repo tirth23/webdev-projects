@@ -24,12 +24,12 @@
 
 
 /* call apply bind methods */
-const student = {
-    name: "Tirth",
-    printName: function () {
-        console.log(this, this.name);
-    },
-};
+// const student = {
+//     name: "Tirth",
+//     printName: function () {
+//         console.log(this, this.name);
+//     },
+// };
 // student.printName();
 
 // const student1 = {
@@ -66,7 +66,7 @@ const student = {
 // printName.call(student3);
 
 
-// /* this inside arrow function retains value of enclosing lexical context */
+/* this inside arrow function retains value of enclosing lexical context */
 // const obj = {
 //     a: 10,
 //     x: () => {

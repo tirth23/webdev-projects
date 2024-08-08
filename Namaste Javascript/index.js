@@ -41,7 +41,7 @@
 // console.log(x);
 // x = 7;
 
-/* Arrow Function */
+/* Arrow Function - not hoisted*/
 // var y = 7;
 // console.log(y);
 // getName();       //getname is variable in memory which is undefined

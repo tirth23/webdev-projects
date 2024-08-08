@@ -19,7 +19,7 @@
 // console.log(output1);
 
 // const output3 = users.filter((x) => x.age < 30).map((x) => x.firstName);
-// // console.log(output3);
+// console.log(output3);
 
 // const output4 = users.reduce(function (acc, curr) {
 //     if(curr.age < 30) {
@@ -40,7 +40,22 @@
 // console.log(us[0]["firstName"]);
 // const fname = "firstName";
 // console.log(us[0][fname]);
+// // console.log(us[0].1);  //syntax error
 // console.log(us[0][1]);
 // console.log(us[0]["1"]);
 // const no = 1;
 // console.log(us[0][no]);
+
+
+
+// /* reverse string */
+// console.log("Hello".split("").reverse().join(''));
+
+// /* captilize first letter */
+// console.log("hello world".split(" ")
+//     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+//     .join(' '));
+
+// /* remove duplicate */
+// console.log([...new Set("aaabbbccc")].join(''));
+

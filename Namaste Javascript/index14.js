@@ -31,7 +31,7 @@
 //     /* to handle rejection from promise, catch is used */
 //     .catch(function (err) {
 //         console.log(err.message);
-//     }) 
+//     })
 //     .then(function (orderId) {
 //         console.log("No matter what happens, it wil be definitely be called.");
 //     });
@@ -50,7 +50,7 @@
 //             setTimeout(function () {
 //                 resolve(orderId);
 //             }, 5000);
-//             /* when promise is resolved arg in resolve() is passed to callback function  */  
+//             /* when promise is resolved arg in resolve() is passed to callback function  */
 //             // resolve(orderId); 
 //         }
 //     });
@@ -60,6 +60,7 @@
 // function proceedToPayment(orderId) {
 //     return new Promise(function (resolve, reject) {
 //         resolve("Payment Successful");
+//         // reject("Payment Failed");
 //     });
 // }
 

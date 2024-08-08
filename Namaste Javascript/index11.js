@@ -1,13 +1,14 @@
 const arr = [3, 4, 6, 5, 2];
 
 /* MAP --- map method is used when we want transformation of whole array & returns arrays */
+/* array.map(function(currentValue, index, arr), thisValue) */
 
-// /* x is each value in arr */
+/* x is each value in arr */
 // function double(x) {
-//     return x * 2;
+//     return x * 2 * this;
 // }
 
-// const output = arr.map(double);
+// const output = arr.map(double, 7);
 // console.log(output)
 
 // console.log(arr.map(function triple(x) {
@@ -17,8 +18,9 @@ const arr = [3, 4, 6, 5, 2];
 
 
 /* FILTER --- filter is used when we want to filter the array to obtain required value & returns filtered array*/
+/* array.filter(function(currentValue, index, arr), thisValue) */
 
-// filter odd value
+/* filter odd value */
 // function isOdd(x) {
 //     return x % 2 !== 0;
 // }
@@ -37,6 +39,7 @@ const arr = [3, 4, 6, 5, 2];
 
 
 /* REDUCE --- reduce is used when we want to reduce the array to single value eg (max, min, avg, sum, difference etc) */
+/* array.reduce(function(total, currentValue, currentIndex, arr), initialValue) */
 
 /* sum of arr */
 // function findSum(arr) {

@@ -27,6 +27,11 @@
 // };
 // console.log(calculateDiameter(radius));
 
+
+
+
+
+
 // /* USING ABSTRACT CODE */
 
 // const radius = [3, 1, 2, 4];
@@ -58,8 +63,14 @@
 
 // console.log(radius.map(area));
 
-/* using Array.prototype allows us to use calculate similar to map and can work on all array
+
+
+
+/* using Array.prototype allows us to use calculate similar to map and can work 
+on all array
 this refers to array to radius which is calling function */
+/* Prototypes are the mechanism by which JavaScript objects inherit features 
+from one another */
 // Array.prototype.calculatetwo = function(logic) {
 //     const output = [];
 //     for (let i = 0; i < this.length; i++) {

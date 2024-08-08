@@ -4,6 +4,7 @@
 // }, 5000);
 // console.log("end");
 // // wait for 10 seconds to  block main thread
+// // getTime() returns the number of milliseconds since January 1, 1970 00:00:00
 // let startDate = new Date().getTime();
 // console.log(startDate);
 // endDate = startDate;

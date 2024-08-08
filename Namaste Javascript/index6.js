@@ -8,7 +8,7 @@
 // console.log("Namaste Javascript");
 
 // function x() {
-//     var i = 1;
+//     // var i = 1;
 //     setTimeout(function() {
 //         console.log(i);
 //     }, 3000);                    
@@ -27,6 +27,7 @@
 // }
 // x();
 
+// let is block scope so everytime new block will have current value of i
 // function x() {
 //     for(let i = 1; i <= 5; i++ ) {
 //         console.log(i);
