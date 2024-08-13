@@ -65,9 +65,11 @@ always use at end to collect rest of values - destructuring*/
 // console.log([1, 2, 3]);
 // console.log([1, 2, 3] + "v");
 // console.log(spellName(...myName));
+// console.log(...myName[3]);
 // console.log(spellName(...myName[3]));
 // console.log(spellName([...myName]));
 // console.log(spellName({ ...myName }));
+// console.log({ ...myName });
 
 
 /* rest operator used to collect rest of values into object,
@@ -75,8 +77,8 @@ properties can be in any sequence but have same name - destructuring*/
 // const { a, c, b } = { a: "A", b: "B", c: "C" };
 // console.log(a, b, c);
 
-// const { d: d, f: e, e: f } = { d: "D", e: "E", f: "F" };
-// console.log(d, e, f);
+// const { d: xp, f: e, e: f } = { d: "D", e: "E", f: "F" };
+// console.log(xp, e, f);
 
 // const { y, x, ...rest } = { x: "X", y: "Y", z: "Z", m: "M" };
 // console.log(x, y, rest);
@@ -120,21 +122,21 @@ properties can be in any sequence but have same name - destructuring*/
 /* spread operator used to spread values of object */
 // const myNames = ["Oluwatobi", "Sofela"];
 // const gh = ["hj", "kl"];
-// const bio = {runs: "codesweetly.com", ...myNames };
+// // const bio = {runs: "codesweetly.com", ...myNames };
 // /* only one array can be included by destructuring */
 // // const bio = { ...gh, runs: "codesweetly.com", ...myNames };
-// // const bio = { ...myNames, runs: "codesweetly.com", ...gh };
+// const bio = { ...myNames, runs: "codesweetly.com", ...gh };
 // console.log(bio);
 
-// const myName = { firstName: "Oluwatobi", lastName: "Sofela" };
-// const bio = { ...myName, website: "codesweetly.com" };
-// console.log(bio);
+// const myName1 = { firstName: "Oluwatobi", lastName: "Sofela" };
+// const bio1 = { ...myName1, website: "codesweetly.com" };
+// console.log(bio1);
 
-// const myName = { firstName: "Tobi", lastName: "Sofela" };
-// const bio = { ...myName, firstName: "Oluwatobi", website: "codesweetly.com" };
-// console.log(bio);
+// const myName2 = { firstName: "Tobi", lastName: "Sofela" };
+// const bio2 = { ...myName2, firstName: "Oluwatobi", website: "codesweetly.com" };
+// console.log(bio2);
 
-/* same reference - changes done in original reflect in copy */
+/* same reference - changes done in original reflect in copy know asshallow copy */
 // const myName = { firstName: "Oluwatobi", lastName: "Sofela" };
 // const bio = myName;
 // myName.firstName = "Tobi";
@@ -148,13 +150,36 @@ properties can be in any sequence but have same name - destructuring*/
 // console.log(myName);
 // console.log(bio);
 
-// const myName = {
+// const myName1 = {
 //     fullName: { firstName: "Oluwatobi", lastName: "Sofela" }
 // };
-// const bio = { ...myName };
-// myName.fullName.firstName = "Tobi";
-// console.log(myName);
-// console.log(bio);
+// const bio1 = { ...myName1 };
+// myName1.fullName = "Tobi";
+// console.log(myName1);
+// console.log(bio1);
+
+/* here fullName is a reference to same object in both objects
+so changing fullName in one object will change fullName in other object
+... does shallow copy
+Shallow Copying: When used to copy objects or arrays, the spread operator performs a shallow copy.
+This means that it only creates copies of the top-level elements, not nested objects or arrays. */
+// const myName2 = {
+//     fullName: { firstName: "Oluwatobi", lastName: "Sofela" }
+// };
+// const bio2 = { ...myName2 };
+// myName2.fullName.firstName = "Tobi";
+// console.log(myName2);
+// console.log(bio2);
+
+// // deep copy 
+// const myName3 = {
+//     fullName: { firstName: "Oluwatobi", lastName: "Sofela" }
+// };
+// const bio3 = JSON.parse(JSON.stringify(myName3));
+// myName3.fullName.firstName = "Tobi";
+// console.log(myName3);
+// console.log(bio3);    
+
 
 // const myVehicle = {
 //     brand: 'Ford',
