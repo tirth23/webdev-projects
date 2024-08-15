@@ -1,4 +1,5 @@
-/* Event Bubbling */
+/* Event Bubbling - default behavior */
+/* Not all events bubble up the DOM tree like focus */
 // document.querySelector("#grandparent")
 // .addEventListener("click", () => {
 //     console.log("grandparent clicked");
@@ -28,7 +29,7 @@
 // }, true)
 
 
-/* Mix of both */
+/* Mix of both - first capture, then bubble */
 // document.querySelector("#grandparent")
 // .addEventListener("click", () => {
 //     console.log("grandparent clicked");
@@ -40,14 +41,14 @@
 // document.querySelector("#child")
 // .addEventListener("click", () => {
 //     console.log("child clicked");
-// }, false)
+// }, true)
 
 
 /* Stop Propagation in Event Bubbling */
 // document.querySelector("#grandparent")
 // .addEventListener("click", (e) => {
 //     console.log("grandparent clicked");
-// }, false
+// }, false)
 // document.querySelector("#parent")
 // .addEventListener("click", (e) => {
 //     console.log("parent clicked");
@@ -73,5 +74,5 @@
 // document.querySelector("#child")
 // .addEventListener("click", (e) => {
 //     console.log("child clicked");
-//     // e.stopPropagation();
+//     e.stopPropagation();
 // }, true)
