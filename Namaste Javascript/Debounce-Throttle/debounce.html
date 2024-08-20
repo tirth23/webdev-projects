@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <input type="text" onkeyup="getData()" /> -->
+
+  <input type="text" onkeyup="betterFunctios('Hello', 'World')" />
+
+  <script>
+
+
+
+    /* Without this binding  */
+    let counter = 0;
+    const getData = (...arr) => {
+      //calls an API and gets data
+      console.log("Fetching data...", counter++, arr);
+    };
+    function debounce (func, delay) {
+      let timer;
+      console.log("Hi");
+      return function () {
+        let context = this;   //not required since we don't have this binding in the function
+        let args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          /* here both will work since we don't have this binding in the function */
+          func.apply(context, args);
+          // func(args);
+        }, delay);
+      }
+    }
+    /* if difference between two keystrokes is more than 300 milliseconds, then only call the function */
+    const betterFunctios = debounce(getData, 300);
+
+
+    // /* With this binding */
+    // let counter = 0;
+    // function getData(arr) {
+    //   //calls an API and gets data
+    //   console.log("Fetching data...", counter++, this.name);
+    // }
+    // const debounceObj = {
+    //   name: 'name from debounceObj',
+    //   debounce: function (func, delay) {
+    //     let timer;
+    //     console.log(this);
+    //     return () => {
+    //       In arrow function this will be the this of outer lexical scope 
+    //       let context = this;
+    //       console.log(context);
+    //       let args = arguments;
+    //       clearTimeout(timer);
+    //       timer = setTimeout(() => {
+    //         /* here we had this binding so in apply() this will be the context of the function */
+    //         func.apply(context, args);
+    //         /* Here we don't have this binding so in apply() this will be the window object */
+    //         // func(args);
+    //       }, delay);
+    //     }
+    //   }
+    // }
+    // // if difference between two keystrokes is more than 300 milliseconds, then only call the function
+    // const betterFunctios = debounceObj.debounce(getData, 300);
+
+
+    // /* Modern approach without this binding */
+    // let counter = 0;
+    // const getData = (...arr) => {
+    //   console.log("Fetching data...", counter++, arr);
+    // };
+    // const debounce = (func, delay) => {
+    //   let timer;
+    //   return (...args) => {
+    //     clearTimeout(timer);
+    //     timer = setTimeout(() => {
+    //       func(...args);
+    //     }, delay);
+    //   }
+    // }
+    // const betterFunctios = debounce(getData, 300);
+
+
+
+    // /* Modern approach with this binding */
+    // let counter = 0;
+    // function getData(...arr) {
+    //   console.log("Fetching data...", counter++, this.name, arr);
+    // }
+    // const debounceObj = {
+    //   name: 'name from debounceObj',
+    //   debounce: function (func, delay) {
+    //     let timer;
+    //     return (...args) => {       
+    //       let context = this;
+    //       clearTimeout(timer);
+    //       timer = setTimeout(() => {
+    //         func.apply(context, args);
+    //       }, delay);
+    //     }
+    //   }
+    // }
+    // const betterFunctios = debounceObj.debounce(getData, 300);
+
+
+
+  </script>
+</body>
+
+</html>
