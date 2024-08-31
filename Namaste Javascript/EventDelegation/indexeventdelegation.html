@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Delegation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Delegation</title>
 </head>
+
 <body>
-    <div>
-        <ul id="category">
-            <li id="shoes">shoes</li>
-            <li id="mobile">mobile</li>
-            <li id="laptop">laptop</li>
-            1
-        </ul>
-    </div>
-    <script src="indexeventdelegation.js"></script>
+  <div>
+    <ul id="category">
+      <li id="shoes">shoes</li>
+      <li id="mobile">mobile</li>
+      <li id="laptop">laptop</li>
+      1
+    </ul>
+  </div>
+  <script>
+    document.querySelector("#category")
+      .addEventListener("click", (e) => {
+        console.log(e.target.id);
+        if (e.target.tagName === "LI") {
+          window.location.href = "/" + e.target.id;
+        }
+      })
+  </script>
 </body>
+
 </html>

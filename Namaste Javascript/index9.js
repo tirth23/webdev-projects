@@ -1,6 +1,6 @@
 // console.log("start");
 // setTimeout(function cb() {
-//     console.log("callback");
+// 	console.log("callback");
 // }, 5000);
 // console.log("end");
 // // wait for 10 seconds to  block main thread
@@ -9,13 +9,13 @@
 // console.log(startDate);
 // endDate = startDate;
 // while (endDate < startDate + 10000) {
-//     endDate = new Date().getTime(); 
+// 	endDate = new Date().getTime();
 // }
 // console.log("while expires");
 
 // console.log("start");
 // function cb() {
-//     console.log("callback");
+// 	console.log("callback");
 // }
 // setTimeout(cb, 0);
 // /*

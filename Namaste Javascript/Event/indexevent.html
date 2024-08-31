@@ -1,24 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event</title>
-    <style>
-        div {
-            min-width: 100px;
-            min-height: 100px;
-            padding: 30px;
-            border: 1px solid #000;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event</title>
+  <style>
+    div {
+      min-width: 100px;
+      min-height: 100px;
+      padding: 30px;
+      border: 1px solid #000;
+    }
+  </style>
 </head>
+
 <body>
-        <div id="grandparent">
-            <div id="parent">
-                <div id="child"></div>
-            </div>
-        </div>
-        <script src="indexevent.js"></script>
+  <div id="grandparent">
+    <div id="parent">
+      <div id="child"></div>
+    </div>
+  </div>
+  <script>
+    /* Event Bubbling - default behavior */
+    /* Not all events bubble up the DOM tree like focus */
+    // document.querySelector("#grandparent")
+    // .addEventListener("click", () => {
+    //     console.log("grandparent clicked");
+    // }, false)
+    // document.querySelector("#parent")
+    // .addEventListener("click", () => {
+    //     console.log("parent clicked");
+    // }, false)
+    // document.querySelector("#child")
+    // .addEventListener("click", () => {
+    //     console.log("child clicked");
+    // }, false)
+
+
+    /* Event Capturing */
+    // document.querySelector("#grandparent")
+    // .addEventListener("click", () => {
+    //     console.log("grandparent clicked");
+    // }, true)
+    // document.querySelector("#parent")
+    // .addEventListener("click", () => {
+    //     console.log("parent clicked");
+    // }, true)
+    // document.querySelector("#child")
+    // .addEventListener("click", () => {
+    //     console.log("child clicked");
+    // }, true)
+
+
+    /* Mix of both - first capture, then bubble */
+    // document.querySelector("#grandparent")
+    // .addEventListener("click", () => {
+    //     console.log("grandparent clicked");
+    // }, true)
+    // document.querySelector("#parent")
+    // .addEventListener("click", () => {
+    //     console.log("parent clicked");
+    // }, false)
+    // document.querySelector("#child")
+    // .addEventListener("click", () => {
+    //     console.log("child clicked");
+    // }, true)
+
+
+    /* Stop Propagation in Event Bubbling */
+    // document.querySelector("#grandparent")
+    // .addEventListener("click", (e) => {
+    //     console.log("grandparent clicked");
+    // }, false)
+    // document.querySelector("#parent")
+    // .addEventListener("click", (e) => {
+    //     console.log("parent clicked");
+    //     e.stopPropagation();
+    // }, false)
+    // document.querySelector("#child")
+    // .addEventListener("click", (e) => {
+    //     console.log("child clicked");
+    //     e.stopPropagation();
+    // }, false)
+
+
+    /* Stop Propagation in Event Capturing */
+    // document.querySelector("#grandparent")
+    // .addEventListener("click", (e) => {
+    //     console.log("grandparent clicked");
+    //     e.stopPropagation();
+    // }, true)
+    // document.querySelector("#parent")
+    // .addEventListener("click", (e) => {
+    //     console.log("parent clicked");
+    // }, true)
+    // document.querySelector("#child")
+    // .addEventListener("click", (e) => {
+    //     console.log("child clicked");
+    //     e.stopPropagation();
+    // }, true)
+  </script>
 </body>
+
 </html>

@@ -1,0 +1,74 @@
+/* Type Coercion refers to the process of automatic or implicit conversion of 
+values from one data type to another */
+/* JS will do type coercion mostly to number except for string when using +  */
+
+/* string to number: '' to 0 || '5' to 5  || '5g' to NaN*/
+// console.log(10 - '5');
+// console.log(10 * '5');
+// console.log(10 / '5');
+// console.log(10 % '5');
+// console.log(10 - 'dfb');
+
+/* boolean to number: true to 1, false to 0 */
+// console.log(true + 2);
+// console.log(false + 2);
+
+/* string/boolean to number */
+// console.log(true - '5');
+// console.log(true - '5g');
+
+/* Exception with + operator */
+/* number to string */
+// console.log(10 + '5');
+
+/* boolean to string */
+// console.log(true + '5');
+// console.log(10 + true + '5');
+
+/* Equality == While comparison with ==, JS will do type coercion mostly to number */
+/* string to number */
+// console.log('5' == 5);
+// console.log('5g' == 5);
+
+/* boolean to number: true to 1, false to 0 */
+// console.log(true == 1);
+// console.log(true == 5);
+// console.log(false == 0);
+
+/* string/boolean to number */
+// console.log(true == '1');
+// console.log(true == '5');
+// console.log(false == '0');
+// console.log(false == 'dcd');
+
+
+
+/* Equality === also checks type and don't do type coercion */
+// console.log('5' === 5);
+// console.log('5g' === 5);
+// console.log(true === 1);
+// console.log(true === '1');
+
+//different reference
+// console.log([1,2,3] == [1,2,3]);
+// console.log([1,2,3] === [1,2,3]);
+
+//different reference
+// console.log({ x: 1, y: 2 } == { x: 1, y: 2 });
+// console.log({ x: 1, y: 2 } === { x: 1, y: 2 });
+
+// console.log("text" == "te" + "xt");
+// console.log("text" === "te" + "xt");
+
+// console.log("abc" == new String("abc")) //different reference but checks inner value
+// console.log("abc" === new String("abc")) //different reference
+
+// console.log(null == undefined);
+// console.log(null === undefined);
+
+// console.log(NaN == NaN);
+// console.log(NaN === NaN);
+
+// console.log([1, 2] == '1,2'); //Conversion of Array to String [1, 2] to '1,2'
+// console.log([1, 2] === '1,2');
+

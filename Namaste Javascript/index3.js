@@ -15,7 +15,7 @@
 
 // let b = 10;
 // let b = 20;
-               
+
 // let c = 10;
 // var c = 20;
 
@@ -41,7 +41,3 @@
 // const b = 20;
 // b = 30;
 // console.log(b);
-
-
-
-

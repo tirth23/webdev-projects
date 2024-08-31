@@ -1,19 +1,19 @@
 /* closure */
 // function x() {
-//     var a = 7;
-//     function y() {
-//         console.log(a);
-//     }
-//     y();
+// 	var a = 7;
+// 	function y() {
+// 		console.log(a);
+// 	}
+// 	y();
 // }
 // x();
 
 // function x() {
-//     var a = 7;
-//     function y() {
-//         console.log(a);
-//     }
-//     return y;
+// 	var a = 7;
+// 	function y() {
+// 		console.log(a);
+// 	}
+// 	return y;
 // }
 // var z = x();
 // console.log(z);
@@ -49,36 +49,36 @@
 // z();
 
 // function x() {
-//     var a = 7;
-//     function y() {
-//         console.log(a);
-//     }
-//     a = 100;
-//     return y;
+// 	var a = 7;
+// 	function y() {
+// 		console.log(a);
+// 	}
+// 	a = 100;
+// 	return y;
 // }
 // var z = x();
 // console.log(z);
 // z();
 
 // function z() {
-//     var b = 100;
-//     function x() {
-//         var a = 7;
-//         function y() {
-//             console.log(a, b);
-//         }
-//         y();
-//     }
-//     x();
+// 	var b = 100;
+// 	function x() {
+// 		var a = 7;
+// 		function y() {
+// 			console.log(a, b);
+// 		}
+// 		y();
+// 	}
+// 	x();
 // }
 // z();
 
 // function x() {
-//     function y() {
-//         console.log(a);
-//     }
-//     let a = 100;
-//     return y;
+// 	function y() {
+// 		console.log(a);
+// 	}
+// 	let a = 100;
+// 	return y;
 // }
 // var z = x();
 // console.log(z);
@@ -96,45 +96,45 @@
 // z();
 
 // function outer() {
-//     var c = 20;
-//     function x(b) {
-//         function y() {
-//             console.log(a, b, c);
-//         }
-//         let a = 100;
-//         return y;
-//     }
-//     return x;
+// 	var c = 20;
+// 	function x(b) {
+// 		function y() {
+// 			console.log(a, b, c);
+// 		}
+// 		let a = 100;
+// 		return y;
+// 	}
+// 	return x;
 // }
-// var z = outer()("Hello World");      //outer will return x => x("Hello World")
+// var z = outer()("Hello World"); //outer will return x => x("Hello World")
 // console.log(z);
 // z();
 
 // var c = 20;
 // function outer() {
-//     // var c = 40;
-//     function x(b) {
-//         function y() {
-//             console.log(a, b, c);
-//         }
-//         // let a = 100;
-//         return y;
-//     }
-//     return x;
+// 	// var c = 40;
+// 	function x(b) {
+// 		function y() {
+// 			console.log(a, b, c);
+// 		}
+// 		// let a = 100;
+// 		return y;
+// 	}
+// 	return x;
 // }
 // // let a = 30;
-// var z = outer()("Hello World");      //outer will return x => x("Hello World")
+// var z = outer()("Hello World"); //outer will return x => x("Hello World")
 // console.log(z);
 // z();
 // var a = 30;
 
 /* Data Hiding */
 // function counter() {
-//     var count = 0;
-//     return function incrementCounter() {
-//         count++;
-//         console.log(count);
-//     }
+// 	var count = 0;
+// 	return function incrementCounter() {
+// 		count++;
+// 		console.log(count);
+// 	};
 // }
 // // console.log(count);
 // /*
@@ -176,7 +176,7 @@
 // data();
 
 /* Another Example:- */
-// Function to increment counter
+/* Function to increment counter */
 // function add() {
 //     let counter = 0;
 //     counter += 1;
@@ -186,7 +186,7 @@
 // add();
 // add();
 // console.log(add());
-// //The counter should now be 3. But it is 1.
+/* The counter should now be 3. But it is 1. */
 
 // function add() {
 //     let counter = 0;
@@ -198,13 +198,16 @@
 // add();
 // console.log(add());
 
-//self-invoking function IIFE - (Immediately Invoked Function Expression)
+/* self-invoking function IIFE - (Immediately Invoked Function Expression) */
 // const add = (function () {
-//     let counter = 0;
-//     return function () { counter += 1; return counter }
+// 	let counter = 0;
+// 	return function () {
+// 		counter += 1;
+// 		return counter;
+// 	};
 // })();
 // console.log(add);
 // add();
 // add();
 // console.log(add());
-// the counter is now 3
+/* the counter is now 3 */

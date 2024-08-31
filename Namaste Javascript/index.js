@@ -37,7 +37,13 @@
 // console.log(x);
 // var x;
 
+// x = 7;
+// console.log(x);
+
 // var x;
+// console.log(x);
+// x = 7;
+
 // console.log(x);
 // x = 7;
 

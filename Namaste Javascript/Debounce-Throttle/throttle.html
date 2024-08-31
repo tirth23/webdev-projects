@@ -8,42 +8,54 @@
 </head>
 
 <body>
-  <!-- <input type="text" onkeyup="getData()" /> -->
+  <!-- <button onclick="expensiveCalculation(event, 'Hello', 'World')">Click Me</button> -->
 
-  <input type="text" onkeyup="debouncedCallAPI(event, 'Hello', 'World')" />
+  <button onclick="throttledCallAPI(event, 'Hello', 'World')">Click Me</button>
 
   <script>
-/*     used for input, textarea, and other events that fire multiple times, where we need to
-    debounce event i.e., only call the function when user pause for a certain amount of time */
+    /* used for resize, scroll, and other events that fire multiple times, where we need to
+    throttle event i.e., only call the function after a certain amount of time has passed */
 
-    function x() {
-      c = 4;
+
+    let counter = 0;
+    function expensiveCalculation(arr) {
+      //calls an API and gets data
+      console.log("Fetching data...", counter++, this.name, arr);
     }
-    console.log(c);
-    x();
-    
+    const throttle = (func, limit) => {
+      let flag = true;
+      return function () {
+        let context = this;
+        let args = arguments;
+        if (flag) {
+          func.apply(context, args);
+          flag = false;
+          setTimeout(() => flag = true, limit);
+        }
+      }
+    }
+    /* if difference between two func call is more than 300 milliseconds, then only call the function */
+    /* call the function after 500 milliseconds even if the user clicks more than once */
+    const throttledCallAPI = throttle(expensiveCalculation, 500);
 
-    // /* Without this binding  */
+
     // let counter = 0;
-    // const getData = (...arr) => {
+    // function expensiveCalculation(arr) {
     //   //calls an API and gets data
-    //   console.log("Fetching data...", counter++, arr);
-    // };
-    // function debounce (func, delay) {
-    //   let timer;
+    //   console.log("Fetching data...", counter++, this.name, arr);
+    // }
+    // const throttle = (func, limit) => {
+    //   let timerId = null;
     //   return function () {
-    //     let context = this;   //not required since we don't have this binding in the function
-    //     let args = arguments;
-    //     clearTimeout(timer);
-    //     timer = setTimeout(() => {
-    //       /* here both will work since we don't have this binding in the function */
-    //       func.apply(context, args);
-    //       // func(args);
-    //     }, delay);
+    //     if(timerId) return;
+    //     timerId = setTimeout(() => {
+    //       func.apply(this, arguments);
+    //       timerId = null;
+    //     }, limit);
     //   }
     // }
-    // /* if difference between two keystrokes is more than 300 milliseconds, then only call the function */
-    // const debouncedCallAPI = debounce(getData, 300);
+    // /* call the function after 500 milliseconds even if the user clicks more than once */
+    // const throttledCallAPI = throttle(expensiveCalculation, 500);
 
 
     // /* With this binding */
@@ -102,7 +114,7 @@
     //   name: 'name from debounceObj',
     //   debounce: function (func, delay) {
     //     let timer;
-    //     return (...args) => {       
+    //     return (...args) => {
     //       let context = this;
     //       clearTimeout(timer);
     //       timer = setTimeout(() => {
