@@ -11,20 +11,18 @@ check in browser console
 // console.log(user);
 
 // /* arg in callbak function is data/response returned in promise */
-// user.then(function(data) {
-//     console.log(data);
-// })
-
+// user.then(function (data) {
+// 	console.log(data);
+// });
 
 /* Callback Hell */
 
 // const cart = ["shoes", "kurta", "pants"];
 
-// api.createOrder(cart, function() {
-//     api.proceedToPayment(function() {s
-//         api.showOrderSummary(function() {
-//             api.walletSummary();
-//         });
-//     });
-// })
-
+// api.createOrder(cart, function () {
+// 	api.proceedToPayment(function () {
+// 		api.showOrderSummary(function () {
+// 			api.walletSummary();
+// 		});
+// 	});
+// });

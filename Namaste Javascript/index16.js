@@ -1,51 +1,87 @@
-// const p1 = new Promise((resolve, reject) => {
-// 	setTimeout(() => {
-// 		console.log("Inside p1");
-// 		// resolve("p1 success");
-// 		reject("p1 fail");
-// 	}, 5000);
-// });
+function resolveAfter15Seconds() {
+	console.log("starting slow promise");
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			resolve("slow");
+			console.log("slow promise is done");
+		}, 15000);
+	});
+}
 
-// const p2 = new Promise((resolve, reject) => {
-// 	setTimeout(() => {
-// 		console.log("Inside p2");
-// 		resolve("p2 success");
-// 		// reject("p2 fail");
-// 	}, 1000);
-// });
+function resolveAfter5Seconds() {
+	console.log("starting fast promise");
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve("fast");
+			console.log("fast promise is done");
+		}, 5000);
+	});
+}
 
-// const p3 = new Promise((resolve, reject) => {
-// 	setTimeout(() => {
-// 		console.log("Inside p3");
-// 		// resolve("p3 success");
-// 		reject("p3 fail");
-// 	}, 2000);
-// });
+async function sequentialStart() {
+	console.log("== sequentialStart starts ==");
 
-/* return array of all success or return single response if any one fail */
-// Promise.all([p1, p2, p3]).then((res) => console.log(res)).catch((err) => console.error(err));
+	// 1. Start a timer, log after it's done
+	const slow = resolveAfter15Seconds();
+	console.log(await slow);
+  console.log("hi");
+	// 2. Start the next timer after waiting for the previous one
+	const fast = resolveAfter5Seconds();
+	console.log(await fast);
 
-/* return array of objects length all settled irrespective of state */
-/* [
-	{
-		status: "fulfilled",
-		value: "p1 success",
-	},
-	{
-		status: "rejected",
-		reason: "p2 fail",
-	},
-]; */
-// Promise.allSettled([p1, p2, p3])
-// 	.then((res) => console.log(res))
-// 	.catch((err) => console.error(err));
+	console.log("== sequentialStart done ==");
+}
 
-/* return first settled response irrespective of state */
-// Promise.race([p1, p2, p3]).then((res) => console.log(res)).catch((err) => console.error(err));
+async function sequentialWait() {
+	console.log("== sequentialWait starts ==");
 
-/* return first settled success response or if all fail return array of errors */
-// Promise.any([p1, p2, p3]).then((res) => console.log(res)).catch((err) => {
-//     console.error(err);
-//     //to get aggregate error in form of array
-//     console.log(err.errors);
-// });
+	// 1. Start two timers without waiting for each other
+	const slow = resolveAfter15Seconds();
+	const fast = resolveAfter5Seconds();
+
+	// 2. Wait for the slow timer to complete, and then log the result
+	console.log(await slow);
+	// 3. Wait for the fast timer to complete, and then log the result
+	console.log(await fast);
+
+	console.log("== sequentialWait done ==");
+}
+
+async function concurrent1() {
+	console.log("== concurrent1 starts ==");
+
+	// 1. Start two timers concurrently and wait for both to complete
+	const results = await Promise.all([
+		resolveAfter15Seconds(),
+		resolveAfter5Seconds(),
+	]);
+	// 2. Log the results together
+	console.log(results[0]);
+	console.log(results[1]);
+
+	console.log("== concurrent1 done ==");
+}
+
+async function concurrent2() {
+	console.log("== concurrent2 starts ==");
+
+	// 1. Start two timers concurrently, log immediately after each one is done
+	await Promise.all([
+		(async () => console.log(await resolveAfter15Seconds()))(),
+		(async () => console.log(await resolveAfter5Seconds()))(),
+	]);
+
+	console.log("== concurrent2 done ==");
+}
+
+// after 15 seconds, logs "slow", then after 5 more second, "fast"
+// sequentialStart();
+
+// after 15 seconds, logs "slow" and then "fast"
+// sequentialWait();
+
+// same as sequentialWait
+// concurrent1();
+
+// after 5 second, logs "fast", then after 10 more second, "slow"
+// concurrent2();

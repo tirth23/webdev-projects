@@ -1,195 +1,117 @@
-/* rest operator used to collect rest of values into array, 
-always use at end to collect rest of values - destructuring*/
-// function getsumsub(num1, num2) {
-//     return [num1 + num2, num1 - num2]
-// }
-// const [add_res, sub_res] = getsumsub(10, 20)
-// console.log("add:" + add_res)
-// console.log("sub:" + sub_res)
+// /* prototype inheritance means once object trying to access property of another object
+// when we print an object, it will print the object's properties and methods
+// and it will attach below key value in the object
+// [[Prototype]]: Object;
 
-// const [x, y, z] = [1, 2, 3];
-// console.log(x, y, z);
-
-// const [a, , c] = [1, 2, 3, 4];
-// console.log(a, c);
-
-// const [q, w] = [1, 2, 3];
-// console.log(q, w);
-
-// const numbers = [1, 2, 3, 4, 5, 6];
-// const [one, two, ...rest] = numbers;
-// console.log(rest);
-
-// function myBio(one, two, ...rest) {
-//     return rest;
-// }
-// console.log(myBio(1, 2, 3, 4, 5, 6));
-
-
-/* spread operator used to spread values of array */
-// const one = [1, 2, 3];
-// const two = [4, 5, 6];
-// console.log([...one, ...two])
-// console.log(0, ...one, 10);
-
-// const three = [[6, 7]];
-// console.log(2, ...three, 3);
-
-/* same reference - changes done in original reflect in copy */
-// const four = [1, 2, 3]
-// const five = four;
-// four.pop();
-// console.log(four);
-// console.log(five);
-
-/* new copy - changes done in original does not reflect in copy */
-// const four = [1, 2, 3]
-// const five = [...four];
-// four.pop();
-// console.log(four);
-// console.log(five);
-
-// const name = "Tirth";
-// console.log(...name);
-
-// const one = [1, 2, 3];
-// function xyz(a, b) {
-//     return a + b;
-// }
-// console.log(xyz(...one));
-
-// const myName = "Oluwatobi Sofela";
-// function spellName(a, b, c) {
-//     return a + b + c;
-// }
-// console.log([1, 2, 3]);
-// console.log([1, 2, 3] + "v");
-// console.log(spellName(...myName));
-// console.log(...myName[3]);
-// console.log(spellName(...myName[3]));
-// console.log(spellName([...myName]));
-// console.log(spellName({ ...myName }));
-// console.log({ ...myName });
-
-
-/* rest operator used to collect rest of values into object,
-properties can be in any sequence but have same name - destructuring*/
-// const { a, c, b } = { a: "A", b: "B", c: "C" };
-// console.log(a, b, c);
-
-// const { d: xp, f: e, e: f } = { d: "D", e: "E", f: "F" };
-// console.log(xp, e, f);
-
-// const { y, x, ...rest } = { x: "X", y: "Y", z: "Z", m: "M" };
-// console.log(x, y, rest);
-
-// const { firstName = "Tobi", website = "CodeSweetly" } = {
-//     firstName: "Oluwatobi",
-//     xi: "h"
+// it will have default properties and methods that JS provides for object
+// it is a reference to the object.Prototype  */
+// let newObj = {
+// 	name: "Tirth",
 // };
-// console.log(firstName, website);
+// console.log(newObj);
+// console.log(newObj.__proto__);
+// /* To access [[Prototype]] properties and methods we need to use __proto__ key */
+// console.log(Object.prototype);
+// /* same as above */
+// console.log(newObj.toString());
+// /* toString() is not in newObj but it is present in Object.prototype */
 
-// const vehicleOne = {
-//     brand: 'Ford',
-//     model: 'Mustang',
-//     type: 'car',
-//     year: 2021,
-//     color: 'red'
-// }
-// myVehicle(vehicleOne);
-// function myVehicle({ type, color, brand, model }) {
-//     console.log('My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.');
-// }
+/* --------------------------------------------------------------------------------------------------------------------- */
 
-// const vehicleOne = {
-//     brand: 'Ford',
-//     model: 'Mustang',
-//     type: 'car',
-//     year: 2021,
-//     color: 'red',
-//     registration: {
-//         city: 'Houston',
-//         state: 'Texas',
-//         country: 'USA'
-//     }
-// }
-// myVehicle(vehicleOne)
-// function myVehicle({ model, registration: { state } }) {
-//     console.log('My ' + model + ' is registered in ' + state + '.');
-// }
-
-
-/* spread operator used to spread values of object */
-// const myNames = ["Oluwatobi", "Sofela"];
-// const gh = ["hj", "kl"];
-// // const bio = {runs: "codesweetly.com", ...myNames };
-// /* only one array can be included by destructuring */
-// // const bio = { ...gh, runs: "codesweetly.com", ...myNames };
-// const bio = { ...myNames, runs: "codesweetly.com", ...gh };
-// console.log(bio);
-
-// const myName1 = { firstName: "Oluwatobi", lastName: "Sofela" };
-// const bio1 = { ...myName1, website: "codesweetly.com" };
-// console.log(bio1);
-
-// const myName2 = { firstName: "Tobi", lastName: "Sofela" };
-// const bio2 = { ...myName2, firstName: "Oluwatobi", website: "codesweetly.com" };
-// console.log(bio2);
-
-/* same reference - changes done in original reflect in copy know asshallow copy */
-// const myName = { firstName: "Oluwatobi", lastName: "Sofela" };
-// const bio = myName;
-// myName.firstName = "Tobi";
-// console.log(myName);
-// console.log(bio);
-
-/* new copy - changes done in original does not reflect in copy */
-// const myName = { firstName: "Oluwatobi", lastName: "Sofela" };
-// const bio = { ...myName };
-// myName.firstName = "Tobi";
-// console.log(myName);
-// console.log(bio);
-
-// const myName1 = {
-//     fullName: { firstName: "Oluwatobi", lastName: "Sofela" }
+// let myobj = {
+// 	name: "Tirth",
+// 	age: 27,
+// 	getIntro: function () {
+// 		console.log(this.name + " " + this.age);
+// 	},
 // };
-// const bio1 = { ...myName1 };
-// myName1.fullName = "Tobi";
-// console.log(myName1);
-// console.log(bio1);
 
-/* here fullName is a reference to same object in both objects
-so changing fullName in one object will change fullName in other object
-... does shallow copy
-Shallow Copying: When used to copy objects or arrays, the spread operator performs a shallow copy.
-This means that it only creates copies of the top-level elements, not nested objects or arrays. */
-// const myName2 = {
-//     fullName: { firstName: "Oluwatobi", lastName: "Sofela" }
+// /* myobj.__proto__ pointing to Object.prototype or myobj.__proto__ is a reference to Object.prototype */
+// console.log(myobj.__proto__);
+// console.log(Object.prototype);
+
+// console.log(myobj.__proto__.__proto__);
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+// const parent = {
+// 	name: "Tirth",
+// 	getIntro: function () {
+// 		console.log("Parent Object");
+// 	},
 // };
-// const bio2 = { ...myName2 };
-// myName2.fullName.firstName = "Tobi";
-// console.log(myName2);
-// console.log(bio2);
+// /* Object.create() method creates a new object, using an existing object
+// as a prototype of the new created object */
+// const child = Object.create(parent);
+// console.log(child);
+// child.getIntro();
+// /* child is a refernce to parent object */
+// /* child object will inherit all the properties and methods of parent object */
+// parent.newProperty = "new property";
+// console.log(child);
+// console.log(child.toString());
+// /* js engine will check if the property  toString() is present in child object or not
+// if not present then it will check [[Prototype]] key of child which is reference to parent object
+// if not present then it will check [[Prototype]] key of parent which is reference to Object.prototype
+// if not present then it will throw an undefined for property and error for method
+// This is called prototypal inheritance and moving up prototype chain */
 
-// // deep copy 
-// const myName3 = {
-//     fullName: { firstName: "Oluwatobi", lastName: "Sofela" }
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+// let myobj = {
+// 	name: "Tirth",
+// 	age: 27,
+// 	getIntro: function () {
+// 		console.log(this.name + " " + this.age);
+// 	},
 // };
-// const bio3 = JSON.parse(JSON.stringify(myName3));
-// myName3.fullName.firstName = "Tobi";
-// console.log(myName3);
-// console.log(bio3);    
 
+// let obj1 = {
+// 	name: "patel",
+// };
 
-// const myVehicle = {
-//     brand: 'Ford',
-//     model: 'Mustang',
-//     color: 'red'
-// }
-// const updateMyVehicle = {
-//     type: 'car',
-//     year: 2021,
-//     color: 'yellow'
-// }
-// const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle }
-// console.log(myUpdatedVehicle);
+// /* prototypal inheritance */
+// /* obj1 inheriting property of obj if not present ---- not best practice , use Object.create() method */
+// obj1.__proto__ = myobj;
+// console.log(obj1);
+// console.log(obj1.__proto__);
+// /* obj1.__proto__ is pointing to myobj */
+// console.log(obj1.name, obj1.age);
+// obj1.getIntro();
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+// /* Same above concepts works with variables, arrays and functions
+// variables, arrays and functions are objects in JS and every object in js has prototype
+// and every object have default properties and methods
+// that can be accessed by using __proto__ key or with . operator */
+
+// let arry = ["Tirth", "Patel"];
+
+// console.log(arry);
+// console.log(arry.length);
+// /* arry.__proto__ or [[Prototype]]: Array(0) will have length property defined in it */
+
+// console.log(arry.__proto__);
+// /* this is the object where js engine is putting all default properties and methods */
+// console.log(Array.prototype);
+// /* same as Array.__proto__ or [[Prototype]]: Array(0) */
+
+// console.log(arry.__proto__.__proto__);
+// console.log(Array.prototype.__proto__);
+// console.log(Object.prototype);
+
+// console.log(arry.__proto__.__proto__.__proto__);
+// /* this is called prototype chain and it ends with null */
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+// function fun() {}
+
+// console.log(fun)
+
+// console.log(fun.__proto__);
+// console.log(Function.prototype);
+
+// console.log(fun.__proto__.__proto__);
+// console.log(Object.prototype);

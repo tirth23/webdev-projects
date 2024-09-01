@@ -15,15 +15,8 @@
   <script>
 /*     used for input, textarea, and other events that fire multiple times, where we need to
     debounce event i.e., only call the function when user pause for a certain amount of time */
-
-    function x() {
-      c = 4;
-    }
-    console.log(c);
-    x();
     
-
-    // /* Without this binding  */
+    /* Without this binding  */
     // let counter = 0;
     // const getData = (...arr) => {
     //   //calls an API and gets data
@@ -76,10 +69,10 @@
     // const debouncedCallAPI = debounceObj.debounce(getData, 300);
 
 
-    // /* Modern approach without this binding */
+    /* Modern approach without this binding */
     // let counter = 0;
-    // const getData = (e, arr) => {
-    //   console.log("Fetching data...", counter++, arr, e.target.value);
+    // const getData = (...arr) => {
+    //   console.log("Fetching data...", counter++, arr, arr[0].target.value);
     // };
     // const debounce = (func, delay) => {
     //   let timer;

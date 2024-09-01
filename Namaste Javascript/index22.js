@@ -1,74 +1,199 @@
-/* Type Coercion refers to the process of automatic or implicit conversion of 
-values from one data type to another */
-/* JS will do type coercion mostly to number except for string when using +  */
+/* rest operator used to collect rest of values into array, 
+always use at end to collect rest of values - destructuring*/
+// function getsumsub(num1, num2) {
+//     return [num1 + num2, num1 - num2]
+// }
+// const [add_res, sub_res] = getsumsub(10, 20)
+// console.log("add:" + add_res)
+// console.log("sub:" + sub_res)
 
-/* string to number: '' to 0 || '5' to 5  || '5g' to NaN*/
-// console.log(10 - '5');
-// console.log(10 * '5');
-// console.log(10 / '5');
-// console.log(10 % '5');
-// console.log(10 - 'dfb');
+// const [x, y, z] = [1, 2, 3];
+// console.log(x, y, z);
 
-/* boolean to number: true to 1, false to 0 */
-// console.log(true + 2);
-// console.log(false + 2);
+// const [a, , c] = [1, 2, 3, 4];
+// console.log(a, c);
 
-/* string/boolean to number */
-// console.log(true - '5');
-// console.log(true - '5g');
+// const [q, w] = [1, 2, 3];
+// console.log(q, w);
 
-/* Exception with + operator */
-/* number to string */
-// console.log(10 + '5');
+// const numbers = [1, 2, 3, 4, 5, 6];
+// const [one, two, ...rest] = numbers;
+// console.log(rest);
 
-/* boolean to string */
-// console.log(true + '5');
-// console.log(10 + true + '5');
-
-/* Equality == While comparison with ==, JS will do type coercion mostly to number */
-/* string to number */
-// console.log('5' == 5);
-// console.log('5g' == 5);
-
-/* boolean to number: true to 1, false to 0 */
-// console.log(true == 1);
-// console.log(true == 5);
-// console.log(false == 0);
-
-/* string/boolean to number */
-// console.log(true == '1');
-// console.log(true == '5');
-// console.log(false == '0');
-// console.log(false == 'dcd');
+// function myBio(one, two, ...rest) {
+//     return rest;
+// }
+// console.log(myBio(1, 2, 3, 4, 5, 6));
 
 
+/* spread operator used to spread values of array */
+// const one = [1, 2, 3];
+// const two = [4, 5, 6];
+// console.log([...one, ...two])
+// console.log(0, ...one, 10);
 
-/* Equality === also checks type and don't do type coercion */
-// console.log('5' === 5);
-// console.log('5g' === 5);
-// console.log(true === 1);
-// console.log(true === '1');
+// const three = [[6, 7]];
+// console.log(2, ...three, 3);
 
-//different reference
-// console.log([1,2,3] == [1,2,3]);
-// console.log([1,2,3] === [1,2,3]);
+/* same reference - changes done in original reflect in copy */
+// const four = [1, 2, 3]
+// const five = four;
+// four.pop();
+// console.log(four);
+// console.log(five);
 
-//different reference
-// console.log({ x: 1, y: 2 } == { x: 1, y: 2 });
-// console.log({ x: 1, y: 2 } === { x: 1, y: 2 });
+/* new copy - changes done in original does not reflect in copy */
+// const four = [1, 2, 3]
+// const five = [...four];
+// four.pop();
+// console.log(four);
+// console.log(five);
 
-// console.log("text" == "te" + "xt");
-// console.log("text" === "te" + "xt");
+// const name = "Tirth";
+// console.log(...name);
 
-// console.log("abc" == new String("abc")) //different reference but checks inner value
-// console.log("abc" === new String("abc")) //different reference
+// const one = [1, 2, 3];
+// function xyz(a, b) {
+//     return a + b;
+// }
+// console.log(xyz(...one));
 
-// console.log(null == undefined);
-// console.log(null === undefined);
+// const myName = "Oluwatobi Sofela";
+// function spellName(a, b, c) {
+//     return a + b + c;
+// }
+// console.log([1, 2, 3]);
+// console.log([1, 2, 3] + "v");
+// console.log(spellName(...myName));
+// console.log(...myName[3]);
+// console.log(spellName(...myName[3]));
+// console.log(spellName([...myName]));
+// console.log(spellName({ ...myName }));
+// console.log({ ...myName });
 
-// console.log(NaN == NaN);
-// console.log(NaN === NaN);
+// // deep copy
+// const ingredientsList = ["noodles", { list: ["eggs", "flour", "water"] }];
+// const ingredientsListDeepCopy = JSON.parse(JSON.stringify(ingredientsList));
 
-// console.log([1, 2] == '1,2'); //Conversion of Array to String [1, 2] to '1,2'
-// console.log([1, 2] === '1,2');
 
+/* rest operator used to collect rest of values into object,
+properties can be in any sequence but have same name - destructuring*/
+// const { a, c, b } = { a: "A", b: "B", c: "C" };
+// console.log(a, b, c);
+
+// const { d: xp, f: e, e: f } = { d: "D", e: "E", f: "F" };
+// console.log(xp, e, f);
+
+// const { y, x, ...rest } = { x: "X", y: "Y", z: "Z", m: "M" };
+// console.log(x, y, rest);
+
+// const { firstName = "Tobi", website = "CodeSweetly" } = {
+//     firstName: "Oluwatobi",
+//     xi: "h"
+// };
+// console.log(firstName, website);
+
+// const vehicleOne = {
+//     brand: 'Ford',
+//     model: 'Mustang',
+//     type: 'car',
+//     year: 2021,
+//     color: 'red'
+// }
+// myVehicle(vehicleOne);
+// function myVehicle({ type, color, brand, model }) {
+//     console.log('My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.');
+// }
+
+// const vehicleOne = {
+//     brand: 'Ford',
+//     model: 'Mustang',
+//     type: 'car',
+//     year: 2021,
+//     color: 'red',
+//     registration: {
+//         city: 'Houston',
+//         state: 'Texas',
+//         country: 'USA'
+//     }
+// }
+// myVehicle(vehicleOne)
+// function myVehicle({ model, registration: { state } }) {
+//     console.log('My ' + model + ' is registered in ' + state + '.');
+// }
+
+
+/* spread operator used to spread values of object */
+// const myNames = ["Oluwatobi", "Sofela"];
+// const gh = ["hj", "kl"];
+// const bio = {runs: "codesweetly.com", ...myNames };
+/* only one array can be included by destructuring */
+// const bio = { ...gh, runs: "codesweetly.com", ...myNames };
+// const bio = { ...myNames, runs: "codesweetly.com", ...gh };
+// console.log(bio);
+
+// const myName1 = { firstName: "Oluwatobi", lastName: "Sofela" };
+// const bio1 = { ...myName1, website: "codesweetly.com" };
+// console.log(bio1);
+
+// const myName2 = { firstName: "Tobi", lastName: "Sofela" };
+// const bio2 = { ...myName2, firstName: "Oluwatobi", website: "codesweetly.com" };
+// console.log(bio2);
+
+/* same reference - changes done in original reflect in copy know asshallow copy */
+// const myName = { firstName: "Oluwatobi", lastName: "Sofela" };
+// const bio = myName;
+// myName.firstName = "Tobi";
+// console.log(myName);
+// console.log(bio);
+
+/* new copy - changes done in original does not reflect in copy */
+// const myName = { firstName: "Oluwatobi", lastName: "Sofela" };
+// const bio = { ...myName };
+// myName.firstName = "Tobi";
+// console.log(myName);
+// console.log(bio);
+
+// const myName1 = {
+//     fullName: { firstName: "Oluwatobi", lastName: "Sofela" }
+// };
+// const bio1 = { ...myName1 };
+// // myName1.fullName = "Tobi";
+// console.log(myName1);
+// console.log(bio1);
+
+// /* here fullName is a reference to same object in both objects
+// so changing fullName in one object will change fullName in other object
+// ... does shallow copy
+// Shallow Copying: When used to copy objects or arrays, the spread operator performs a shallow copy.
+// This means that it only creates copies of the top-level elements, not nested objects or arrays. */
+// const myName2 = {
+//     fullName: { firstName: "Oluwatobi", lastName: "Sofela" }
+// };
+// const bio2 = { ...myName2 };
+// myName2.fullName.firstName = "Tobi";
+// console.log(myName2);
+// console.log(bio2);
+
+// /* deep copy  */
+// const myName3 = {
+//     fullName: { firstName: "Oluwatobi", lastName: "Sofela" }
+// };
+// const bio3 = JSON.parse(JSON.stringify(myName3));
+// myName3.fullName.firstName = "Tobi";
+// console.log(myName3);
+// console.log(bio3);    
+
+
+// const myVehicle = {
+//     brand: 'Ford',
+//     model: 'Mustang',
+//     color: 'red'
+// }
+// const updateMyVehicle = {
+//     type: 'car',
+//     year: 2021,
+//     color: 'yellow'
+// }
+// const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle }
+// console.log(myUpdatedVehicle);

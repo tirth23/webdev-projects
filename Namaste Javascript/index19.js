@@ -1,27 +1,32 @@
-// let name1 = {
-//     firstname: "Tirth",
-//     lastname: "Patel"
+/* At its core, currying is a functional programming technique that involves 
+breaking down a function that takes multiple arguments into a series of functions 
+that take one argument each. This creates a chain of functions, where each function 
+returns another function until the final result is achieved */
+
+/* Currying with bind */
+// let multiply = function (x, y) {
+// 	console.log(x);
+// 	console.log(y);
+// 	console.log(x * y);
+// };
+
+// let multiplyTwo = multiply.bind(this, 2);
+// console.log(multiplyTwo);
+// multiplyTwo(5);
+
+// let multiplyTwo2 = multiply.bind(this);
+// multiplyTwo2(5, 2);
+
+// let multiplyThree = multiply.bind(this, 3, 4);
+// multiplyThree(5);
+
+/* Currying with closure */
+// function multiply(x) {
+// 	return function (y) {
+// 		console.log(x * y);
+// 	};
 // }
-// console.log(name1);
-
-// let printName = function (city, state, country) {
-//     console.log(this.firstname + " " + this.lastname + " " + city + " " + state + " " + country);
-// }
-
-// let printMyName = printName.bind(name1, "amdavad");
-// printMyName("gujarat", "india");
-
-// /* polyfill for bind */
-/* A polyfill is a piece of code (usually JavaScript on the Web) 
-used to provide modern functionality on older browsers that do not natively support it. */
-// Function.prototype.mybind = function(...args) {
-//     let obj = this;
-//     params = args.slice(1);
-//     return function (...args2) {
-//         // obj.call(args[0]);
-//         obj.apply(args[0], [...params, ...args2]);
-//     }
-// }
-
-// let printMyName1 = printName.mybind(name1, "amdavad");
-// printMyName1("gujarat", "india");
+// let multiplyTwo = multiply(2);
+// multiplyTwo(5);
+// let multiplyThree = multiply(3);
+// multiplyThree(5);

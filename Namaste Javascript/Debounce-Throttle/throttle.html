@@ -17,26 +17,26 @@
     throttle event i.e., only call the function after a certain amount of time has passed */
 
 
-    let counter = 0;
-    function expensiveCalculation(arr) {
-      //calls an API and gets data
-      console.log("Fetching data...", counter++, this.name, arr);
-    }
-    const throttle = (func, limit) => {
-      let flag = true;
-      return function () {
-        let context = this;
-        let args = arguments;
-        if (flag) {
-          func.apply(context, args);
-          flag = false;
-          setTimeout(() => flag = true, limit);
-        }
-      }
-    }
-    /* if difference between two func call is more than 300 milliseconds, then only call the function */
-    /* call the function after 500 milliseconds even if the user clicks more than once */
-    const throttledCallAPI = throttle(expensiveCalculation, 500);
+    // let counter = 0;
+    // function expensiveCalculation(arr) {
+    //   //calls an API and gets data
+    //   console.log("Fetching data...", counter++, this.name, arr);
+    // }
+    // const throttle = (func, limit) => {
+    //   let flag = true;
+    //   return function () {
+    //     let context = this;
+    //     let args = arguments;
+    //     if (flag) {
+    //       func.apply(context, args);
+    //       flag = false;
+    //       setTimeout(() => flag = true, limit);
+    //     }
+    //   }
+    // }
+    // /* if difference between two func call is more than 300 milliseconds, then only call the function */
+    // /* call the function after 500 milliseconds even if the user clicks more than once */
+    // const throttledCallAPI = throttle(expensiveCalculation, 500);
 
 
     // let counter = 0;
@@ -57,73 +57,22 @@
     // /* call the function after 500 milliseconds even if the user clicks more than once */
     // const throttledCallAPI = throttle(expensiveCalculation, 500);
 
-
-    // /* With this binding */
-    // let counter = 0;
-    // function getData(arr) {
-    //   //calls an API and gets data
-    //   console.log("Fetching data...", counter++, this.name, arr);
-    // }
-    // const debounceObj = {
-    //   name: 'name from debounceObj',
-    //   debounce: function (func, delay) {
-    //     let timer;
-    //     console.log(this);
-    //     return () => {
-    //       /* In arrow function this will be the this of outer lexical scope  */
-    //       let context = this;
-    //       console.log(context);
-    //       let args = arguments;
-    //       clearTimeout(timer);
-    //       timer = setTimeout(() => {
-    //         /* here we had this binding so in apply() this will be the context of the function */
-    //         func.apply(context, args);
-    //         /* Here we don't have this binding so in apply() this will be the window object */
-    //         // func(args);
-    //       }, delay);
-    //     }
-    //   }
-    // }
-    // // if difference between two keystrokes is more than 300 milliseconds, then only call the function
-    // const debouncedCallAPI = debounceObj.debounce(getData, 300);
-
-
     // /* Modern approach without this binding */
     // let counter = 0;
-    // const getData = (e, arr) => {
+    // const getData = (e, ...arr) => {
     //   console.log("Fetching data...", counter++, arr, e.target.value);
     // };
-    // const debounce = (func, delay) => {
-    //   let timer;
+    // const throttle = (func, delay) => {
+    //   let timer = null;
     //   return (...args) => {
-    //     clearTimeout(timer);
+    //     if (timer) return;
     //     timer = setTimeout(() => {
     //       func(...args);
+    //       timer = null;
     //     }, delay);
     //   }
     // }
-    // const debouncedCallAPI = debounce(getData, 300);
-
-
-    // /* Modern approach with this binding */
-    // let counter = 0;
-    // function getData(...arr) {
-    //   console.log("Fetching data...", counter++, this.name, arr);
-    // }
-    // const debounceObj = {
-    //   name: 'name from debounceObj',
-    //   debounce: function (func, delay) {
-    //     let timer;
-    //     return (...args) => {
-    //       let context = this;
-    //       clearTimeout(timer);
-    //       timer = setTimeout(() => {
-    //         func.apply(context, args);
-    //       }, delay);
-    //     }
-    //   }
-    // }
-    // const debouncedCallAPI = debounceObj.debounce(getData, 300);
+    // const throttledCallAPI = throttle(getData, 300);
 
 
   </script>
