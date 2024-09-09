@@ -95,3 +95,25 @@
 // 	console.log(a + " innner");
 // }
 // console.log(a + " outerrmost");
+
+// function print() {
+// 	var x = 10;
+// 	let y = 20;
+//   console.log(window);
+// 	console.log(window.x);
+// 	console.log(window.y);
+// }
+// print();
+
+// var x = 21;
+// var compute = function () {
+// 	console.log(x);
+// 	var x = 20;
+// };
+// compute();
+
+
+
+
+
+
