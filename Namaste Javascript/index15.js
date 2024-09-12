@@ -1,21 +1,21 @@
 /* Async/Await */
 
 /* timer starts from where promise is declared */
-const p1 = new Promise((resolve, reject) => {
-	console.log("p1");
-	setTimeout(() => {
-		console.log("inside p1 timeout");
-		resolve("Promise1 Resolved");
-	}, 5000);
-});
+// const p1 = new Promise((resolve, reject) => {
+// 	console.log("p1");
+// 	setTimeout(() => {
+// 		console.log("inside p1 timeout");
+// 		resolve("Promise1 Resolved");
+// 	}, 5000);
+// });
 
-const p2 = new Promise((resolve, reject) => {
-	console.log("p2");
-	setTimeout(() => {
-		console.log("inside p2 timeout");
-		resolve("Promise2 Resolved");
-	}, 10000);
-});
+// const p2 = new Promise((resolve, reject) => {
+// 	console.log("p2");
+// 	setTimeout(() => {
+// 		console.log("inside p2 timeout");
+// 		resolve("Promise2 Resolved");
+// 	}, 10000);
+// });
 
 /* async will always returns promise */
 // async function getData() {
@@ -35,19 +35,19 @@ const p2 = new Promise((resolve, reject) => {
 // getData();
 
 /* handling promise with await */
-async function handlePromise() {
-	console.log("Hello World");
-	/* JS engine seems to wait for promise to resolve
-    but internally it suspends handlePromise execution from call stack */
-	const val = await p1;
-	console.log("First");
-	console.log(val);
+// async function handlePromise() {
+// 	console.log("Hello World");
+// 	/* JS engine seems to wait for promise to resolve
+//     but internally it suspends handlePromise execution from call stack */
+// 	const val = await p1;
+// 	console.log("First");
+// 	console.log(val);
 
-	const val2 = await p2;
-	console.log("First2");
-	console.log(val2);
-}
-handlePromise();
+// 	const val2 = await p2;
+// 	console.log("First2");
+// 	console.log(val2);
+// }
+// handlePromise();
 
 //will take 25 sec to complete
 // async function handlePromise() {
@@ -123,3 +123,10 @@ const GITHUB_AP = "https://api.github.com/users/tirth23";
 
 /* either use try catch block or below statement */
 // handlePro().catch((err) => console.log(err));
+
+
+/* try {
+  //if anywhere it throws errors, it skips rest of statements and go to catch
+} catch {
+  //catches error
+} */

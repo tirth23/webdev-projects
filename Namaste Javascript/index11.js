@@ -155,11 +155,11 @@ value = 0, in original array as it is
 a = 40, b = 10 -> a - b -> 30 > 0 -> [10, 40]
 a = 5, b = 10 -> a - b -> -5 < 0 -> [5, 10] 
 */
-arr.sort((a, b) => {
-	console.log(a, b);
-	return a - b;
-});
-console.log(arr);
+// arr.sort((a, b) => {
+// 	console.log(a, b);
+// 	return a - b;
+// });
+// console.log(arr);
 
 /* 
 find largest number formed by combination of elements 

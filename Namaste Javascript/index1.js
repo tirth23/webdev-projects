@@ -29,3 +29,20 @@
 // console.log(x);
 // x = "Tirth";
 // console.log(x);
+
+// "use strict"
+// function test() {
+//   a = 5;
+//   /* when declared with var it becomes function scope */
+//   var b = 10;
+// }
+// test();
+// /* In strict mode a also becomes function scope */
+// console.log(a);
+// console.log(b);
+
+/* In strict mode not allowed */
+// function abc(a, a) {
+//   console.log(a);
+// }
+// abc(1, 2);

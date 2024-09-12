@@ -50,8 +50,19 @@
 // }
 // console.log(b());   //prints returned  function
 
-
 // Immediately invoked function expression - IIFE
 // (function hey(i) {
 //     console.log("HI" + i);
 // })(6);
+
+//Constuctor Function
+// function Car(make, model) {
+// 	this.make = make;
+// 	this.model = model;
+// 	this.displayInfo = function () {
+// 		console.log(`Car ${this.make} ${this.model}`);
+// 	};
+// }
+
+// const car = new Car("Toyota", "camry");
+// car.displayInfo();

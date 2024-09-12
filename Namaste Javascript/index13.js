@@ -60,7 +60,10 @@ undefined is return if nothing is returned in promise
 /* catch: The catch() method of Promise instances schedules a function to be called when the 
 promise is rejected. It immediately returns another Promise object, allowing you to 
 chain calls to other promise methods.
-It is a shortcut for then(undefined, onRejected). */
+It is a shortcut for then(undefined, onRejected). 
+Internally it will call then with undefined
+In promise chain, if any promise will be rejected then catch even if it is at end will capture that
+*/
 
 /* finally: The finally() method of Promise instances schedules a function to be called when 
 the promise is settled (either fulfilled or rejected). It immediately returns another 
@@ -137,3 +140,24 @@ Promise object, allowing you to chain calls to other promise methods. */
 //     console.log(data);
 // 		console.log("I am always called even if the prior then's promise rejects");
 // 	});
+
+
+// Promise.reject("rejected promise")
+// 	.finally(() => {
+// 		console.log("always called finally");
+// 	})
+// 	.then(() => {
+// 		console.log("not called since rejection");
+// 	})
+// 	.then((data) => {
+// 		console.log(1);
+//     // return "another promise";
+//     throw new Error("Error from 2nd then");
+// 	})
+//   .then((data) => {
+//     console.log(data);
+//   })
+// 	.catch((error) => {
+// 		console.error(`onRejected function called: ${error.message}`);
+//     return "data from catch in form of promise"
+// 	})
