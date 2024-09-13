@@ -55,14 +55,17 @@
 //     console.log("HI" + i);
 // })(6);
 
-//Constuctor Function
-// function Car(make, model) {
+// /* Constuctor Function */
+// function car(make, model, year) {
 // 	this.make = make;
 // 	this.model = model;
+//   year = year
 // 	this.displayInfo = function () {
-// 		console.log(`Car ${this.make} ${this.model}`);
+// 		console.log(`Car ${this.make} ${this.model} ${year}`);
 // 	};
 // }
+// const car1 = new car("Toyota", "camry", 2029);
+// car1.displayInfo();
 
-// const car = new Car("Toyota", "camry");
-// car.displayInfo();
+
+

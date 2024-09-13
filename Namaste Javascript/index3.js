@@ -1,13 +1,17 @@
+// /* A variable declared with let, const, or class is said to be in a "temporal dead zone" (TDZ) 
+// from the start of the block until code execution reaches the place where the variable is declared 
+// and initialized. */
 // var a = 10;
 // console.log(a);
-// let b = 20;
-// console.log(b);
+// // console.log(b);   //tdz
+// // let b = 20;
 // console.log(window.a);
-// console.log(window.b);
+// console.log(window.b);   //script scope not in global scope
 // console.log(window.c);
 // console.log(window.d);
-// // console.log(c);
-// let c = 30;
+// let c;
+// console.log(c); //c will be undefined in script scope
+// c = 30;
 
 // var a = 10;
 // var a = 20;

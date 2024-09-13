@@ -1,4 +1,7 @@
-/* closure */
+/* A closure is the combination of a function bundled together (enclosed) with references to its 
+surrounding state (the lexical environment). In other words, a closure gives a function access to 
+its outer scope. In JavaScript, closures are created every time a function is created, at 
+function creation time. */
 // function x() {
 // 	var a = 7;
 // 	function y() {
@@ -20,13 +23,13 @@
 // z();
 
 // function x() {
-//     var a = 7;
-//     function y() {
-//         console.log(a);
-//     }
-//     return y;
+// 	var a = 7;
+// 	function y() {
+// 		console.log(a);
+// 	}
+// 	return y;
 // }
-// x()();      //means we are calling inner function of x using ()(): x() returns y -> y();
+// x()(); //means we are calling inner function of x using ()(): x() returns y -> y();
 
 // function x() {
 // 	var a = 7;
@@ -128,7 +131,7 @@
 // z();
 // var a = 30;
 
-/* Data Hiding */
+// /* Data Hiding */
 // function counter() {
 // 	var count = 0;
 // 	return function incrementCounter() {
@@ -149,56 +152,74 @@
 // counter2();
 
 // function Counter() {
-//     var count = 0;
-//     this.incrementCounter = function xyz () {
-//         count++;
-//         console.log(count);
-//     }
-//     this.decrementCounter = function () {
-//         count--;
-//         console.log(count);
-//     }
+// 	var count = 0;
+// 	this.incrementCounter = function xyz() {
+// 		count++;
+// 		console.log(count);
+// 	};
+// 	this.decrementCounter = function () {
+// 		count--;
+// 		console.log(count);
+// 	};
 // }
-// // using constructor function
+// /* using constructor function */
 // var counter1 = new Counter();
 // counter1.incrementCounter();
 // counter1.incrementCounter();
 // counter1.decrementCounter();
 
-/* smart garbage collector */
-// function a() {
-//     var x = 3, z = 10;
-//     return function b() {
-//         console.log(x);
-//     }
+// function Counter() {
+// 	this.count = 0;
+// 	this.incrementCounter = function xyz() {
+// 		this.count++;
+// 		console.log(this.count);
+// 	};
+// 	this.decrementCounter = function () {
+// 		this.count--;
+// 		console.log(this.count);
+// 	};
 // }
-// var data = a();  // z will be removed from memory by SGC
+// /* using constructor function */
+// var counter1 = new Counter();
+// counter1.incrementCounter();
+// counter1.incrementCounter();
+// counter1.decrementCounter();
+
+// /* smart garbage collector */
+// function a() {
+// 	var x = 3,
+// 		z = 10;
+// 	return function b() {
+// 		console.log(x);
+// 	};
+// }
+// var data = a(); // z will be removed from memory by SGC
 // data();
 
-/* Another Example:- */
-/* Function to increment counter */
+// /* Function to increment counter */
 // function add() {
-//     let counter = 0;
-//     counter += 1;
-//     return counter;
-// }
-// // Call add() 3 times
-// add();
-// add();
-// console.log(add());
-/* The counter should now be 3. But it is 1. */
-
-// function add() {
-//     let counter = 0;
-//     function plus() { counter += 1; }
-//     plus();
-//     return counter;
+// 	let counter = 0;
+// 	counter += 1;
+// 	return counter;
 // }
 // add();
 // add();
 // console.log(add());
+// /* The counter should now be 3. But it is 1. */
 
-/* self-invoking function IIFE - (Immediately Invoked Function Expression) */
+// function add() {
+// 	let counter = 0;
+// 	function plus() {
+// 		counter += 1;
+// 	}
+// 	plus();
+// 	return counter;
+// }
+// add();
+// add();
+// console.log(add());
+
+// /* self-invoking function IIFE - (Immediately Invoked Function Expression) */
 // const add = (function () {
 // 	let counter = 0;
 // 	return function () {
@@ -210,4 +231,4 @@
 // add();
 // add();
 // console.log(add());
-/* the counter is now 3 */
+// /* the counter is now 3 */

@@ -1,9 +1,9 @@
-const arr = [10, 5, 49, 40, 25];
+// const arr = [10, 5, 49, 40, 25];
 
-/* MAP --- map method is used when we want transformation of whole array & returns arrays */
-/* array.map(function(currentValue, index, arr), thisValue) */
+// /* MAP --- map method is used when we want transformation of whole array & returns arrays */
+// /* array.map(function(currentValue, index, arr), thisValue) */
 
-/* x is each value in arr */
+// /* x is each value in arr */
 // function double(x, index, arr) {
 // 	return x * 2 * this;
 // }
@@ -11,9 +11,11 @@ const arr = [10, 5, 49, 40, 25];
 // const output = arr.map(double, 7);
 // console.log(output);
 
-// console.log(arr.map(function triple(x) {
-//     return x * 3;
-// }));
+// console.log(
+// 	arr.map(function triple(x) {
+// 		return x * 3;
+// 	})
+// );
 // console.log(arr.map((x) => x * 3));
 
 // const sampleObj = {
@@ -31,7 +33,7 @@ const arr = [10, 5, 49, 40, 25];
 // console.log(doubled);
 // console.log(doubled2);
 
-/* Custom Map function */
+// /* Custom Map function */
 // Array.prototype.customMap = function (callback, thisValue) {
 // 	const resultArray = [];
 // 	for (let i = 0; i < this.length; i++) {
@@ -42,12 +44,12 @@ const arr = [10, 5, 49, 40, 25];
 // 	return resultArray;
 // };
 
-// const multiplier = {
+// const multiplier1 = {
 // 	factor: 3,
 // };
 // const tripled = arr.customMap(function (currentValue) {
 // 	return currentValue * this.factor;
-// }, multiplier);
+// }, multiplier1);
 // console.log(tripled);
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */

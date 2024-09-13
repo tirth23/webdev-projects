@@ -94,30 +94,50 @@ lexical context (where physically placed in code) */
 // };
 // obj.x();
 
-const name1 = {
-  nickName: 'Joe',
-  arrow: () => {
-    console.log(`arrow: ${this.nickName}`);
-  },
-  regular: function () {
-    console.log(`regular: ${this.nickName}`);
-  }
-}
-// window.nickName = "tirth";
-name1.arrow();
-name1.regular()
-
 // const obj1 = {
 // 	a: 10,
 // 	y: function () {
-// 		console.log(this);
+// 		console.log(`Inside y: `, this);
 // 		const x = () => {
-// 			console.log(this);
+// 			console.log(`Inside x: `, this);
+// 		};
+// 		const z = function () {
+//       /* act as normal function so refers to window in non strict and undefined in strict */
+// 			console.log(`Inside z: `, this);
 // 		};
 // 		x();
+// 		z();
 // 	},
 // };
 // obj1.y();
+
+// const name1 = {
+// 	nickName: "Joe",
+// 	eventuallySayName: function () {
+//     console.log(this);
+// 		function actuallySayName() {
+// 			console.log(`first: ${this.nickName}`);
+// 		};
+// 		const actuallySayNameWithArrow = () => {
+// 			console.log(`second: ${this.nickName}`);
+// 		};
+// 		actuallySayName();
+// 		actuallySayNameWithArrow();
+//     /* forms closure with lexical scope */
+// 		setTimeout(actuallySayName, 1000);
+// 		setTimeout(actuallySayNameWithArrow, 1000);
+// 	},
+// 	arrow: () => {
+// 		console.log(`arrow: ${this.nickName}`);
+// 	},
+// 	regular: function () {
+// 		console.log(`regular: ${this.nickName}`);
+// 	},
+// };
+// // window.nickName = "tirth";
+// name1.arrow();
+// name1.regular(); //method invocation
+// name1.eventuallySayName(); //method invocation
 
 /* Node Env */
 /* In node env, this return {} which is module.exports */

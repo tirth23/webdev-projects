@@ -58,9 +58,9 @@
 // 	let a = 20;
 // }
 
-// let a = 10;
+// let a = 10;    //script
 // {
-// 	var a = 20;
+// 	var a = 20;  //global
 // }
 
 // let a = 10;
@@ -77,12 +77,12 @@
 
 // const a = 100;
 // {
-//     const a = 200;
-//     {
-//         const a = 300;
-//         console.log(a + " innnermost");
-//     }
-//     console.log(a + " innner");
+// 	const a = 200;
+// 	{
+// 		const a = 300;
+// 		console.log(a + " innnermost");
+// 	}
+// 	console.log(a + " innner");
 // }
 // console.log(a + " outerrmost");
 
@@ -111,9 +111,3 @@
 // 	var x = 20;
 // };
 // compute();
-
-
-
-
-
-

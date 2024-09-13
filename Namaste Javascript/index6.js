@@ -8,7 +8,7 @@
 // console.log("Namaste Javascript");
 
 // function x() {
-// 	// var i = 1;
+// 	var i = 1;
 // 	setTimeout(function () {
 // 		console.log(i);
 // 	}, 3000);
