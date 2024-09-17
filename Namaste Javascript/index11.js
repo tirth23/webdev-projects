@@ -1,4 +1,4 @@
-// const arr = [10, 5, 49, 40, 25];
+const arr = [10, 5, 49, 40, 25];
 
 // /* MAP --- map method is used when we want transformation of whole array & returns arrays */
 // /* array.map(function(currentValue, index, arr), thisValue) */
@@ -54,17 +54,16 @@
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
-/* FILTER --- filter is used when we want to filter the array to obtain required value & returns filtered array*/
-/* array.filter(function(currentValue, index, arr), thisValue) */
+// /* FILTER --- filter is used when we want to filter the array to obtain required value & returns filtered array*/
+// /* array.filter(function(currentValue, index, arr), thisValue) */
 
-/* filter odd value */
+// /* filter odd value */
 // function isOdd(x) {
 // 	return x % 2 !== 0;
 // }
 // const output = arr.filter(isOdd);
 // console.log(output);
 
-// // return values > 4
 // const output2 = arr.filter(function isGreat(x) {
 // 	return x > 4;
 // });
@@ -75,10 +74,10 @@
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
-/* REDUCE --- reduce is used when we want to reduce the array to single value eg (max, min, avg, sum, difference etc) */
-/* array.reduce(function(total, currentValue, currentIndex, arr), initialValue) */
+// /* REDUCE --- reduce is used when we want to reduce the array to single value eg (max, min, avg, sum, difference etc) */
+// /* array.reduce(function(total, currentValue, currentIndex, arr), initialValue) */
 
-/* sum of arr */
+// /* sum of arr */
 // function findSum(arr) {
 // 	let sum = 0;
 // 	for (let i = 0; i < arr.length; i++) {
@@ -101,78 +100,126 @@ init = initial value of accumulator before iterating
 // 	}, 0)
 // );
 
-/* max in arr */
 // function findMax(arr) {
-//     let max = 0;
-//     for (let i = 0; i < arr.length; i++) {
-//         if(arr[i] > max) {
-//             max = arr[i]
-//         }
-//     }
-//     return max;
+// 	let max = 0;
+// 	for (let i = 0; i < arr.length; i++) {
+// 		if (arr[i] > max) {
+// 			max = arr[i];
+// 		}
+// 	}
+// 	return max;
 // }
 // console.log(findMax(arr));
 
 // const output = arr.reduce(function (max, curr) {
-//     if(curr > max) {
-//         max = curr;
-//     }
-//     return max;
+// 	if (curr > max) {
+// 		max = curr;
+// 	}
+// 	return max;
 // }, 0);
 // console.log(output);
 
-/* if we are supplying default initial value then acc will get that value and 
-curr will get arr[0] */
-// console.log(arr.reduce((acc, curr, index) => {
-//   console.log(index, acc, curr);
-//   acc = acc + curr;
-//   return acc;
-// }, arr[0]));
-
+// /* without initial value: acc = arr[0] and curr = arr[1]
+// 1 -> acc = 10,  curr = 5   return 15
+// 2 -> acc = 15,  curr = 49  return 64
+// 3 -> acc = 64,  curr = 40  return 104
+// 4 -> acc = 104, curr = 25  return 129
+// */
 // console.log(arr.reduce((acc, curr, index) => {
 //   console.log(index, acc, curr);
 //   acc = acc + curr;
 //   return acc;
 // }));
 
+// /* with initial value: acc = initial value and curr = arr[0]
+// 1 -> acc = 100, curr = 10  return 110
+// 2 -> acc = 110, curr = 5   return 115
+// 3 -> acc = 115, curr = 49  return 164
+// 4 -> acc = 164, curr = 40  return 204
+// 5 -> acc = 204, curr = 25  return 229
+// */
+// console.log(arr.reduce((acc, curr, index) => {
+//   console.log(index, acc, curr);
+//   acc = acc + curr;
+//   return acc;
+// }, 100));
+
+// const ans1 = [5].reduce((acc, curr) => {
+//   console.log(acc, curr);
+//   return acc + curr;
+// }, 3);
+// console.log(ans1);
+
+// /* if only 1 Element, directly return that element */
+// const ans2 = [5].reduce((acc, curr) => {
+// 	console.log(acc, curr);
+// 	return acc + curr;
+// });
+// console.log(ans2);
+
+// const ans3 = [].reduce((acc, curr) => {
+// 	return acc + curr;
+// }, 7);
+// console.log(ans3);
+
+// /* error -> arr length 0 & no initial value */
+// const ans4 = [].reduce((acc, curr) => {
+// 	return acc + curr;
+// });
+// console.log(ans4);
+
+// /* Flatten the nested array */
+// function flattenArray(arr) {
+// 	return arr.reduce((flatArray, item) => {
+// 		if (Array.isArray(item)) {
+// 			flatArray.push(...flattenArray(item)); // Recursively flatten nested arrays;
+// 		} else {
+// 			flatArray.push(item); // If it's not an array, push it to the flatArray
+// 		}
+// 		return flatArray;
+// 	}, []);
+// }
+// const nestedArray = [1, [2, 3], [4, [5, 6]]];
+// const flattenedArray = flattenArray(nestedArray);
+// console.log(flattenedArray);
+
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
-/* Sort: arr.sort(callback); */
-
-/* bydefault lexographical short numbers converted to string and utf-16 is compared
-10 5 -> unicode(1) is U+0031 and unicode(5) is U+0035 -> U+0031 - U+0035 -> 1 comes before 5 -> [10, 5] 
-if same value then second character is check and so on....
-10, 25, 49, 40, 5 -> 10 25 40 49 5 (1 < 2 < 4 {0 < 9} < 5)
-*/
+// /* Sort: arr.sort(callback);
+// bydefault lexographical short numbers converted to string and utf-16 is compared
+// 10 5 -> unicode(1) is U+0031 and unicode(5) is U+0035 -> U+0031 - U+0035 -> 1 comes before 5 -> [10, 5]
+// if same value then second character is check and so on....
+// 10, 25, 49, 40, 5 -> 10 25 40 49 5 (1 < 2 < 4 {0 < 9} < 5)
+// */
 // arr.sort();
 // console.log(arr);
 
-/* 
-In custom sort a & b is picked randomly from array and compared
-returned 
-value > 0, in original array b comes before a [b, a]
-value < 0, in original array a comes before b [a, b]
-value = 0, in original array as it is
+// /*
+// In custom sort a & b is picked randomly from array and compared
+// returned
+// value > 0, in original array b comes before a [b, a]
+// value < 0, in original array a comes before b [a, b]
+// value = 0, in original array as it is
 
-a = 40, b = 10 -> a - b -> 30 > 0 -> [10, 40]
-a = 5, b = 10 -> a - b -> -5 < 0 -> [5, 10] 
-*/
+// a = 40, b = 10 -> a - b -> 30 > 0 -> [10, 40]
+// a = 5, b = 10 -> a - b -> -5 < 0 -> [5, 10]
+// */
 // arr.sort((a, b) => {
 // 	console.log(a, b);
 // 	return a - b;
 // });
 // console.log(arr);
 
-/* 
-find largest number formed by combination of elements 
+// /*
+// find largest number formed by combination of elements
 
-  a = 5, b = 10
-  num2(ba) - num1(ab) = 105 - 510 < 0 -> [a, b] -> [5, 10]
-  
-  a = 10, b = 5
-  num2(ba) - num1(ab) = 510 - 105 > 0 -> [b, a] -> [5, 10]
+//   a = 5, b = 10
+//   num2(ba) - num1(ab) = 105 - 510 < 0 -> [a, b] -> [5, 10]
 
-*/
+//   a = 10, b = 5
+//   num2(ba) - num1(ab) = 510 - 105 > 0 -> [b, a] -> [5, 10]
+
+// */
 // arr.sort((a, b) => {
 // 	console.log(a, b);
 // 	const num1 = "" + a + b;
@@ -180,3 +227,59 @@ find largest number formed by combination of elements
 // 	return num2 - num1;
 // });
 // console.log(arr);
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// /* totalTransactions: Total number of transactions.
+// totalAmount: Total amount of all transactions.
+// averageTransactionAmount: Average amount of transactions.
+// transactionsPerDay: An object where keys are dates and values are
+// arrays containing transactions made on that date.
+// transactionsByCustomer: An object where keys are customer IDs and
+// values are arrays containing transactions made by that customer. */
+
+// const transactions = [
+// 	{ customerId: 1, amount: 100, date: "2024-03-01" },
+// 	{ customerId: 2, amount: 150, date: "2024-03-01" },
+// 	{ customerId: 1, amount: 200, date: "2024-03-02" },
+// 	{ customerId: 3, amount: 50, date: "2024-03-02" },
+// 	{ customerId: 2, amount: 120, date: "2024-03-03" },
+// ];
+
+// const finalobj = {
+// 	totalTransactions: transactions.length,
+// };
+
+// transactions.reduce((acc, curr) => {
+// 	acc.totalAmount = (acc.totalAmount ?? 0) + curr.amount;
+// 	return acc;
+// }, finalobj);
+
+// finalobj.averageTransactionAmount = finalobj.totalAmount / transactions.length;
+
+// transactions.reduce((acc, curr) => {
+//   let currdate = curr.date
+//   acc.transactionsPerDay = acc.transactionsPerDay || {};
+//   if(acc.transactionsPerDay[currdate]) {
+//     acc.transactionsPerDay[currdate].push(curr);
+//   } else {
+//     acc.transactionsPerDay[currdate] = [curr];
+//   }
+//   return acc;
+// }, finalobj);
+
+// transactions.reduce((acc, curr) => {
+//   let currCustomer = curr.customerId;
+//   acc.transactionsByCustomer = acc.transactionsByCustomer || {};
+//   if(acc.transactionsByCustomer[currCustomer]) {
+//     acc.transactionsByCustomer[currCustomer].push(curr);
+//   } else {
+//     acc.transactionsByCustomer[currCustomer] = [curr];
+//   }
+//   return acc;
+// }, finalobj);
+
+// console.table(finalobj);
+
+
+

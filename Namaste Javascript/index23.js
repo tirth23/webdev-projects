@@ -41,8 +41,6 @@ values from one data type to another */
 // console.log(false == '0');
 // console.log(false == 'dcd');
 
-
-
 /* Equality === also checks type and don't do type coercion */
 // console.log('5' === 5);
 // console.log('5g' === 5);
@@ -71,4 +69,3 @@ values from one data type to another */
 
 // console.log([1, 2] == '1,2'); //Conversion of Array to String [1, 2] to '1,2'
 // console.log([1, 2] === '1,2');
-

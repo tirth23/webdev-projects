@@ -85,7 +85,7 @@ Promise object, allowing you to chain calls to other promise methods. */
 // .catch((err) => console.log(err))               //on reject
 // .finally(() => console.log("promise settled")); //executes everytime
 
-/* Promise chain preferred over then()'s two case syntax */
+// /* Promise chain preferred over then()'s two case syntax */
 // Promise.resolve()
 // 	.then(() => {
 // 		// console.log("No error");
@@ -107,7 +107,7 @@ Promise object, allowing you to chain calls to other promise methods. */
 // 		throw new Error("Oh no!");
 // 	})
 //   .then((data) => {
-//     console.log(1);
+//     console.log(1, data);
 //   })
 // 	.catch((error) => {
 // 		console.error(`onRejected function called: ${error.message}`);
@@ -126,21 +126,20 @@ Promise object, allowing you to chain calls to other promise methods. */
 // 	.catch((error) => console.log("rejection from promise: ", error))
 // 	.then((data) => {
 // 		console.log(1);
-//     // return "another promise";
-//     throw new Error("Error from 2nd then");
-// 	})
-//   .then((data) => {
-//     console.log(data);
-//   })
-// 	.catch((error) => {
-// 		console.error(`onRejected function called: ${error.message}`);
-//     return "data from catch in form of promise"
+// 		// return "another promise";
+// 		throw new Error("Error from 2nd then");
 // 	})
 // 	.then((data) => {
-//     console.log(data);
+// 		console.log(data);
+// 	})
+// 	.catch((error) => {
+// 		console.error(`onRejected function called: ${error.message}`);
+// 		return "data from catch in form of promise";
+// 	})
+// 	.then((data) => {
+// 		console.log(data);
 // 		console.log("I am always called even if the prior then's promise rejects");
 // 	});
-
 
 // Promise.reject("rejected promise")
 // 	.finally(() => {

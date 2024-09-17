@@ -49,11 +49,9 @@
 // 		console.log(this.name + " " + this.age);
 // 	},
 // };
-
 // let obj1 = {
 // 	name: "patel",
 // };
-
 // /* prototypal inheritance */
 // /* obj1 inheriting property of obj if not present ---- not best practice , use Object.create() method */
 // obj1.__proto__ = myobj;
@@ -66,7 +64,6 @@
 // let obj2 = {
 // 	newkey: "new value",
 // };
-
 // obj1 = {
 // 	...obj1,
 // 	__proto__: obj2,
@@ -141,6 +138,28 @@
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
+// function User(name) {
+// 	this.name = name;
+// 	this.msg = function () {
+// 		console.log(`Hello ${this.name}!`);
+// 	};
+// }
+// const user1 = new User("Kohli");
+// const user2 = new User("Dhoni");
+// console.log(user1.msg === user2.msg);
+// /* When methods are added directly to the constructor, each
+// instance of the object gets its own copy of the method, leading
+// to higher memory usage */
+
+// const obj = {
+// 	name: "Tirth",
+// };
+// console.log(obj.toString());
+// obj.__proto__ = null; // breaks the prototype chain
+// console.log(obj.toString());
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
 // function func() {}
 
 // console.log(func);
@@ -211,28 +230,6 @@
 // console.log(rabbit.jumps);
 // delete animal.jumps;
 // console.log(rabbit.jumps);
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-// function User(name) {
-// 	this.name = name;
-// 	this.msg = function () {
-// 		console.log(`Hello ${this.name}!`);
-// 	};
-// }
-// const user1 = new User("Kohli");
-// const user2 = new User("Dhoni");
-// console.log(user1.msg === user2.msg);
-// /* When methods are added directly to the constructor, each
-// instance of the object gets its own copy of the method, leading
-// to higher memory usage */
-
-// const obj = {
-//   name: "Tirth",
-// }
-// console.log(obj.toString());
-// obj.__proto__ = null;     // breaks the prototype chain
-// console.log(obj.toString());
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 

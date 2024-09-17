@@ -1,10 +1,10 @@
 /* we can use strict anywhere inside code and code below will get effected */
 // "use strict"
 
-/* this in global space */
+// /* this in global space */
 // console.log(this);
 
-/* In non-strict, this is undefined in function. so replaced with global object - this substiution */
+// /* In non-strict, this is undefined in function. so replaced with global object - this substiution */
 // function x() {
 // 	/* strict: undefined
 //   non-strict: window */
@@ -43,7 +43,7 @@
 // const myfn = obj4.fn;
 // myfn();
 
-/* call apply bind methods */
+// /* call apply bind methods */
 // const student = {
 // 	name: "Tirth",
 // 	printName: function () {
@@ -58,7 +58,7 @@
 // /* function borrowing */
 // student.printName.call(student1);
 
-/* can be used by putting function outside object */
+// /* can be used by putting function outside object */
 // let printName = function (homeTown, state) {
 // 	console.log(this.firstName + " " + this.lastName + " " + homeTown + state);
 // };
@@ -68,15 +68,15 @@
 // };
 
 // /* call */
-// printName.call(student2, "Ahmedabad", "Gujarat");
+// printName.call(student2, "Ahmedabad", " Gujarat");
 
 // /* apply */
-// printName.apply(student2, ["Ahmedabad", "Gujarat"]);
+// printName.apply(student2, ["Ahmedabad", " Gujarat"]);
 
 // /* bind */
 // const newPrintFun = printName.bind(student2, "Ahmedabad");
 // console.log(newPrintFun)
-// newPrintFun("Gujarat");
+// newPrintFun(" Gujarat");
 
 // const student3 = {
 //     firstName: "Xyz",
@@ -139,6 +139,7 @@ lexical context (where physically placed in code) */
 // name1.regular(); //method invocation
 // name1.eventuallySayName(); //method invocation
 
+// "use strict"
 /* Node Env */
 /* In node env, this return {} which is module.exports */
 // console.log(this);

@@ -71,7 +71,7 @@
 // 	"cheese and tikki"
 // );
 // specialOrder.describe();
-// Pizza.calculateTotalPizzasMade(); 
+// Pizza.calculateTotalPizzasMade();
 
 /* ---------------------------------------------------------------------------------------------------------- */
 

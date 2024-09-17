@@ -1,6 +1,4 @@
-/* Async/Await */
-
-/* timer starts from where promise is declared */
+// /* timer starts from where promise is declared */
 // const p1 = new Promise((resolve, reject) => {
 // 	console.log("p1");
 // 	setTimeout(() => {
@@ -17,7 +15,7 @@
 // 	}, 10000);
 // });
 
-/* async will always returns promise */
+// /* async will always returns promise */
 // async function getData() {
 // 	return p1;
 // 	// return "Hi";
@@ -26,15 +24,15 @@
 // console.log(dataPromise);
 // dataPromise.then((res) => console.log(res));
 
-/* handling promise with normal way */
+// /* handling promise with normal way */
 // async function getData() {
 // 	//JS engine won't wait for promise to be resolved
 // 	p1.then((res) => console.log(res));
 // 	console.log("First");
 // }
-// getData();
+// console.log(getData());
 
-/* handling promise with await */
+// /* handling promise with await */
 // async function handlePromise() {
 // 	console.log("Hello World");
 // 	/* JS engine seems to wait for promise to resolve
@@ -49,7 +47,7 @@
 // }
 // handlePromise();
 
-//will take 25 sec to complete
+// /* will take 25 sec to complete */
 // async function handlePromise() {
 // 	console.log("Hello World");
 // 	/* JS engine seems to wait for promise to resolve
@@ -82,7 +80,7 @@
 // }
 // handlePromise();
 
-/* async/await vs return */
+// /* async/await vs return */
 // const p = new Promise((res, rej) => {
 //   res(1);
 // });
@@ -97,16 +95,16 @@
 // console.log(p === basicReturn()); // true
 // console.log(p === asyncReturn()); // false
 
-/* real world use */
-const GITHUB_AP = "https://api.github.com/users/tirth23";
+// /* real world use */
+// const GITHUB_AP = "https://api.github.com/users/tirth23";
 
-/* using normal way */
+// /* using normal way */
 // fetch(GITHUB_AP)
 //     .then((data) => data.json())
 //     .then((jsonValue) => console.log(jsonValue))
 //     .catch((err) => console.log(err));
 
-//* using aysnc/await */
+// /* using aysnc/await */
 // async function handlePro() {
 //     console.log("Check");
 //     try {
@@ -127,6 +125,7 @@ const GITHUB_AP = "https://api.github.com/users/tirth23";
 
 /* try {
   //if anywhere it throws errors, it skips rest of statements and go to catch
+  //can have multiple try..catch
 } catch {
   //catches error
 } */

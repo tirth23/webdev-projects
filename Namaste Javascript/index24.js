@@ -1,7 +1,24 @@
-/* generator function used as iteratorfor infinite loop return object with yield value & done value
-depending on completion 
+/* 
+A generator function can be exited and later re-entered, with its context 
+(variable bindings) saved across re-entrances. 
+generator function used as iterator for infinite loop return genrator object. genrator Object has next()
+which has yield value & done value depending on completion
 The yield operator is used to pause and resume a generator function.
 */
+
+// function* generator(i) {
+// 	yield i + 2;
+// 	yield i + 10;
+// }
+
+// const gen = generator(10);
+
+// console.log(gen.next().value);
+// // Expected output: 12
+// console.log(gen.next().value);
+// // Expected output: 20
+
+/* ----------------------------------------------------------------------------------------------------------------- */
 
 // function* simpleGenerator() {
 // 	console.log("Before 1");
@@ -16,13 +33,14 @@ The yield operator is used to pause and resume a generator function.
 // }
 
 // const generatorObject = simpleGenerator();
+// console.log(generatorObject);
 // console.log(generatorObject.next()); //prints value till first yield
 // console.log(generatorObject.next());
 // console.log(generatorObject.next());
 // console.log(generatorObject.next());
 
 // const genObj1 = simpleGenerator();
-// console.log(genObj1.next());
+// console.log(genObj1.next().value);
 
 /* ----------------------------------------------------------------------------------------------------------- */
 
@@ -46,7 +64,8 @@ The yield operator is used to pause and resume a generator function.
 // 	let id = 1;
 // 	while (true) {
 // 		const argValueFromNext = yield id;
-// 		if (argValueFromNext != null) {
+// 		console.log(argValueFromNext);
+// 		if (argValueFromNext !== undefined) {
 // 			id += argValueFromNext;
 // 		} else {
 // 			id++;
@@ -54,13 +73,10 @@ The yield operator is used to pause and resume a generator function.
 // 	}
 // }
 // const genObj3 = generateId2();
-// console.log(genObj3.next()); 
+// console.log(genObj3.next());
 // console.log(genObj3.next(4)); //will pass 4 as arg so value will start from 5
 // console.log(genObj3.next());
 // console.log(genObj3.next());
 // console.log(genObj3.return(10)); //it exist from generator function
 // console.log(genObj3.next());
-// console.log(genObj3.throw(new Error("error"))); //throws error
-
-
-
+// // console.log(genObj3.throw(new Error("error"))); //throws error

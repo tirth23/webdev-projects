@@ -1,11 +1,11 @@
-/* rest operator used to collect rest of values into array, 
-always use at end to collect rest of values - destructuring*/
+// /* rest operator used to collect rest of values into array,
+// always use at end to collect rest of values - destructuring*/
 // function getsumsub(num1, num2) {
-//     return [num1 + num2, num1 - num2]
+// 	return [num1 + num2, num1 - num2];
 // }
-// const [add_res, sub_res] = getsumsub(10, 20)
-// console.log("add:" + add_res)
-// console.log("sub:" + sub_res)
+// const [add_res, sub_res] = getsumsub(10, 20);
+// console.log("add:" + add_res);
+// console.log("sub:" + sub_res);
 
 // const [x, y, z] = [1, 2, 3];
 // console.log(x, y, z);
@@ -21,12 +21,11 @@ always use at end to collect rest of values - destructuring*/
 // console.log(rest);
 
 // function myBio(one, two, ...rest) {
-//     return rest;
+// 	return rest;
 // }
 // console.log(myBio(1, 2, 3, 4, 5, 6));
 
-
-/* spread operator used to spread values of array */
+// /* spread operator used to spread values of array */
 // const one = [1, 2, 3];
 // const two = [4, 5, 6];
 // console.log([...one, ...two])
@@ -35,7 +34,7 @@ always use at end to collect rest of values - destructuring*/
 // const three = [[6, 7]];
 // console.log(2, ...three, 3);
 
-/* same reference - changes done in original reflect in copy */
+// /* same reference - changes done in original reflect in copy */
 // const four = [1, 2, 3]
 // const five = four;
 // four.pop();
@@ -51,6 +50,7 @@ always use at end to collect rest of values - destructuring*/
 
 // const name = "Tirth";
 // console.log(...name);
+// console.log([...name]);
 
 // const one = [1, 2, 3];
 // function xyz(a, b) {
@@ -75,12 +75,12 @@ always use at end to collect rest of values - destructuring*/
 // const ingredientsList = ["noodles", { list: ["eggs", "flour", "water"] }];
 // const ingredientsListDeepCopy = JSON.parse(JSON.stringify(ingredientsList));
 
-
-/* rest operator used to collect rest of values into object,
-properties can be in any sequence but have same name - destructuring*/
+// /* rest operator used to collect rest of values into object,
+// properties can be in any sequence but have same name - destructuring*/
 // const { a, c, b } = { a: "A", b: "B", c: "C" };
 // console.log(a, b, c);
 
+// /* const {namefromObj: newName} = {namefromObj: value} */
 // const { d: xp, f: e, e: f } = { d: "D", e: "E", f: "F" };
 // console.log(xp, e, f);
 
@@ -88,44 +88,45 @@ properties can be in any sequence but have same name - destructuring*/
 // console.log(x, y, rest);
 
 // const { firstName = "Tobi", website = "CodeSweetly" } = {
-//     firstName: "Oluwatobi",
-//     xi: "h"
+// 	firstName: "Oluwatobi",
+// 	xi: "h",
 // };
 // console.log(firstName, website);
 
 // const vehicleOne = {
-//     brand: 'Ford',
-//     model: 'Mustang',
-//     type: 'car',
-//     year: 2021,
-//     color: 'red'
-// }
+// 	brand: "Ford",
+// 	model: "Mustang",
+// 	type: "car",
+// 	year: 2021,
+// 	color: "red",
+// };
 // myVehicle(vehicleOne);
 // function myVehicle({ type, color, brand, model }) {
-//     console.log('My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.');
+// 	console.log(
+// 		"My " + type + " is a " + color + " " + brand + " " + model + "."
+// 	);
 // }
 
 // const vehicleOne = {
-//     brand: 'Ford',
-//     model: 'Mustang',
-//     type: 'car',
-//     year: 2021,
-//     color: 'red',
-//     registration: {
-//         city: 'Houston',
-//         state: 'Texas',
-//         country: 'USA'
-//     }
-// }
-// myVehicle(vehicleOne)
+// 	brand: "Ford",
+// 	model: "Mustang",
+// 	type: "car",
+// 	year: 2021,
+// 	color: "red",
+// 	registration: {
+// 		city: "Houston",
+// 		state: "Texas",
+// 		country: "USA",
+// 	},
+// };
+// myVehicle(vehicleOne);
 // function myVehicle({ model, registration: { state } }) {
-//     console.log('My ' + model + ' is registered in ' + state + '.');
+// 	console.log("My " + model + " is registered in " + state + ".");
 // }
-
 
 /* spread operator used to spread values of object */
-// const myNames = ["Oluwatobi", "Sofela"];
-// const gh = ["hj", "kl"];
+const myNames = ["Oluwatobi", "Sofela"];
+const gh = ["hj", "kl"];
 // const bio = {runs: "codesweetly.com", ...myNames };
 /* only one array can be included by destructuring */
 // const bio = { ...gh, runs: "codesweetly.com", ...myNames };
@@ -140,7 +141,7 @@ properties can be in any sequence but have same name - destructuring*/
 // const bio2 = { ...myName2, firstName: "Oluwatobi", website: "codesweetly.com" };
 // console.log(bio2);
 
-/* same reference - changes done in original reflect in copy know asshallow copy */
+/* same reference - changes done in original reflect in copy know as shallow copy */
 // const myName = { firstName: "Oluwatobi", lastName: "Sofela" };
 // const bio = myName;
 // myName.firstName = "Tobi";
@@ -155,20 +156,20 @@ properties can be in any sequence but have same name - destructuring*/
 // console.log(bio);
 
 // const myName1 = {
-//     fullName: { firstName: "Oluwatobi", lastName: "Sofela" }
+// 	fullName: { firstName: "Oluwatobi", lastName: "Sofela" },
 // };
 // const bio1 = { ...myName1 };
 // // myName1.fullName = "Tobi";
 // console.log(myName1);
 // console.log(bio1);
 
-// /* here fullName is a reference to same object in both objects
-// so changing fullName in one object will change fullName in other object
-// ... does shallow copy
-// Shallow Copying: When used to copy objects or arrays, the spread operator performs a shallow copy.
-// This means that it only creates copies of the top-level elements, not nested objects or arrays. */
+/* here fullName is a reference to same object in both objects
+so changing fullName in one object will change fullName in other object
+... does shallow copy
+Shallow Copying: When used to copy objects or arrays, the spread operator performs a shallow copy.
+This means that it only creates copies of the top-level elements, not nested objects or arrays. */
 // const myName2 = {
-//     fullName: { firstName: "Oluwatobi", lastName: "Sofela" }
+// 	fullName: { firstName: "Oluwatobi", lastName: "Sofela" },
 // };
 // const bio2 = { ...myName2 };
 // myName2.fullName.firstName = "Tobi";
@@ -182,18 +183,17 @@ properties can be in any sequence but have same name - destructuring*/
 // const bio3 = JSON.parse(JSON.stringify(myName3));
 // myName3.fullName.firstName = "Tobi";
 // console.log(myName3);
-// console.log(bio3);    
-
+// console.log(bio3);
 
 // const myVehicle = {
-//     brand: 'Ford',
-//     model: 'Mustang',
-//     color: 'red'
-// }
+// 	brand: "Ford",
+// 	model: "Mustang",
+// 	color: "red",
+// };
 // const updateMyVehicle = {
-//     type: 'car',
-//     year: 2021,
-//     color: 'yellow'
-// }
-// const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle }
+// 	type: "car",
+// 	year: 2021,
+// 	color: "yellow",
+// };
+// const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle };
 // console.log(myUpdatedVehicle);

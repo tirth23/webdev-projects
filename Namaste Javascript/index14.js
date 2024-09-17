@@ -39,6 +39,7 @@
 // function createOrder(cart) {
 // 	/* creating promise using promise Constructor */
 // 	const pr = new Promise(function (resolve, reject) {
+//     console.log("inside promise of create order");
 // 		if (!validateCart(cart)) {
 // 			const err = new Error("Cart is not valid");
 // 			reject(err);
@@ -47,6 +48,7 @@
 // 		const orderId = "12345";
 // 		if (orderId) {
 // 			setTimeout(function () {
+//         console.log("inside setTimeout of promise");
 // 				resolve(orderId);
 // 			}, 5000);
 // 			/* when promise is resolved arg in resolve() is passed to callback function  */

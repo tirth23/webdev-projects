@@ -1,9 +1,9 @@
-const users = [
-	{ firstName: "Tirth", lastName: "Patel", age: 25 },
-	{ firstName: "Rahul", lastName: "Kadva", age: 90 },
-	{ firstName: "Samsung", lastName: "Korea", age: 22 },
-	{ firstName: "Akshay", lastName: "Saini", age: 25 },
-];
+// const users = [
+// 	{ firstName: "Tirth", lastName: "Patel", age: 25 },
+// 	{ firstName: "Rahul", lastName: "Kadva", age: 90 },
+// 	{ firstName: "Samsung", lastName: "Korea", age: 22 },
+// 	{ firstName: "Akshay", lastName: "Saini", age: 25 },
+// ];
 
 // const output = users.map((x) => x.firstName + " " + x.lastName);
 // console.log(output);
@@ -35,7 +35,6 @@ const users = [
 //     { firstName: "Samsung", lastName: "Korea", 3: 22 },
 //     { firstName: "Akshay", lastName: "Saini", 4: 25 }
 // ];
-
 // console.log(us[0].firstName);
 // console.log(us[0]["firstName"]);
 // const fname = "firstName";

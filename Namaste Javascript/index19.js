@@ -1,12 +1,10 @@
-/* At its core, currying is a functional programming technique that involves 
-breaking down a function that takes multiple arguments into a series of functions 
-that take one argument each. This creates a chain of functions, where each function 
-returns another function until the final result is achieved */
+// /* At its core, currying is a functional programming technique that involves 
+// breaking down a function that takes multiple arguments into a series of functions 
+// that take one argument each. This creates a chain of functions, where each function 
+// returns another function until the final result is achieved */
 
-/* Currying with bind */
+// /* Currying with bind */
 // let multiply = function (x, y) {
-// 	console.log(x);
-// 	console.log(y);
 // 	console.log(x * y);
 // };
 
@@ -20,7 +18,7 @@ returns another function until the final result is achieved */
 // let multiplyThree = multiply.bind(this, 3, 4);
 // multiplyThree(5);
 
-/* Currying with closure */
+// /* Currying with closure */
 // function multiply(x) {
 // 	return function (y) {
 // 		console.log(x * y);
