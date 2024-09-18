@@ -1,3 +1,24 @@
+/* Primitive DataType: number, string, boolean, null, undefined, symbol, bigint
+Object DataType: Object, Array, Function, Map, Set, Date, RegExp, Error, WeakMap, WeakSet */
+
+/* Primitive DataType */
+
+// var x = 7;
+// var y = "Hello";
+// var z = true;
+// var a = null;
+// var b = undefined;
+// var c = Symbol("Hello");
+// var d = BigInt(10);
+
+// console.log(x);
+// console.log(y);
+// console.log(z);
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(d);
+
 // var x = 7;
 // function getName() {
 // 	console.log("Namaste Javascript");

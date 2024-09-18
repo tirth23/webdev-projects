@@ -167,7 +167,9 @@ const gh = ["hj", "kl"];
 so changing fullName in one object will change fullName in other object
 ... does shallow copy
 Shallow Copying: When used to copy objects or arrays, the spread operator performs a shallow copy.
-This means that it only creates copies of the top-level elements, not nested objects or arrays. */
+This means that it only creates copies of the top-level elements, not nested objects or arrays. 
+shallow copy with ... helpful for change in top level of object and saves time as it doesn't have to check nested object
+*/
 // const myName2 = {
 // 	fullName: { firstName: "Oluwatobi", lastName: "Sofela" },
 // };
@@ -197,3 +199,43 @@ This means that it only creates copies of the top-level elements, not nested obj
 // };
 // const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle };
 // console.log(myUpdatedVehicle);
+
+
+// /* polyfill of deepcopy */
+// function deepCopy(obj) {
+//   if(typeof obj !== 'object' || obj === null) {
+//     return obj;
+//   }
+//   if(obj instanceof Array) {
+//     let copy = [];
+//     for(let i = 0; i < obj.length; i++) {
+//       copy[i] = deepCopy(obj[i]);
+//     }
+//     return copy;
+//   }
+//   if(obj instanceof Function) {
+//     return obj.bind({});
+//   }
+//   if(obj instanceof Object) {
+//     const copy = {};
+//     for(let key in obj) {
+//       copy[key] = deepCopy(obj[key]);
+//     }
+//     return copy;
+//   }
+//   throw new Error('Unable to copy object');
+// }
+// const myObj = {
+//   name: 'Oluwatobi',
+//   age: 30,
+//   address: {
+//     street: '123 Main St',
+//     city: 'Anytown',
+//     state: 'CA',
+//     zip: 12345
+//   }
+// };
+// const myObjCopy = deepCopy(myObj);
+// myObjCopy.address.city = 'changed';
+// console.log(myObjCopy);
+// console.log(myObj);

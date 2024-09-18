@@ -69,3 +69,21 @@ values from one data type to another */
 
 // console.log([1, 2] == '1,2'); //Conversion of Array to String [1, 2] to '1,2'
 // console.log([1, 2] === '1,2');
+
+// const falsyValues = [false, 0, -0, "", null, undefined, NaN];
+// falsyValues.forEach((value) => {
+// 	if (value) {
+// 		console.log(`${value} is truthy`);
+// 	} else {
+// 		console.log(`${value} is falsy`);
+// 	}
+// });
+
+// const truthyValues = [1, -1, "0", "false", "true", {}, [], () => {}];
+// truthyValues.forEach((value) => {
+// 	if (value) {
+// 		console.log(`${value} is truthy`);
+// 	} else {
+// 		console.log(`${value} is falsy`);
+// 	}
+// });
