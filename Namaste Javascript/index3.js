@@ -12,6 +12,7 @@
 // let c;
 // console.log(c); //c will be undefined in script scope
 // c = 30;
+// console.log(c); 
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
@@ -93,4 +94,19 @@
 //   console.log(bestFood); // returns undefined because bestFood's TDZ does not exist here
 //   bestFood = "Vegetable Fried Rice"; // bestFood's TDZ does not exist here
 //   console.log(bestFood); // returns "Vegetable Fried Rice" because bestFood's TDZ does not exist here
+// }
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// let bestFood = "Vegetable Fried Rice"; 
+// {
+//   console.log(bestFood); 
+//   let bestFood = "Vegetable Fried Rice"; 
+// }
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// let bestFood = "Vegetable Fried Rice"; 
+// {
+//   console.log(bestFood); 
 // }
