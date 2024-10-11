@@ -1,173 +1,172 @@
+/* Primitive DataType: number, string, boolean, null, undefined, symbol, bigint
+Object DataType: Object, Array, Function, Map, Set, Date, RegExp, Error, WeakMap, WeakSet */
+
+/* Primitive DataType */
+
+// var x = 7;
+// var y = "Hello";
+// var z = true;
+// var a = null;
+// var b = undefined;
+// var c = Symbol("Hello");
+// var d = BigInt(10);
+// console.log(x, typeof x);
+// console.log(y, typeof y);
+// console.log(z, typeof z);
+// console.log(a, typeof a);
+// console.log(b, typeof b);
+// console.log(c, typeof c);
+// console.log(d, typeof d);
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// var x = 7;
+// function getName() {
+// 	console.log("Namaste Javascript");
+// }
+// getName();
+// console.log(x);
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
 /* 
-Scope means where we can access the variable/function in code
-Scope is directly dependent on lexical environment
-Lexical environment is local memory along with reference to the enclosing lexical environment of its parent
-lexical means where it is physically located in code
-lexical environment of GEC is null 
-*/
-
-// var x = 1;
-// a();
-// b();
+hoisting: JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, 
+variables, classes, or imports to the top of their scope, prior to execution of the code
+ */
+// getName();
 // console.log(x);
-// function a() {
-// 	var x = 10;
-// 	console.log(x);
-// }
-// function b() {
-// 	console.log(x);
-//   var x = 100;
+// var x = 7;
+// function getName() {
+// 	console.log("Namaste Javascript");
 // }
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
-// var x = 1;
-// a();
-// b();
+// getName();
 // console.log(x);
-// function a() {
-// 	var x = 10;
-// 	console.log(x);
-// }
-// function b() {
-// 	console.log(x); //x will check in lexical scope/env
+// var y = 9;
+// console.log(y);
+// function getName() {
+// 	console.log("Namaste Javascript");
 // }
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
-// var x = 1;
-// a();
-// b();
-// console.log(x);
-// function a() {
-// 	var x = 10;
-// 	console.log(x);
+// function getName() {
+// 	console.log("Namaste Javascript");
+// 	// return 2;
 // }
-// function b() {
-// 	console.log(x);
-//   x = 100;   // bydefault it will be global variable
-// }
+// console.log(getName());
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
-// var x = 10;
-// let z = 100;
-// function a() {
-// 	var y = 5;
+// console.log(getName);
+// function getName() {
+// 	console.log("Namaste Javascript");
 // }
-// console.log(window.x);
-// console.log(this.x);
+// console.log(getName);
+// console.log(typeof getName);
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// x = 7;
 // console.log(x);
-// /* non-esixting object returns undefined */
-// // console.log(window.y);
-// // console.log(this.y);
-// // console.log(y);
-// console.log(window.z);
-// console.log(this.z);
-// console.log(z);
+// var x;
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // var x;
 // console.log(x);
-// x = 10;
+// x = 7;
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// /*
+// In non-strict, if explicitly not declare as var, let or const, it will be declared as global variable
+// In strict mode, if explicitly not declare as var, let or const, it will throw an reference error
+// */
+// // 'use strict'
+// x = 7;
 // console.log(x);
-// x = "Tirth";
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
 // console.log(x);
+// x = 7;
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
-// "use strict"
-// function test() {
-//   a = 5;
-//   /* when declared with var it becomes function scope */
-//   var b = 10;
-// }
-// test();
-// /* In strict mode a = 5 not allowed */
-// console.log(a);
-// console.log(b);
+// /* Arrow Function - not hoisted*/
+// var y = 7;
+// console.log(y);
+// getName(); //getname is variable in memory which is undefined
+// console.log(x);
+// var x = 7;
+// var getName = () => {
+// 	console.log("Hi");
+// };
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
-// /* In strict mode not allowed */
-// "use strict"
-// function abc(a, a) {
-//   console.log(a);
-// }
-// abc(1, 2);
+// var y = 7;
+// console.log(y);
+// console.log(getName); //getname is variable in memory which is undefined
+// console.log(x);
+// var x = 7;
+// var getName = () => {
+// 	console.log("Hi");
+// };
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
-// function a() {
-// 	console.log(b + " in a");
-// 	c();
-// 	function c() {
-// 		console.log(b + " in c");
-// 	}
-// }
-// var b = 10;
-// a();
+// var y = 7;
+// console.log(y);
+// console.log(x);
+// var x = 7;
+// var getName = () => {
+// 	console.log("Hi");
+// };
+// getName(); //once function initialized it behaves like function
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
-// function a() {
-// 	console.log(b + " in a");
-// 	c();
-// 	function c() {
-// 		console.log(b + " in c");
-// 	}
-//   var b = 69;
-// }
-// var b = 10;
-// a();
+// var y = 7;
+// console.log(y);
+// console.log(x);
+// var x = 7;
+// var getName = () => {
+// 	console.log("Hi");
+// };
+// console.log(getName); //once function initialized it behaves like function
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
-// function a() {
-// 	console.log(b + " in a");
-//   var b = 69;
-// 	c();
-// 	function c() {
-// 		console.log(b + " in c");
-// 	}
-// }
-// var b = 10;
-// a();
+// /* Anonyms Function behaves same as arrow function for hoisting */
+// var y = 7;
+// console.log(y);
+// console.log(getName);
+// // getName();
+// console.log(x);
+// var x = 7;
+// var getName = function () {
+// 	console.log("Hii");
+// };
+// console.log(getName);
+// getName();
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
-// function a() {
-//   c();
-// 	var b = 10;
-// 	console.log(b + " in a");
-// 	function c() {
-// 		console.log(b + " in c");
-// 	}
-// }
-// a();
-
-/* ------------------------------------------------------------------------------------------------------------------------------------ */
-
-// var b = 20;
-// function a() {
-// 	var b = 10;
-// 	c();
-// 	function c() {
-// 		console.log(b + " in c");
-// 	}
-// }
-// a();
-// console.log(b + " in global");
-
-/* ------------------------------------------------------------------------------------------------------------------------------------ */
-
-// function a() {
-// 	var b = 10;
-// 	c();
-// 	function c() {
-// 		console.log(b + " in c");
-// 	}
-// }
-// a();
-// console.log(b + " in global");
+// /* Named Function Expression behaves same as arrow function for hoisting */
+// var y = 7;
+// console.log(y);
+// console.log(getName);
+// // getName();
+// console.log(x);
+// var x = 7;
+// var getName = function xyz() {
+// 	console.log("Hi");
+// };
+// console.log(getName);
+// getName();
+// // console.log(xyz);
+// // xyz();
