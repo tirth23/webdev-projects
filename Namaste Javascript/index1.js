@@ -60,11 +60,20 @@ variables, classes, or imports to the top of their scope, prior to execution of 
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
+/* 
+The console.dir() method in JavaScript is used to display an interactive list of the properties of a specified JavaScript object. 
+Unlike console.log(), which prints the object as a string representation, console.dir() presents the object in a tree-like structure, 
+which is especially useful for inspecting deeply nested objects. 
+Unlike console.log(), which often prints a string representation of an object (e.g., [object Object]), 
+console.dir() helps visualize the actual properties of that object.
+*/
+
 // console.log(getName);
 // function getName() {
 // 	console.log("Namaste Javascript");
 // }
 // console.log(getName);
+// console.dir(getName)
 // console.log(typeof getName);
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */

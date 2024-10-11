@@ -1,4 +1,4 @@
-const arr = [10, 5, 49, 40, 25];
+// const arr = [10, 5, 49, 40, 25];
 
 // /* MAP --- map method is used when we want transformation of whole array & returns arrays */
 // /* array.map(function(currentValue, index, arr), thisValue) */

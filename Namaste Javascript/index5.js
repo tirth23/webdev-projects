@@ -2,6 +2,7 @@
 surrounding state (the lexical environment). In other words, a closure gives a function access to 
 its outer scope. In JavaScript, closures are created every time a function is created, at 
 function creation time. */
+
 // function x() {
 // 	var a = 7;
 // 	function y() {
@@ -11,16 +12,22 @@ function creation time. */
 // }
 // x();
 
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
 // function x() {
 // 	var a = 7;
 // 	function y() {
 // 		console.log(a);
 // 	}
+//   // check scope closure is formed 
+//   console.dir(y);  
 // 	return y;
 // }
 // var z = x();
 // console.log(z);
 // z();
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // function x() {
 // 	var a = 7;
@@ -30,6 +37,8 @@ function creation time. */
 // 	return y;
 // }
 // x()(); //means we are calling inner function of x using ()(): x() returns y -> y();
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // function x() {
 // 	var a = 7;
@@ -41,6 +50,8 @@ function creation time. */
 // console.log(z);
 // z();
 
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
 // function x() {
 // 	var a = 7;
 // 	return function () {
@@ -50,6 +61,8 @@ function creation time. */
 // var z = x();
 // console.log(z);
 // z();
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // function x() {
 // 	var a = 7;
@@ -62,6 +75,8 @@ function creation time. */
 // var z = x();
 // console.log(z);
 // z();
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // function z() {
 // 	var b = 100;
@@ -76,6 +91,8 @@ function creation time. */
 // }
 // z();
 
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
 // function x() {
 // 	function y() {
 // 		console.log(a);
@@ -87,6 +104,8 @@ function creation time. */
 // console.log(z);
 // z();
 
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
 // function x(b) {
 // 	function y() {
 // 		console.log(a, b);
@@ -97,6 +116,8 @@ function creation time. */
 // var z = x("Hello World");
 // console.log(z);
 // z();
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // function outer() {
 // 	var c = 20;
@@ -112,6 +133,8 @@ function creation time. */
 // var z = outer()("Hello World"); //outer will return x => x("Hello World")
 // console.log(z);
 // z();
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // var c = 20;
 // function outer() {
@@ -130,6 +153,8 @@ function creation time. */
 // console.log(z);
 // z();
 // var a = 30;
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // /* Data Hiding */
 // function counter() {
@@ -151,6 +176,8 @@ function creation time. */
 // counter2();
 // counter2();
 
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
 // function Counter() {
 // 	var count = 0;
 // 	this.incrementCounter = function xyz() {
@@ -164,10 +191,14 @@ function creation time. */
 // }
 // /* using constructor function */
 // var counter1 = new Counter();
+// console.log(counter1)
 // counter1.incrementCounter();
 // counter1.incrementCounter();
 // counter1.decrementCounter();
 
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// /* count declared as this so outer scope can access it which is not data hiding */
 // function Counter() {
 // 	this.count = 0;
 // 	this.incrementCounter = function xyz() {
@@ -181,9 +212,12 @@ function creation time. */
 // }
 // /* using constructor function */
 // var counter1 = new Counter();
+// console.log(counter1)
 // counter1.incrementCounter();
 // counter1.incrementCounter();
 // counter1.decrementCounter();
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // /* smart garbage collector */
 // function a() {
@@ -196,6 +230,8 @@ function creation time. */
 // var data = a(); // z will be removed from memory by SGC
 // data();
 
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
 // /* Function to increment counter */
 // function add() {
 // 	let counter = 0;
@@ -206,6 +242,8 @@ function creation time. */
 // add();
 // console.log(add());
 // /* The counter should now be 3. But it is 1. */
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // function add() {
 // 	let counter = 0;
@@ -218,6 +256,8 @@ function creation time. */
 // add();
 // add();
 // console.log(add());
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // /* self-invoking function IIFE - (Immediately Invoked Function Expression) */
 // const add = (function () {

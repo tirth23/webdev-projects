@@ -90,6 +90,19 @@ lexical environment of GEC is null
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
+// /* 
+// if value declared without explicit type is not found in scope it finds in outer scope & finds till global Scope 
+// & there also if not found it treats that variable as global variable
+// In strict mode, variable without type not allowed 
+// */
+// function doSomething(callback) {
+//   value = 2;
+// }
+// doSomething();
+// console.log(value);
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
 // /* In strict mode not allowed */
 // "use strict"
 // function abc(a, a) {
