@@ -1,15 +1,16 @@
-// const arr = [10, 5, 49, 40, 25];
+const arr = [10, 5, 49, 40, 25];
 
 // /* MAP --- map method is used when we want transformation of whole array & returns arrays */
-// /* array.map(function(currentValue, index, arr), thisValue) */
+// /* array.map(function(currentValue, currentValueIndex, arr), thisValue) */
 
 // /* x is each value in arr */
 // function double(x, index, arr) {
 // 	return x * 2 * this;
 // }
-
 // const output = arr.map(double, 7);
 // console.log(output);
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // console.log(
 // 	arr.map(function triple(x) {
@@ -17,6 +18,8 @@
 // 	})
 // );
 // console.log(arr.map((x) => x * 3));
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // const sampleObj = {
 // 	factor: 10,
@@ -32,6 +35,8 @@
 // const doubled2 = numbers.map(multiplier.multiply, sampleObj);
 // console.log(doubled);
 // console.log(doubled2);
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // /* Custom Map function */
 // Array.prototype.customMap = function (callback, thisValue) {
@@ -52,10 +57,10 @@
 // }, multiplier1);
 // console.log(tripled);
 
-/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // /* FILTER --- filter is used when we want to filter the array to obtain required value & returns filtered array*/
-// /* array.filter(function(currentValue, index, arr), thisValue) */
+// /* array.filter(function(currentValue, currentValueIndex, arr), thisValue) */
 
 // /* filter odd value */
 // function isOdd(x) {
@@ -63,6 +68,8 @@
 // }
 // const output = arr.filter(isOdd);
 // console.log(output);
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // const output2 = arr.filter(function isGreat(x) {
 // 	return x > 4;
@@ -72,10 +79,10 @@
 // const output1 = arr.filter((x) => x > 4);
 // console.log(output1);
 
-/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // /* REDUCE --- reduce is used when we want to reduce the array to single value eg (max, min, avg, sum, difference etc) */
-// /* array.reduce(function(total, currentValue, currentIndex, arr), initialValue) */
+// /* array.reduce(function(total, currentValue, currentValueIndex, arr), initialValue) */
 
 // /* sum of arr */
 // function findSum(arr) {
@@ -87,18 +94,22 @@
 // }
 // console.log(findSum(arr));
 
-/*
-reduce(function (accumulator, current) {}, init) 
-accumulator = stores result
-current = current value in arr while iterating
-init = initial value of accumulator before iterating
-*/
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// /*
+// reduce(function (accumulator, current) {}, init)
+// accumulator = stores result
+// current = current value in arr while iterating
+// init = initial value of accumulator before iterating
+// */
 // console.log(
 // 	arr.reduce(function (acc, curr) {
 // 		acc = acc + curr;
 // 		return acc;
 // 	}, 0)
 // );
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // function findMax(arr) {
 // 	let max = 0;
@@ -111,6 +122,8 @@ init = initial value of accumulator before iterating
 // }
 // console.log(findMax(arr));
 
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
 // const output = arr.reduce(function (max, curr) {
 // 	if (curr > max) {
 // 		max = curr;
@@ -119,6 +132,8 @@ init = initial value of accumulator before iterating
 // }, 0);
 // console.log(output);
 
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
 // /* without initial value: acc = arr[0] and curr = arr[1]
 // 1 -> acc = 10,  curr = 5   return 15
 // 2 -> acc = 15,  curr = 49  return 64
@@ -126,10 +141,12 @@ init = initial value of accumulator before iterating
 // 4 -> acc = 104, curr = 25  return 129
 // */
 // console.log(arr.reduce((acc, curr, index) => {
-//   console.log(index, acc, curr);
+//   console.log(acc, curr, index);
 //   acc = acc + curr;
 //   return acc;
 // }));
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // /* with initial value: acc = initial value and curr = arr[0]
 // 1 -> acc = 100, curr = 10  return 110
@@ -139,28 +156,37 @@ init = initial value of accumulator before iterating
 // 5 -> acc = 204, curr = 25  return 229
 // */
 // console.log(arr.reduce((acc, curr, index) => {
-//   console.log(index, acc, curr);
+//   console.log(acc, curr, index);
 //   acc = acc + curr;
 //   return acc;
 // }, 100));
 
-// const ans1 = [5].reduce((acc, curr) => {
-//   console.log(acc, curr);
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// const ans1 = [5].reduce((acc, curr, index) => {
+//   console.log(acc, curr, index);
 //   return acc + curr;
 // }, 3);
 // console.log(ans1);
 
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
 // /* if only 1 Element, directly return that element */
-// const ans2 = [5].reduce((acc, curr) => {
-// 	console.log(acc, curr);
+// const ans2 = [5].reduce((acc, curr, index) => {
+// 	console.log(acc, curr, index);
 // 	return acc + curr;
 // });
 // console.log(ans2);
 
-// const ans3 = [].reduce((acc, curr) => {
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// const ans3 = [].reduce((acc, curr, index) => {
+//   console.log(acc, curr, index)
 // 	return acc + curr;
 // }, 7);
 // console.log(ans3);
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // /* error -> arr length 0 & no initial value */
 // const ans4 = [].reduce((acc, curr) => {
@@ -168,9 +194,12 @@ init = initial value of accumulator before iterating
 // });
 // console.log(ans4);
 
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
 // /* Flatten the nested array */
 // function flattenArray(arr) {
-// 	return arr.reduce((flatArray, item) => {
+// 	return arr.reduce((flatArray, item, index) => {
+//     console.log(flatArray, item, index);
 // 		if (Array.isArray(item)) {
 // 			flatArray.push(...flattenArray(item)); // Recursively flatten nested arrays;
 // 		} else {
@@ -194,6 +223,8 @@ init = initial value of accumulator before iterating
 // arr.sort();
 // console.log(arr);
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
 // /*
 // In custom sort a & b is picked randomly from array and compared
 // returned
@@ -209,6 +240,8 @@ init = initial value of accumulator before iterating
 // 	return a - b;
 // });
 // console.log(arr);
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // /*
 // find largest number formed by combination of elements
@@ -279,7 +312,4 @@ init = initial value of accumulator before iterating
 //   return acc;
 // }, finalobj);
 
-// console.table(finalobj);
-
-
-
+// console.dir(finalobj);

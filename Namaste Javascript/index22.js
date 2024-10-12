@@ -125,8 +125,8 @@
 // }
 
 /* spread operator used to spread values of object */
-const myNames = ["Oluwatobi", "Sofela"];
-const gh = ["hj", "kl"];
+// const myNames = ["Oluwatobi", "Sofela"];
+// const gh = ["hj", "kl"];
 // const bio = {runs: "codesweetly.com", ...myNames };
 /* only one array can be included by destructuring */
 // const bio = { ...gh, runs: "codesweetly.com", ...myNames };

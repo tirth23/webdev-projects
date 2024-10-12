@@ -1,12 +1,7 @@
-/*
-fetch() will return promise and stores in user
-initaliy it will be in pending
-after it gets data, it is fulfilled
-check in browser console
-*/
-
+// /*
+// fetch() will return promise and stores in user initaliy it will be in pending after it gets data, it is fulfilled
+// */
 // const GITHUB_API = "https://api.github.com/users/tirth23";
-
 // const user = fetch(GITHUB_API);
 // console.log(user);
 
@@ -15,10 +10,10 @@ check in browser console
 // 	console.log(data);
 // });
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
 /* Callback Hell */
-
 // const cart = ["shoes", "kurta", "pants"];
-
 // api.createOrder(cart, function (pay) {
 // 	api.proceedToPayment(pay, function (summary) {
 // 		api.showOrderSummary(summary, function (wallet) {
@@ -27,7 +22,10 @@ check in browser console
 // 	});
 // });
 
-/* Promise => The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+/* 
+Promise => The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
 const prom1 = new Promise((resolve, reject) => {
   resolve(data);
   reject(error);
@@ -55,35 +53,44 @@ handleFulfilled1Callback will get value from resolve of prom1
 handleRejected1Callback will get value from reject of prom1 
 
 undefined is return if nothing is returned in promise
-*/
 
-/* catch: The catch() method of Promise instances schedules a function to be called when the 
-promise is rejected. It immediately returns another Promise object, allowing you to 
-chain calls to other promise methods.
+catch: The catch() method of Promise instances schedules a function to be called when the promise is rejected. 
+It immediately returns another Promise object, allowing you to chain calls to other promise methods.
 It is a shortcut for then(undefined, onRejected). 
 Internally it will call then with undefined
 In promise chain, if any promise will be rejected then catch even if it is at end will capture that
-*/
 
-/* finally: The finally() method of Promise instances schedules a function to be called when 
-the promise is settled (either fulfilled or rejected). It immediately returns another 
-Promise object, allowing you to chain calls to other promise methods. */
+finally: The finally() method of Promise instances schedules a function to be called when the promise is settled 
+(either fulfilled or rejected). 
+It immediately returns another Promise object, allowing you to chain calls to other promise methods. */
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // Promise.reject(1).then(
 // 	(data) => console.log(data),
 // 	(error) => console.log(error)
 // );
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
 // Promise.reject(1)
+// 	.finally((data) => console.log(data))
 // 	.then((data) => console.log(data))
 // 	.catch((error) => console.log(error));
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // Promise.resolve().then((data) => console.log(data));
 // Promise.resolve(1).then((data) => console.log(data));
 
-// SomePromise
-// .then((result) => console.log(result))          //on resolve
-// .catch((err) => console.log(err))               //on reject
-// .finally(() => console.log("promise settled")); //executes everytime
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+/* 
+SomePromise
+  .then((result) => console.log(result)) //on resolve
+	.catch((err) => console.log(err)) //on reject
+	.finally(() => console.log("promise settled")); //executes everytime 
+*/
 
 // /* Promise chain preferred over then()'s two case syntax */
 // Promise.resolve()
