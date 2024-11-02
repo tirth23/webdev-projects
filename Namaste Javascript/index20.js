@@ -234,3 +234,17 @@ used to provide modern functionality on older browsers that do not natively supp
 // const arr3 = [5, 8];
 // const ans = arr3.myReduce((acc, curr) => acc + curr);
 // console.log(ans);
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+
+/* 
+greet is a function but also an object, allowing us to add a custom property (language)
+This flexibility is key to JavaScript’s powerful functional capabilities 
+*/
+
+// function greet() {
+// 	console.log("Hello, world!");
+// }
+// greet.language = "English";
+// console.log(greet.language);
+// greet();

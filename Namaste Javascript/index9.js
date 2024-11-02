@@ -17,9 +17,11 @@
 
 // let startTime = performance.now();
 // console.log(startTime, "ms elaped since start of this script");
-// while (performance.now() - startTime < 10000) {
+// while (performance.now() < startTime + 10000) {
 // 	// Do nothing for 10000 ms to emulate extremely slow code
 // }
+// let endTime = performance.now();
+// console.log(endTime - startTime);
 
 // console.log("while expires");
 

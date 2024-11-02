@@ -83,3 +83,67 @@
 // }
 // MyClass.myStaticMethod();
 // const ob = new MyClass();
+
+/* ---------------------------------------------------------------------------------------------------------- */
+
+/* Person is a constructor function.
+sayHello is a method added to Person's prototype, which any instance of Person can access. */
+// function Person(name) {
+//   this.name = name;
+// }
+
+// Person.prototype.sayHello = function() {
+//   console.log(`Hello, my name is ${this.name}`);
+// };
+
+// const person = new Person('Alice');
+// person.sayHello();
+
+/* ---------------------------------------------------------------------------------------------------------- */
+
+/* 
+Class in JavaScript, it's just syntactic sugar over the older function-based approach to creating objects and prototypes. 
+This means that a class is really a function with some extra features that make it easier to create objects, 
+use inheritance, and manage prototypes. 
+
+JavaScript interprets this as:
+
+Creates a constructor function called Person
+Adds a constructor method to Person.prototype that initializes the instance.
+Adds a sayHello method to Person.prototype
+*/
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   sayHello() {
+//     console.log(`Hello, my name is ${this.name}`);
+//   }
+// }
+
+// const person = new Person('Alice');
+// person.sayHello(); 
+
+/* 
+Class Constructor Function: The class itself acts as a constructor function.
+
+Methods on Prototypes: Any methods defined within the class (like sayHello in the example) are added to the prototype, 
+not to each instance. This is exactly what we do manually with prototypes, but the class syntax does it automatically.
+
+Strict Mode: All code inside a class is automatically executed in strict mode, even if you don’t declare 'use strict'.
+
+Non-Callable: Unlike regular functions, classes cannot be called without the new keyword. 
+If you try to call a class like a regular function, JavaScript will throw an error. 
+*/
+
+/* 
+JavaScript uses prototypes to allow objects to inherit properties and methods from other objects. 
+When you create a class, JavaScript sets up the prototype property on the constructor function and links 
+instances of the class to this prototype.
+
+When you create an instance (const person = new Person('Alice')), JavaScript links person.__proto__ to Person.prototype.
+Methods defined in the class, like sayHello, are stored on Person.prototype, so all instances can access them.
+This linking of __proto__ to prototype is how JavaScript achieves inheritance, and it's the same mechanism 
+used with functions and objects. 
+*/

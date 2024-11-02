@@ -215,7 +215,7 @@ const arr = [10, 5, 49, 40, 25];
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // /* Sort: arr.sort(callback);
-// bydefault lexographical short numbers converted to string and utf-16 is compared
+// bydefault lexographical sort numbers converted to string and utf-16 is compared
 // 10 5 -> unicode(1) is U+0031 and unicode(5) is U+0035 -> U+0031 - U+0035 -> 1 comes before 5 -> [10, 5]
 // if same value then second character is check and so on....
 // 10, 25, 49, 40, 5 -> 10 25 40 49 5 (1 < 2 < 4 {0 < 9} < 5)
@@ -233,7 +233,7 @@ const arr = [10, 5, 49, 40, 25];
 // value = 0, in original array as it is
 
 // a = 40, b = 10 -> a - b -> 30 > 0 -> [10, 40]
-// a = 5, b = 10 -> a - b -> -5 < 0 -> [5, 10]
+// a = 10, b = 40 -> a - b -> -30 < 0 -> [10, 40]
 // */
 // arr.sort((a, b) => {
 // 	console.log(a, b);
@@ -313,3 +313,17 @@ const arr = [10, 5, 49, 40, 25];
 // }, finalobj);
 
 // console.dir(finalobj);
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+/* object key always have string/symbol, if else then it automatically tries to convert to String */
+const obj = {
+	name: "JS",
+};
+
+const arr1 = ["name"];
+console.log(arr1.toString());
+
+/* obj[arr1] => obj["name"] converted to name, i.e., obj.name = "React" */
+obj[arr1] = "React";
+console.log(obj.names);
