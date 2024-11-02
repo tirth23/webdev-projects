@@ -35,7 +35,7 @@
 // 	name: "Alice",
 // 	age: 30,
 // 	introduce: function () {
-// 		// console.log(this)
+// 		console.log(this)
 // 		console.log(`My name is ${this.name} and I am ${this.age} years old.`);
 // 	},
 // };
@@ -51,6 +51,7 @@
 
 /* A polyfill is a piece of code (usually JavaScript on the Web) 
 used to provide modern functionality on older browsers that do not natively support it. */
+
 // /* polyfill for call */
 // let car = {
 // 	name: "Mercedes",
@@ -230,6 +231,6 @@ used to provide modern functionality on older browsers that do not natively supp
 // 		return accumulator;
 // 	};
 // }
-// const arr3 = [5];
+// const arr3 = [5, 8];
 // const ans = arr3.myReduce((acc, curr) => acc + curr);
 // console.log(ans);

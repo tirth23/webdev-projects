@@ -40,7 +40,7 @@
 
 // console.log(myobj.__proto__.__proto__);
 
-/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------- */
 
 // let myobj = {
 // 	name: "Tirth",
@@ -69,6 +69,8 @@
 // 	__proto__: obj2,
 // };
 // console.log(obj1);
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
 
 // const animal = {
 // 	eats: true,
@@ -113,10 +115,9 @@
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
-// /* Same above concepts works with variables, arrays and functions
-// variables, arrays and functions are objects in JS and every object in js has prototype
-// and every object have default properties and methods
-// that can be accessed by using __proto__ key or with . operator */
+// /* Same above concepts works with variables, arrays and functions variables, arrays and functions are objects in JS and 
+// every object in js has prototype and every object have default properties and methods that can be accessed 
+// by using __proto__ key or with . operator */
 
 // let arry = ["Tirth", "Patel"];
 
@@ -162,13 +163,13 @@
 
 // function func() {}
 
-// console.log(func);
+// console.dir(func);
 
-// console.log(func.__proto__);
-// console.log(func.prototype);
-// console.log(func.prototype.constructor === func);
-// console.log(Function.prototype);
-// console.log(Function.prototype.constructor);
+// console.dir(func.__proto__);
+// console.dir(func.prototype);
+// console.dir(func.prototype.constructor === func);
+// console.dir(Function.prototype);
+// console.dir(Function.prototype.constructor);
 
 // console.log(func.__proto__.__proto__);
 // console.log(Object.prototype);
@@ -283,11 +284,11 @@
 // child.childProperty = "child property";
 // console.log(child);
 // console.log(child.toString());
-// /* js engine will check if the property  toString() is present in child object or not
-// if not present then it will check [[Prototype]] key of child which is reference to parent object
-// if not present then it will check [[Prototype]] key of parent which is reference to Object.prototype
-// if not present then it will throw an undefined for property and error for method
-// This is called prototypal inheritance and moving up prototype chain */
+/* js engine will check if the property  toString() is present in child object or not
+if not present then it will check [[Prototype]] key of child which is reference to parent object
+if not present then it will check [[Prototype]] key of parent which is reference to Object.prototype
+if not present then it will throw an undefined for property and error for method
+This is called prototypal inheritance and moving up prototype chain */
 
 // const carPrototype = {
 // 	displayInfo: function () {

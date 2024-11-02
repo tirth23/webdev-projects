@@ -22,8 +22,12 @@
 // 	}, 10000);
 // });
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
 // /* return promise which has array of all success or return single response if any one fail */
 // Promise.all([p1, p2, p3]).then((res) => console.log(res)).catch((err) => console.error(err));
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // /* return array of objects length all settled irrespective of state */
 // /*
@@ -42,8 +46,12 @@
 // 	.then((res) => console.log(res))
 // 	.catch((err) => console.error(err));
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
 // /* return first settled response irrespective of state */
 // Promise.race([p1, p2, p3]).then((res) => console.log(res)).catch((err) => console.error(err));
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // /* return first settled success response or if all fail return array of errors */
 // Promise.any([p1, p2, p3]).then((res) => console.log(res)).catch((err) => {
@@ -74,12 +82,14 @@
 // 	return promise;
 // };
 // Promise.myAll([p1, p2, p3]).then((res) => console.log(res)).catch((err) => console.error(err));
-// Test 1: All promises resolve
+
+// /* Test 1: All promises resolve */
 // let promises1 = [Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)];
 // Promise.myAll(promises1)
 // 	.then((results) => console.log("All resolved:", results))
 // 	.catch((error) => console.error("Rejected:", error));
-// // Test 2: Including a promise that rejects
+
+// /* Test 2: Including a promise that rejects */
 // let promises2 = [
 // 	Promise.resolve(10),
 // 	Promise.reject(new Error("Failed")),
@@ -113,11 +123,14 @@
 // 		});
 // 	});
 // };
-// Promise.myAny([p1, p2, p3]).then((res) => console.log(res)).catch((err) => {
-//     console.error(err);
-//     //to get aggregate error in form of array
-//     // console.log(err.errors);
-// });
+
+// Promise.myAny([p1, p2, p3])
+// 	.then((res) => console.log(res))
+// 	.catch((err) => {
+// 		console.error(err);
+// 		//to get aggregate error in form of array
+// 		// console.log(err.errors);
+// 	});
 // let promises1 = [
 // 	Promise.resolve(1),
 // 	Promise.reject(new Error("Failed")),
@@ -134,7 +147,7 @@
 // 		console.error("Rejected with:", error.errors.length, "errors")
 // 	);
 
-/* ------------------------------------------------------------------------------------------------------------------------------ */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // Promise.myRace = function (promises) {
 // 	return new Promise((resolve, reject) => {

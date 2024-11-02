@@ -13,7 +13,9 @@
 // x();
 // window.x();
 
-/* this inside object's method refers to object*/
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// /* this inside object's method refers to object*/
 // const obj3 = {
 // 	a: 10,
 // 	x: function () {
@@ -21,6 +23,8 @@
 // 	},
 // };
 // obj3.x();
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // var obj2 = {
 // 	fn: function () {
@@ -33,6 +37,8 @@
 // };
 // obj2.fn();
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
 // const obj4 = {
 //   fn: function() {
 //     console.log(this);
@@ -42,6 +48,8 @@
 // /* here we are assigning function so this is window/global in non strict & undefined in strict*/
 // const myfn = obj4.fn;
 // myfn();
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // /* call apply bind methods */
 // const student = {
@@ -53,10 +61,12 @@
 // student.printName();
 
 // const student1 = {
-//     name: "Patel",
+// 	name: "Patel",
 // };
 // /* function borrowing */
 // student.printName.call(student1);
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // /* can be used by putting function outside object */
 // let printName = function (homeTown, state) {
@@ -75,7 +85,7 @@
 
 // /* bind */
 // const newPrintFun = printName.bind(student2, "Ahmedabad");
-// console.log(newPrintFun)
+// console.log(newPrintFun);
 // newPrintFun(" Gujarat");
 
 // const student3 = {
@@ -84,8 +94,9 @@
 // };
 // printName.call(student3);
 
-/* this inside arrow function retains value of enclosing 
-lexical context (where physically placed in code) */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// /* this inside arrow function retains value of enclosing lexical context (where physically placed in code) */
 // const obj = {
 // 	a: 10,
 // 	x: () => {
@@ -93,6 +104,8 @@ lexical context (where physically placed in code) */
 // 	},
 // };
 // obj.x();
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // const obj1 = {
 // 	a: 10,
@@ -110,6 +123,8 @@ lexical context (where physically placed in code) */
 // 	},
 // };
 // obj1.y();
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // const name1 = {
 // 	nickName: "Joe",
@@ -134,10 +149,12 @@ lexical context (where physically placed in code) */
 // 		console.log(`regular: ${this.nickName}`);
 // 	},
 // };
-// // window.nickName = "tirth";
+// window.nickName = "tirth";
 // name1.arrow();
 // name1.regular(); //method invocation
 // name1.eventuallySayName(); //method invocation
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // "use strict"
 /* Node Env */

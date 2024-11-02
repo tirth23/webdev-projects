@@ -57,22 +57,22 @@
     // /* call the function after 500 milliseconds even if the user clicks more than once */
     // const throttledCallAPI = throttle(expensiveCalculation, 500);
 
-    // /* Modern approach without this binding */
-    // let counter = 0;
-    // const getData = (e, ...arr) => {
-    //   console.log("Fetching data...", counter++, arr, e.target.value);
-    // };
-    // const throttle = (func, delay) => {
-    //   let timer = null;
-    //   return (...args) => {
-    //     if (timer) return;
-    //     timer = setTimeout(() => {
-    //       func(...args);
-    //       timer = null;
-    //     }, delay);
-    //   }
-    // }
-    // const throttledCallAPI = throttle(getData, 300);
+    /* Modern approach without this binding */
+    let counter = 0;
+    const getData = (e, ...arr) => {
+      console.log("Fetching data...", counter++, arr, e.target.value);
+    };
+    const throttle = (func, delay) => {
+      let timer = null;
+      return (...args) => {
+        if (timer) return;
+        timer = setTimeout(() => {
+          func(...args);
+          timer = null;
+        }, delay);
+      }
+    }
+    const throttledCallAPI = throttle(getData, 300);
 
 
   </script>

@@ -1,21 +1,23 @@
-// function resolveAfter15Seconds() {
-// 	console.log("starting slow promise");
-// 	return new Promise((resolve) => {
-// 		setTimeout(() => {
-// 			resolve("slow");
-// 			console.log("slow promise is done");
-// 		}, 15000);
-// 	});
-// }
-// function resolveAfter5Seconds() {
-// 	console.log("starting fast promise");
-// 	return new Promise((resolve, reject) => {
-// 		setTimeout(() => {
-// 			resolve("fast");
-// 			console.log("fast promise is done");
-// 		}, 5000);
-// 	});
-// }
+function resolveAfter15Seconds() {
+	console.log("starting slow promise");
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			resolve("slow");
+			console.log("slow promise is done");
+		}, 15000);
+	});
+}
+function resolveAfter5Seconds() {
+	console.log("starting fast promise");
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve("fast");
+			console.log("fast promise is done");
+		}, 5000);
+	});
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // async function sequentialStart() {
 // 	console.log("== sequentialStart starts ==");
@@ -32,6 +34,8 @@
 // }
 // /* after 15 seconds, logs "slow", then after 5 more second, "fast" */
 // sequentialStart();
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // async function sequentialWait() {
 // 	console.log("== sequentialWait starts ==");
@@ -50,6 +54,8 @@
 // /* after 15 seconds, logs "slow" and then "fast" */
 // sequentialWait();
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
 // async function concurrent1() {
 // 	console.log("== concurrent1 starts ==");
 
@@ -66,6 +72,8 @@
 // }
 // /* same as sequentialWait */
 // concurrent1();
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // async function concurrent2() {
 // 	console.log("== concurrent2 starts ==");

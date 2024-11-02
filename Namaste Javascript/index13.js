@@ -74,7 +74,7 @@ It immediately returns another Promise object, allowing you to chain calls to ot
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // Promise.reject(1)
-// 	.finally((data) => console.log(data))
+// 	.finally((data) => console.log("Returns " + data))
 // 	.then((data) => console.log(data))
 // 	.catch((error) => console.log(error));
 
@@ -95,7 +95,7 @@ SomePromise
 // /* Promise chain preferred over then()'s two case syntax */
 // Promise.resolve()
 // 	.then(() => {
-// 		// console.log("No error");
+// 		console.log("No error");
 // 		throw new Error("Oh no!");
 // 	})
 // 	.then(
@@ -107,21 +107,26 @@ SomePromise
 // 		}
 // 	);
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
 // Promise.resolve()
 // 	.then(() => {
-//     // console.log("No error");
-//     // return 1;
-// 		throw new Error("Oh no!");
+//     console.log("No error");
+//     return 1;
+// 		// throw new Error("Oh no!");
 // 	})
 //   .then((data) => {
 //     console.log(1, data);
+//     return "Hello"
 //   })
 // 	.catch((error) => {
 // 		console.error(`onRejected function called: ${error.message}`);
 // 	})
-// 	.then(() => {
-// 		console.log("I am always called even if the prior then's promise rejects");
+// 	.then((data) => {
+// 		console.log("I am always called even if the prior then's promise rejects " + data);
 // 	});
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // Promise.reject("rejected promise")
 // 	.finally(() => {
@@ -147,6 +152,8 @@ SomePromise
 // 		console.log(data);
 // 		console.log("I am always called even if the prior then's promise rejects");
 // 	});
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // Promise.reject("rejected promise")
 // 	.finally(() => {

@@ -47,6 +47,8 @@
 // }
 // handlePromise();
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
 // /* will take 25 sec to complete */
 // async function handlePromise() {
 // 	console.log("Hello World");
@@ -80,48 +82,54 @@
 // }
 // handlePromise();
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
 // /* async/await vs return */
 // const p = new Promise((res, rej) => {
 //   res(1);
 // });
+
 // async function asyncReturn() {
 //   return p;
 // }
 // console.log(asyncReturn());
+
 // function basicReturn() {
 //   return Promise.resolve(p);
 // }
 // console.log(basicReturn());
+
 // console.log(p === basicReturn()); // true
-// console.log(p === asyncReturn()); // false
+// console.log(p === asyncReturn()); // false since aysnc automatically wraps whatever is returned in a new promise
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // /* real world use */
 // const GITHUB_AP = "https://api.github.com/users/tirth23";
 
 // /* using normal way */
 // fetch(GITHUB_AP)
-//     .then((data) => data.json())
-//     .then((jsonValue) => console.log(jsonValue))
-//     .catch((err) => console.log(err));
+// 	.then((data) => data.json())
+// 	.then((jsonValue) => console.log(jsonValue))
+// 	.catch((err) => console.log(err));
 
 // /* using aysnc/await */
 // async function handlePro() {
-//     console.log("Check");
-//     try {
-//         const data = await fetch(GITHUB_AP);
-//         const jsonValue = await data.json();
-//         console.log(jsonValue);
-//     } catch (err) {
-//         console.log(err);
-//     }
-//     console.log("stop execution till await is resolved");
+// 	console.log("Check");
+// 	try {
+// 		const data = await fetch(GITHUB_AP);
+// 		const jsonValue = await data.json();
+// 		console.log(jsonValue);
+// 	} catch (err) {
+// 		console.log(err);
+// 	}
+// 	console.log("stop execution till await is resolved");
 // }
 // handlePro();
 // console.log("Hi");
 
 /* either use try catch block or below statement */
 // handlePro().catch((err) => console.log(err));
-
 
 /* try {
   //if anywhere it throws errors, it skips rest of statements and go to catch

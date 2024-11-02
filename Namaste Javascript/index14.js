@@ -1,12 +1,3 @@
-/* Bad Practice => callback hell */
-// createOrder(cart, function (orderID) {
-// 	proceedToPayment(orderID, function (paymentInfo) {
-// 		showSummary(paymentInfo, function () {
-// 			updateWallet();
-// 		});
-// 	});
-// });
-
 // const cart = ["shirt", "shoes", "pants"];
 
 // const prom = createOrder(cart); // orderId
