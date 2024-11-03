@@ -1,15 +1,21 @@
-// /* Prototype is object that has methods and properties that gets attach to objects
-// It is a mechanism by which objects inherit properties and methods from other objects
+/* 
+Prototype is object that has methods and properties that gets attach to objects
+It is a mechanism by which objects inherit properties and methods from other objects
 
-// prototype inheritance means once object trying to access property of another object
-// when we print an object, it will print the object's properties and methods
-// and it will attach below key value in the object
-// [[Prototype]]: SomeObject;
+prototype inheritance means once object trying to access property of another object
+when we print an object, it will print the object's properties and methods
+and it will attach below key value in the object
+[[Prototype]]: SomeObject;
 
-// SomeObject here is protoype
+SomeObject here is protoype
 
-// it will have default properties and methods that JS provides for object
-// it is a reference to the object.Prototype  */
+it will have default properties and methods that JS provides for object
+it is a reference to the object.Prototype  
+
+Object is a built-in constructor function in JavaScript that creates objects.
+Object is the root of JavaScript's prototype chain. 
+All objects inherit properties and methods from Object.prototype
+*/
 
 // let newObj = {
 // 	name: "Tirth",
@@ -64,11 +70,60 @@
 // let obj2 = {
 // 	newkey: "new value",
 // };
+// /* created new object & modified prototpye, now __proto__ pointing to obj2 */
 // obj1 = {
 // 	...obj1,
 // 	__proto__: obj2,
 // };
+// // obj2.__proto__ = null;
 // console.log(obj1);
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+// const parent = {
+// 	name: "Tirth",
+// 	getIntro: function () {
+// 		console.log("Parent Object");
+// 	},
+// };
+
+// /* Object.create() method creates a new object, using an existing object
+// as a prototype of the new created object */
+// const child = Object.create(parent); //child prototype -> parent
+// console.log(child);
+// console.log(child.__proto__);
+// console.log(parent);
+
+// /* child object will inherit all the properties and methods of parent object */
+// child.getIntro();
+
+// parent.newProperty = "new property";
+// child.childProperty = "child property";
+// console.log(child);
+// console.log(child.toString());
+// /*
+// js engine will check if the property  toString() is present in child object or not
+// if not present then it will check [[Prototype]] key of child which is reference to parent object
+// if not present then it will check [[Prototype]] key of parent which is reference to Object.prototype
+// if not present then it will throw an undefined for property and error for method
+// This is called prototypal inheritance and moving up prototype chain
+// */
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+// const carPrototype = {
+// 	displayInfo: function () {
+// 		return `This is a ${this.year} ${this.model}.`;
+// 	},
+// };
+// const car1 = Object.create(carPrototype);
+// car1.model = "Toyota Camry";
+// car1.year = 2021;
+// const car2 = Object.create(carPrototype);
+// car2.model = "Ford Mustang";
+// car2.year = 2023;
+// console.log(car1.displayInfo()); // "This is a 2021 Toyota Camry."
+// console.log(car2.displayInfo()); // "This is a 2023 Ford Mustang."
 
 /* ------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -86,7 +141,7 @@
 // };
 // const carnivore = {
 // 	eatsMeat: "yes",
-// 	__proto__: animal,
+// 	__proto__: animal,/*  */
 // };
 // const rabbit = {
 // 	canJump: true,
@@ -107,6 +162,11 @@
 // for (let key in rabbit) {
 // 	console.log(key);
 // }
+
+// /*
+// hasOwnProperty is a method in JavaScript used to check if an object has a specific property as its own
+// property, rather than inheriting it from its prototype chain
+// */
 // for (let key in rabbit) {
 // 	if (rabbit.hasOwnProperty(key)) {
 // 		console.log(key);
@@ -115,9 +175,35 @@
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
-// /* Same above concepts works with variables, arrays and functions variables, arrays and functions are objects in JS and 
-// every object in js has prototype and every object have default properties and methods that can be accessed 
-// by using __proto__ key or with . operator */
+// const animal = {
+// 	jumps: null,
+// };
+// const rabbit = {
+// 	__proto__: animal,
+// 	jumps: true,
+// };
+// console.log(rabbit.jumps);
+// delete rabbit.jumps;
+// console.log(rabbit.jumps);
+// delete animal.jumps;
+// console.log(rabbit.jumps);
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+// const obj = {
+// 	name: "Tirth",
+// };
+// console.log(obj.toString());
+// obj.__proto__ = null; // breaks the prototype chain
+// console.log(obj.toString());
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+// /*
+// Same above concepts works with variables, arrays and functions variables, arrays and functions are objects in JS and
+// every object in js has prototype and every object have default properties and methods that can be accessed
+// by using __proto__ key or with . operator
+// */
 
 // let arry = ["Tirth", "Patel"];
 
@@ -132,6 +218,7 @@
 
 // console.log(arry.__proto__.__proto__);
 // console.log(Array.prototype.__proto__);
+// /* It is the top-most prototype in JavaScript’s prototype chain */
 // console.log(Object.prototype);
 
 // console.log(arry.__proto__.__proto__.__proto__);
@@ -139,6 +226,28 @@
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
+// function func() {}
+
+// console.dir(func);
+
+// console.dir(func.__proto__);
+// console.dir(Function.prototype);
+
+// console.dir(func.prototype);
+// console.dir(func.prototype.constructor === func);
+
+// console.dir(Function.prototype.constructor);
+
+// console.log(func.__proto__.__proto__);
+// console.log(Object.prototype);
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+// /*
+// When methods are added directly to the constructor, each
+// instance of the object gets its own copy of the method, leading
+// to higher memory usage
+// */
 // function User(name) {
 // 	this.name = name;
 // 	this.msg = function () {
@@ -148,41 +257,10 @@
 // const user1 = new User("Kohli");
 // const user2 = new User("Dhoni");
 // console.log(user1.msg === user2.msg);
-// /* When methods are added directly to the constructor, each
-// instance of the object gets its own copy of the method, leading
-// to higher memory usage */
-
-// const obj = {
-// 	name: "Tirth",
-// };
-// console.log(obj.toString());
-// obj.__proto__ = null; // breaks the prototype chain
-// console.log(obj.toString());
+// console.log(User);
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
-// function func() {}
-
-// console.dir(func);
-
-// console.dir(func.__proto__);
-// console.dir(func.prototype);
-// console.dir(func.prototype.constructor === func);
-// console.dir(Function.prototype);
-// console.dir(Function.prototype.constructor);
-
-// console.log(func.__proto__.__proto__);
-// console.log(Object.prototype);
-
-// function BetterUser(name) {
-// 	this.name = name;
-// }
-// BetterUser.prototype.msg = function () {
-// 	console.log(`Hello ${this.name}!`);
-// };
-// const user3 = new BetterUser("Shubman");
-// const user4 = new BetterUser("Rohit");
-// console.log(user3.msg === user4.msg);
 // /* Defining methods on the prototype allows all instances to share
 // a single copy of the method. This not only saves memory but can
 // also lead to better runtime performance because there is less
@@ -193,6 +271,24 @@
 // better practice in JavaScript when creating constructor functions
 // that produce multiple instances.
 // */
+// function BetterUser(name) {
+// 	this.name = name;
+// }
+// BetterUser.prototype.msg = function () {
+// 	console.log(`Hello ${this.name}!`);
+// };
+// const user3 = new BetterUser("Shubman");
+// const user4 = new BetterUser("Rohit");
+// console.log(user3.msg === user4.msg);
+// console.log(BetterUser);
+// console.dir(BetterUser);
+
+// BetterUser.prototype.value = "Old Value";
+// user4.value = "New Value in user4";
+// console.log(user3.value);
+// console.log(user4.value);
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
 
 // function Animal() {
 // 	this.eats = true;
@@ -210,27 +306,17 @@
 // Dog.prototype.constructor = Dog;
 // console.log(dog.constructor.name);
 
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
 // function Rabbit() {}
 // Rabbit.prototype = {
 // 	eats: true,
 // };
-// console.log(Rabbit);
+// console.dir(Rabbit);
 // let rabbit1 = new Rabbit();
+
 // Rabbit.prototype = {};
 // console.log(rabbit1.eats);
-
-// const animal = {
-// 	jumps: null,
-// };
-// const rabbit = {
-// 	__proto__: animal,
-// 	jumps: true,
-// };
-// console.log(rabbit.jumps);
-// delete rabbit.jumps;
-// console.log(rabbit.jumps);
-// delete animal.jumps;
-// console.log(rabbit.jumps);
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
@@ -264,44 +350,3 @@
 // };
 // console.log("Hello".carzyMethod("@"));
 // console.log("Hello".carzyMethod("##"));
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
-
-// const parent = {
-// 	name: "Tirth",
-// 	getIntro: function () {
-// 		console.log("Parent Object");
-// 	},
-// };
-// /* Object.create() method creates a new object, using an existing object
-// as a prototype of the new created object */
-// const child = Object.create(parent); //child prototype -> parent
-// console.log(child);
-// child.getIntro();
-// /* child is a refernce to parent object */
-// /* child object will inherit all the properties and methods of parent object */
-// parent.newProperty = "new property";
-// child.childProperty = "child property";
-// console.log(child);
-// console.log(child.toString());
-/* js engine will check if the property  toString() is present in child object or not
-if not present then it will check [[Prototype]] key of child which is reference to parent object
-if not present then it will check [[Prototype]] key of parent which is reference to Object.prototype
-if not present then it will throw an undefined for property and error for method
-This is called prototypal inheritance and moving up prototype chain */
-
-// const carPrototype = {
-// 	displayInfo: function () {
-// 		return `This is a ${this.year} ${this.model}.`;
-// 	},
-// };
-// const car1 = Object.create(carPrototype);
-// car1.model = "Toyota Camry";
-// car1.year = 2021;
-// const car2 = Object.create(carPrototype);
-// car2.model = "Ford Mustang";
-// car2.year = 2023;
-// console.log(car1.displayInfo()); // "This is a 2021 Toyota Camry."
-// console.log(car2.displayInfo()); // "This is a 2023 Ford Mustang."
-
-/* ----------------------------------------------------------------------------------------------------------------------- */
