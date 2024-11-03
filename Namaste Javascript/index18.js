@@ -1,4 +1,8 @@
-/* we can use strict anywhere inside code and code below will get effected */
+/* 
+we can use strict anywhere inside code and code below will get effected 
+strict forces stricter parsing and error handling, helping developers avoid common bugs 
+and write more secure code
+*/
 // "use strict"
 
 // /* this in global space */
@@ -39,11 +43,12 @@
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
+// "use strict";
 // const obj4 = {
-//   fn: function() {
-//     console.log(this);
-//   }
-// }
+// 	fn: function () {
+// 		console.log(this);
+// 	},
+// };
 // obj4.fn();
 // /* here we are assigning function so this is window/global in non strict & undefined in strict*/
 // const myfn = obj4.fn;
@@ -51,7 +56,26 @@
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
-// /* call apply bind methods */
+// "use strict";
+// const obj5 = {
+// 	fn: () => {
+// 		console.log(this);
+// 	},
+// };
+// obj5.fn();
+// /* here we are assigning function so this is window/global in non strict & undefined in strict*/
+// const myfn5 = obj5.fn;
+// myfn5();
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// /*
+// call apply bind methods: an object can borrow a method from another object
+// call: calls this function with a given this value and arguments provided individually
+// apply: similar to call, arguments are passed in array
+// bind: similar to call but return a new function that can be called with other args
+// */
+// "use strict"
 // const student = {
 // 	name: "Tirth",
 // 	printName: function () {
@@ -149,7 +173,7 @@
 // 		console.log(`regular: ${this.nickName}`);
 // 	},
 // };
-// window.nickName = "tirth";
+// window.nickName = "globalNickname";
 // name1.arrow();
 // name1.regular(); //method invocation
 // name1.eventuallySayName(); //method invocation

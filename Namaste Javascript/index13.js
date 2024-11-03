@@ -12,7 +12,7 @@
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
-/* Callback Hell */
+// /* Callback Hell */
 // const cart = ["shoes", "kurta", "pants"];
 // api.createOrder(cart, function (pay) {
 // 	api.proceedToPayment(pay, function (summary) {
@@ -117,7 +117,7 @@ SomePromise
 // 	})
 //   .then((data) => {
 //     console.log(1, data);
-//     return "Hello"
+//     // return "Hello"
 //   })
 // 	.catch((error) => {
 // 		console.error(`onRejected function called: ${error.message}`);

@@ -88,3 +88,18 @@ function resolveAfter5Seconds() {
 // }
 // /* after 5 second, logs "fast", then after 10 more second, "slow" */
 // concurrent2();
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// async function concurrent2() {
+// 	console.log("== concurrent2 starts ==");
+
+// 	// Start both timers without awaiting them, so they start running concurrently
+// 	(async () => console.log(await resolveAfter15Seconds()))();
+// 	(async () => console.log(await resolveAfter5Seconds()))();
+
+// 	console.log("== concurrent2 done ==");
+// }
+
+// /* after 5 seconds, logs "fast", then after 10 more seconds, "slow" */
+// concurrent2();

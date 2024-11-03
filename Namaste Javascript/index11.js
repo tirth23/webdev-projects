@@ -316,14 +316,4 @@ const arr = [10, 5, 49, 40, 25];
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
-/* object key always have string/symbol, if else then it automatically tries to convert to String */
-const obj = {
-	name: "JS",
-};
 
-const arr1 = ["name"];
-console.log(arr1.toString());
-
-/* obj[arr1] => obj["name"] converted to name, i.e., obj.name = "React" */
-obj[arr1] = "React";
-console.log(obj.names);

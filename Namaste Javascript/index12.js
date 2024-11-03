@@ -1,9 +1,9 @@
-// const users = [
-// 	{ firstName: "Tirth", lastName: "Patel", age: 25 },
-// 	{ firstName: "Rahul", lastName: "Kadva", age: 90 },
-// 	{ firstName: "Samsung", lastName: "Korea", age: 22 },
-// 	{ firstName: "Akshay", lastName: "Saini", age: 25 },
-// ];
+const users = [
+	{ firstName: "Tirth", lastName: "Patel", age: 25 },
+	{ firstName: "Rahul", lastName: "Kadva", age: 90 },
+	{ firstName: "Samsung", lastName: "Korea", age: 22 },
+	{ firstName: "Akshay", lastName: "Saini", age: 25 },
+];
 
 // const output = users.map((x) => x.firstName + " " + x.lastName);
 // console.log(output);
@@ -57,6 +57,20 @@
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
+// /* object key always have string/symbol, if else then it automatically tries to convert to String */
+// const obj = {
+// 	name: "JS",
+// };
+
+// const arr1 = ["name"];
+// console.log(arr1.toString());
+
+// /* obj[arr1] => obj["name"] converted to name, i.e., obj.name = "React" */
+// obj[arr1] = "React";
+// console.log(obj.name);
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
 // /* reverse string */
 // console.log("Hello".split("").reverse().join(''));
 
@@ -75,4 +89,3 @@
 // /* remove duplicate */
 // console.dir(new Set("aaabbbccc"));
 // console.log([...new Set("aaabbbccc")].join(''));
-

@@ -39,11 +39,13 @@
 // 		console.log(`My name is ${this.name} and I am ${this.age} years old.`);
 // 	},
 // };
-// // Get the button element from the HTML
+
 // const button = document.getElementById("introduceButton");
-// // Add an event listener to the button
-// // We use bind to ensure 'this' inside introduce refers to 'alice'
-// // button.addEventListener('click', alice.introduce);
+
+// /* bydefault this refers to HTML element in event listener */
+// button.addEventListener('click', alice.introduce);
+
+// /* We use bind to ensure 'this' inside introduce refers to 'alice' */
 // const boundIntroduce = alice.introduce.bind(alice);
 // button.addEventListener("click", boundIntroduce);
 
@@ -52,30 +54,30 @@
 /* A polyfill is a piece of code (usually JavaScript on the Web) 
 used to provide modern functionality on older browsers that do not natively support it. */
 
-// /* polyfill for call */
-// let car = {
-// 	name: "Mercedes",
-// 	color: "White",
-// };
-// function buyCar(price) {
-// 	console.log(`I bought a ${this.color} ${this.name} of ${price} `);
-//   return "returnd from car";
-// }
-// Function.prototype.myCall = function (context, ...args) {
-// 	// console.log(this)
-// 	if (typeof this !== "function") {
-// 		throw new Error(this + "Is not callable");
-// 	}
-//   // context -> car
-//   context = context && typeof context === "object" ? context : {};
-// 	context.myFunction = this; // add buycar into car
-//   const result = context.myFunction(...args); // Call the function with the specified context and arguments
-//   console.log(car);
-//   delete context.myFunction; // Remove the temporary property
-//   return result;
-// };
-// console.log(buyCar.myCall(car, "5000000"));
-// console.log(car);
+/* polyfill for call */
+let car = {
+	name: "Mercedes",
+	color: "White",
+};
+function buyCar(price) {
+	console.log(`I bought a ${this.color} ${this.name} of ${price} `);
+  return "returnd from car";
+}
+Function.prototype.myCall = function (context, ...args) {
+	// console.log(this)
+	if (typeof this !== "function") {
+		throw new Error(this + "Is not callable");
+	}
+  // context -> car
+  context = context && typeof context === "object" ? context : {};
+	context.myFunction = this; // add buycar into car
+  const result = context.myFunction(...args); // Call the function with the specified context and arguments
+  console.log(car);
+  delete context.myFunction; // Remove the temporary property
+  return result;
+};
+console.log(buyCar.myCall(car, "5000000"));
+console.log(car);
 
 /* ------------------------------------------------------------------------------------------------------------------------------- */
 
