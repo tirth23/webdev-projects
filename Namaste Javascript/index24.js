@@ -1,10 +1,18 @@
-/* 
-A generator function can be exited and later re-entered, with its context 
-(variable bindings) saved across re-entrances. 
-generator function used as iterator for infinite loop return genrator object. genrator Object has next()
-which has yield value & done value depending on completion
-The yield operator is used to pause and resume a generator function.
-*/
+// /*
+// Generator functions in JavaScript are special functions that can be paused and resumed, allowing you to generate
+// values on-the-fly and maintain the function’s state across multiple invocations.
+
+// They provide a more powerful way to work with iterators, enabling you to yield values one at a time instead of returning
+// them all at once.
+
+// A generator function can be exited and later re-entered, with its context
+// (variable bindings) saved across re-entrances.
+
+// generator function used as iterator for infinite loop return genrator object. genrator Object has next()
+// which has yield value & done value depending on completion
+
+// The yield operator is used to pause and resume a generator function.
+// */
 
 // function* generator(i) {
 // 	yield i + 2;
@@ -14,9 +22,7 @@ The yield operator is used to pause and resume a generator function.
 // const gen = generator(10);
 
 // console.log(gen.next().value);
-// // Expected output: 12
 // console.log(gen.next().value);
-// // Expected output: 20
 
 /* ----------------------------------------------------------------------------------------------------------------- */
 
