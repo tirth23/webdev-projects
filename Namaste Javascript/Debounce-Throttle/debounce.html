@@ -69,20 +69,22 @@
     // const debouncedCallAPI = debounceObj.debounce(getData, 300);
 
 
-    /* Modern approach without this binding */
+    // /* Modern approach without this binding */
     // let counter = 0;
-    // const getData = (...arr) => {
-    //   console.log("Fetching data...", counter++, arr, arr[0].target.value);
+    // const getData = function (...arr) {
+    //   console.log("Fetching data...", counter++, arr, arr[0].target.value, this);
     // };
     // const debounce = (func, delay) => {
     //   let timer;
     //   return (...args) => {
     //     clearTimeout(timer);
     //     timer = setTimeout(() => {
-    //       func(...args);
+    //       // func(...args);
+    //       func.apply(obj, args); 
     //     }, delay);
     //   }
     // }
+    // obj = {name: "sdvsdvdf"};
     // const debouncedCallAPI = debounce(getData, 300);
 
 
