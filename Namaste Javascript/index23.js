@@ -107,4 +107,28 @@
 // 	}
 // });
 
+/* ----------------------------------------------------------------------------------------------------------------------- */
 
+// obj = {
+// 	name: "obj",
+// 	first: 0,
+// 	second: {
+// 		name: "second",
+// 	},
+// };
+// /* if obj.first is nullish value then it doesnot check second value */
+// // const nestedProp = obj.first && obj.second;
+
+// /* 
+// obj.first is not null or undefined before attempting to access obj.first.second. 
+// If obj.first is null or undefined, the expression automatically short-circuits, 
+// returning undefined 
+// */
+// const nestedProp = obj.first?.second;
+
+// /* above option chaining polyfill:- */
+// // const temp = obj.first;
+// // const nestedProp =
+// //   temp === null || temp === undefined ? undefined : temp.second;
+
+// console.log(nestedProp);
