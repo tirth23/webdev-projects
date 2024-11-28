@@ -31,5 +31,22 @@ returns another function until the final result is achieved */
 // let multiplyThree = multiply(3);
 // multiplyThree(5);
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
+// /* a pure function is one that, for the same inputs, always returns the same output and has no side effects.  */
+// function add(a, b) {
+//   return a + b;
+// }
+// console.log(add(2, 3)); // 5
+// console.log(add(2, 3)); // 5
 
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// /* In contrast, an impure function may have side effects or may return different results for the same inputs due to external factors. */
+// let counter = 0;
+// function incrementCounter() {
+// 	counter += 1; // Modifies external state
+// 	return counter;
+// }
+// console.log(incrementCounter()); // 1
+// console.log(incrementCounter()); // 2 

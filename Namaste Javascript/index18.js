@@ -180,6 +180,26 @@ and write more secure code
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
+// function Product(name, price) {
+//   this.name = name;
+//   this.price = price;
+// }
+
+// /* 
+// this in JavaScript functions: Normally, this refers to the object that is calling the function. 
+// In constructor functions (functions called with new), this refers to the new instance being created. 
+// */
+// function Food(name, price) {
+//   console.log(this);
+//   Product.call(this, name, price);
+//   this.category = 'food';
+// }
+
+// console.log(new Food('cheese', 5));
+// console.log(new Food())
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
 // "use strict"
 /* Node Env */
 /* In node env, this return {} which is module.exports */

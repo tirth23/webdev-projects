@@ -97,6 +97,23 @@ All objects inherit properties and methods from Object.prototype
 // /* child object will inherit all the properties and methods of parent object */
 // child.getIntro();
 
+// let vehicle = {
+//   wheels: '4',
+//   fuelType: 'Gasoline',
+//   color: 'Green'
+// }
+// let carProps = {
+//   type: {
+//     value: 'Volkswagen'
+//   },
+//   model: {
+//     value: 'Golf'
+//   }
+// }
+
+// var car = Object.create(vehicle, carProps);
+// console.log(car);
+
 // parent.newProperty = "new property";
 // child.childProperty = "child property";
 // console.log(child);
@@ -108,6 +125,11 @@ All objects inherit properties and methods from Object.prototype
 // if not present then it will throw an undefined for property and error for method
 // This is called prototypal inheritance and moving up prototype chain
 // */
+
+// function Person() {}
+// Person.prototype.name = "Sudheer";
+// var object = new Person();
+// console.log(object);
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
@@ -274,6 +296,7 @@ All objects inherit properties and methods from Object.prototype
 // function BetterUser(name) {
 // 	this.name = name;
 // }
+// BetterUser.hi = "Tirth"
 // BetterUser.prototype.msg = function () {
 // 	console.log(`Hello ${this.name}!`);
 // };
