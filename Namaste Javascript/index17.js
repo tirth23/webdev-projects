@@ -2,14 +2,14 @@
 // 	setTimeout(() => {
 // 		console.log("Inside p1");
 // 		resolve("p1 success");
-// 		// reject("p1 fail");
+// 		reject("p1 fail");
 // 	}, 15000);
 // });
 
 // const p2 = new Promise((resolve, reject) => {
 // 	setTimeout(() => {
 // 		console.log("Inside p2");
-// 		// resolve("p2 success");
+// 		resolve("p2 success");
 // 		reject("p2 fail");
 // 	}, 5000);
 // });
@@ -17,14 +17,14 @@
 // const p3 = new Promise((resolve, reject) => {
 // 	setTimeout(() => {
 // 		console.log("Inside p3");
-// 		resolve("p3 success");
-// 		// reject("p3 fail");
+// 		// resolve("p3 success");
+// 		reject("p3 fail");
 // 	}, 10000);
 // });
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
-/* returns fulfilled promise whose result will be an array of all values result of fulfilled
+// /* returns fulfilled promise whose result will be an array of all values result of fulfilled
 // promises in array or returns rejected promise with single response if any one rejected state */
 // console.log(Promise.all([p1, p2, p3]));
 // Promise.all([p1, p2, p3])
@@ -33,7 +33,7 @@
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
-// /* returns fulfilled promise with result as array of objects once all promises settle irrespective of state */
+/* returns fulfilled promise with result as array of objects once all promises settle irrespective of state */
 // /*
 // [
 // 	{
@@ -100,8 +100,6 @@
 // Promise.myAll([p1, p2, p3])
 // 	.then((res) => console.log(res))
 // 	.catch((err) => console.error(err));
-
-// console.log(p1)
 
 // let promises1 = [Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)];
 // Promise.myAll(promises1)

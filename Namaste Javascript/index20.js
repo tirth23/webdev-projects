@@ -18,6 +18,7 @@
 // 	);
 // };
 // let printMyName = printName.bind(name1, "amdavad");
+// console.dir(printMyName);
 // printMyName("gujarat", "india");
 
 /* ------------------------------------------------------------------------------------------------------------------------------- */

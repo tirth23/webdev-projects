@@ -50,16 +50,16 @@ used with functions and objects.
 // Adds a sayHello method to Person.prototype
 // */
 // class Person {
-//   constructor(name) {
-//     this.name = name;
-//   }
+// 	constructor(name) {
+// 		this.name = name;
+// 	}
 
-//   sayHello() {
-//     console.log(`Hello, my name is ${this.name}`);
-//   }
+// 	sayHello() {
+// 		console.log(`Hello, my name is ${this.name}`);
+// 	}
 // }
 
-// const person = new Person('Alice');
+// const person = new Person("Alice");
 // person.sayHello();
 
 /* ----------------------------------------------------------------------------------------------------------------- */

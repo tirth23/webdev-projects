@@ -100,6 +100,5 @@ function resolveAfter5Seconds() {
 
 // 	console.log("== concurrent2 done ==");
 // }
-
 // /* after 5 seconds, logs "fast", then after 10 more seconds, "slow" */
 // concurrent2();

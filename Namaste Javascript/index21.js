@@ -46,7 +46,7 @@ All objects inherit properties and methods from Object.prototype
 
 // console.log(myobj.__proto__.__proto__);
 
-/* ------------------------------------------------------------------------------------------------------------------------------- */
+// /* ------------------------------------------------------------------------------------------------------------------------------- */
 
 // let myobj = {
 // 	name: "Tirth",
@@ -97,6 +97,20 @@ All objects inherit properties and methods from Object.prototype
 // /* child object will inherit all the properties and methods of parent object */
 // child.getIntro();
 
+// parent.newProperty = "new property";
+// child.childProperty = "child property";
+// console.log(child);
+// console.log(child.toString());
+// /*
+// js engine will check if the property  toString() is present in child object or not
+// if not present then it will check [[Prototype]] key of child which is reference to parent object
+// if not present then it will check [[Prototype]] key of parent which is reference to Object.prototype
+// if not present then it will throw an undefined for property and error for method
+// This is called prototypal inheritance and moving up prototype chain
+// */
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
 // let vehicle = {
 //   wheels: '4',
 //   fuelType: 'Gasoline',
@@ -113,23 +127,6 @@ All objects inherit properties and methods from Object.prototype
 
 // var car = Object.create(vehicle, carProps);
 // console.log(car);
-
-// parent.newProperty = "new property";
-// child.childProperty = "child property";
-// console.log(child);
-// console.log(child.toString());
-// /*
-// js engine will check if the property  toString() is present in child object or not
-// if not present then it will check [[Prototype]] key of child which is reference to parent object
-// if not present then it will check [[Prototype]] key of parent which is reference to Object.prototype
-// if not present then it will throw an undefined for property and error for method
-// This is called prototypal inheritance and moving up prototype chain
-// */
-
-// function Person() {}
-// Person.prototype.name = "Sudheer";
-// var object = new Person();
-// console.log(object);
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
@@ -163,7 +160,7 @@ All objects inherit properties and methods from Object.prototype
 // };
 // const carnivore = {
 // 	eatsMeat: "yes",
-// 	__proto__: animal,/*  */
+// 	__proto__: animal /*  */,
 // };
 // const rabbit = {
 // 	canJump: true,
@@ -280,6 +277,13 @@ All objects inherit properties and methods from Object.prototype
 // const user2 = new User("Dhoni");
 // console.log(user1.msg === user2.msg);
 // console.log(User);
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+// function Person() {}
+// Person.prototype.name = "Sudheer";
+// var object = new Person();
+// console.log(object);
 
 /* ----------------------------------------------------------------------------------------------------------------------- */
 

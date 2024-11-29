@@ -65,9 +65,12 @@
 // const arr1 = ["name"];
 // console.log(arr1.toString());
 
-// /* obj[arr1] => obj["name"] converted to name, i.e., obj.name = "React" */
+// /* obj[arr1] => obj[["name"]] => obj["name"], i.e., obj.name = "React" */
 // obj[arr1] = "React";
 // console.log(obj.name);
+// console.log(obj[arr1]);
+// console.log(obj["name"]);
+// console.log(obj[name]);
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -87,5 +90,5 @@
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 // /* remove duplicate */
-// console.dir(new Set("aaabbbccc"));
+// console.log(new Set("aaabbbccc"));
 // console.log([...new Set("aaabbbccc")].join(''));

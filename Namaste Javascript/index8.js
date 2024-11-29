@@ -33,7 +33,7 @@
 // 			console.log("Buttom Clicked", ++count);
 // 		});
 // }
-// /* xyz() will form closure with  its outer env and noone can change count from outside */
+// /* xyz() will form closure with its outer env and noone can change count from outside */
 // attachEventListeners();
 
 

@@ -15,7 +15,7 @@
 // 	}, 10000);
 // });
 
-// /* async will always returns promise */
+/* async will always returns promise */
 // async function getData() {
 // 	return p1;
 // 	// return "Hi";
@@ -24,7 +24,7 @@
 // console.log(dataPromise);
 // dataPromise.then((res) => console.log(res));
 
-// /* handling promise with normal way */
+/* handling promise with normal way */
 // async function getData() {
 // 	//JS engine won't wait for promise to be resolved
 // 	p1.then((res) => console.log(res));

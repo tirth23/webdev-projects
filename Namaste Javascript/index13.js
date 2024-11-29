@@ -85,12 +85,12 @@ It immediately returns another Promise object, allowing you to chain calls to ot
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
-/* 
-SomePromise
-  .then((result) => console.log(result)) //on resolve
-	.catch((err) => console.log(err)) //on reject
-	.finally(() => console.log("promise settled")); //executes everytime 
-*/
+// /* 
+// SomePromise
+//   .then((result) => console.log(result)) //on resolve
+// 	.catch((err) => console.log(err)) //on reject
+// 	.finally(() => console.log("promise settled")); //executes everytime 
+// */
 
 // /* Promise chain preferred over then()'s two case syntax */
 // Promise.resolve()
@@ -112,12 +112,12 @@ SomePromise
 // Promise.resolve()
 // 	.then(() => {
 //     console.log("No error");
-//     return 1;
-// 		// throw new Error("Oh no!");
+//     // return 1;
+// 		throw new Error("Oh no!");
 // 	})
 //   .then((data) => {
 //     console.log(1, data);
-//     // return "Hello"
+//     return "Hello"
 //   })
 // 	.catch((error) => {
 // 		console.error(`onRejected function called: ${error.message}`);

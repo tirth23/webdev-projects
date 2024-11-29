@@ -1,9 +1,9 @@
-/* 
-we can use strict anywhere inside code and code below will get effected 
-strict forces stricter parsing and error handling, helping developers avoid common bugs 
-and write more secure code
-*/
-// "use strict"
+// /*
+// we can use strict anywhere inside code and code below will get effected
+// strict forces stricter parsing and error handling, helping developers avoid common bugs
+// and write more secure code
+// */
+// // "use strict"
 
 // /* this in global space */
 // console.log(this);
@@ -113,8 +113,8 @@ and write more secure code
 // newPrintFun(" Gujarat");
 
 // const student3 = {
-//     firstName: "Xyz",
-//     lastName: "Abc"
+// 	firstName: "Xyz",
+// 	lastName: "Abc",
 // };
 // printName.call(student3);
 
@@ -185,9 +185,9 @@ and write more secure code
 //   this.price = price;
 // }
 
-// /* 
-// this in JavaScript functions: Normally, this refers to the object that is calling the function. 
-// In constructor functions (functions called with new), this refers to the new instance being created. 
+// /*
+// this in JavaScript functions: Normally, this refers to the object that is calling the function.
+// In constructor functions (functions called with new), this refers to the new instance being created.
 // */
 // function Food(name, price) {
 //   console.log(this);
@@ -200,7 +200,7 @@ and write more secure code
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 
-// "use strict"
+// "use strict";
 /* Node Env */
 /* In node env, this return {} which is module.exports */
 // console.log(this);

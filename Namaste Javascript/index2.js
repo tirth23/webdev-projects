@@ -44,7 +44,7 @@ lexical environment of GEC is null
 // 	console.log(x);
 // }
 // function b() {
-// 	console.log(x);
+// 	console.log(x); //check in lexical env
 //   x = 100;   // bydefault it will be global variable
 // }
 
@@ -59,8 +59,8 @@ lexical environment of GEC is null
 // console.log(this.x);
 // console.log(x);
 // /* non-esixting object returns undefined */
-// // console.log(window.y);
-// // console.log(this.y);
+// console.log(window.y);
+// console.log(this.y);
 // // console.log(y);
 // console.log(window.z);
 // console.log(this.z);
@@ -104,7 +104,7 @@ lexical environment of GEC is null
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
 // /* In strict mode not allowed */
-// "use strict"
+// // "use strict"
 // function abc(a, a) {
 //   console.log(a);
 // }

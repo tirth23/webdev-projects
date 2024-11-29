@@ -256,7 +256,6 @@
 // 		for (let key in obj) {
 // 			copy[key] = deepCopy(obj[key]);
 // 		}
-
 // 		return copy;
 // 	}
 // 	throw new Error("Unable to copy object");
@@ -272,6 +271,6 @@
 // 	},
 // };
 // const myObjCopy = deepCopy(myObj);
-// myObjCopy.address.city = 'changed';
+// myObjCopy.address.city = "changed";
 // console.log(myObjCopy);
 // console.log(myObj);

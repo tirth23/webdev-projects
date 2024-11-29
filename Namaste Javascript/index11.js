@@ -1,4 +1,4 @@
-// const arr = [10, 5, 49, 40, 25];
+const arr = [10, 5, 49, 40, 25];
 
 // /* MAP --- map method is used when we want transformation of whole array & returns arrays */
 // /* array.map(function(currentValue, currentValueIndex, arr), thisValue) */
@@ -180,6 +180,7 @@
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
+// /* if only 1 Element, directly return that element */
 // const ans3 = [].reduce((acc, curr, index) => {
 //   console.log(acc, curr, index)
 // 	return acc + curr;
@@ -199,7 +200,7 @@
 // /* Flatten the nested array */
 // function flattenArray(arr) {
 // 	return arr.reduce((flatArray, item, index) => {
-//     console.log(flatArray, item, index);
+// 		console.log(flatArray, item, index);
 // 		if (Array.isArray(item)) {
 // 			flatArray.push(...flattenArray(item)); // Recursively flatten nested arrays;
 // 		} else {
@@ -315,5 +316,3 @@
 // console.dir(finalobj);
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
-
-
