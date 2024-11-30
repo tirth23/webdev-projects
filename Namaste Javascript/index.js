@@ -20,9 +20,9 @@
 // console.log(encoded_uri);
 // console.log(decoded_uri);
 
-// /* 
-// Use encodeURIComponent for individual URI components (like query parameters) instead of encodeURI, 
-// as encodeURI does not encode characters like &, =, and ?, which have specific uses within query strings. 
+// /*
+// Use encodeURIComponent for individual URI components (like query parameters) instead of encodeURI,
+// as encodeURI does not encode characters like &, =, and ?, which have specific uses within query strings.
 // */
 
 // const component = "hello world & special=characters?";
@@ -44,3 +44,13 @@
 // 	//Profile code goes here
 // };
 // console.dir(fn);
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// var myObject = new Map();
+// myObject.set("z", 1);
+// myObject.set("@", 2);
+// myObject.set("b", 3);
+// for (var [key, value] of myObject) {
+// 	console.log(key, value);
+// }
