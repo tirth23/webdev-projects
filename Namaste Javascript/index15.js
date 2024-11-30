@@ -1,11 +1,23 @@
-// /* timer starts from where promise is declared */
-// const p1 = new Promise((resolve, reject) => {
-// 	console.log("p1");
-// 	setTimeout(() => {
-// 		console.log("inside p1 timeout");
-// 		resolve("Promise1 Resolved");
-// 	}, 5000);
-// });
+/* 
+async function always return promise immediately, Async functions always return a promise.
+if it doesn't return anything, it will return fulfilled promise wuth result as undefined
+If the return value of an async function is not explicitly a promise, it will be implicitly wrapped in a promise.
+
+The await keyword in JavaScript is used inside an async function to pause the execution of the function until a 
+Promise is resolved or rejected
+await can only be used before promise and inside async function
+If the Promise is resolved, await returns the resolved value.
+If the Promise is rejected, an error is thrown, which you can handle with try...catch 
+*/
+
+/* timer starts from where promise is declared */
+const p1 = new Promise((resolve, reject) => {
+	console.log("p1");
+	setTimeout(() => {
+		console.log("inside p1 timeout");
+		resolve("Promise1 Resolved");
+	}, 5000);
+});
 
 // const p2 = new Promise((resolve, reject) => {
 // 	console.log("p2");
@@ -137,3 +149,97 @@
 } catch {
   //catches error
 } */
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// async function getData() {
+// 	/* pauses the execution of the getData function until the Promise.resolve("Hello!") resolves */
+// 	console.log("Hi");
+// 	// let startTime = performance.now();
+// 	// while (performance.now() < startTime + 10000) {}
+// 	// const innerdata = await Promise.reject("Suspend Execution!"); //if rejected diectly exit function and in return promise value is rejected
+//   const innerdata = await Promise.resolve("success Execution!");
+// 	console.log(innerdata);
+// 	console.log(Promise.resolve("Resolved Promise"));
+// 	/*
+//   await resolved promise and returns value
+//   return from promise will again wrap value into promise whose result will be that value
+//   */
+// 	return await Promise.resolve("Hello!");
+// }
+// /*
+// when getData() called, getData function starts executing. Since it’s an async function,
+// it prints hello and wait for 10 seconds
+// it encounters await and suspends excution and it immediately returns a Promise.
+// The returned Promise is stored in the data variable and continue
+// executing below code and prints promise with state and value depend on return statement
+// */
+// const data = getData();
+// // let startTime = performance.now();
+// // while(performance.now() < startTime + 10000) {
+// // }
+// console.log(data);
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// /* If you use await with a non-Promise value, it converts the value into a resolved Promise and returns the value immediately. */
+// async function simpleValue() {
+// 	const result = await 42; // Non-Promise value
+// 	console.log(result); // Logs: 42
+// }
+// simpleValue();
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// /* If the Promise is rejected, await throws the error, and it can be caught with try...catch */
+// async function handleError() {
+// 	try {
+// 		const result = await Promise.reject("Something went wrong!");
+// 		console.log(result); // This won't run
+// 	} catch (error) {
+// 		console.error(error); // Logs: "Something went wrong!"
+// 	}
+// }
+// handleError();
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// /* both returns promise */
+// async function foo1() {
+//   return 1;
+// }
+// foo1();
+
+// /*
+// The Promise.resolve() static method "resolves" a given value to a Promise. If the value is a promise, that promise is returned;
+// if the value is a thenable, Promise.resolve() will call the then() method with two callbacks it prepared;
+// otherwise the returned promise will be fulfilled with the value
+//  */
+// function foo2() {
+//   return Promise.resolve(1);
+// }
+// foo2();
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// /* All are same */
+// function getProcessedData(url) {
+// 	return downloadData(url) // returns a promise
+// 		.catch((e) => downloadFallbackData(url)) // returns a promise
+// 		.then((v) => processDataInWorker(v)); // returns a promise
+// }
+
+// async function getProcessedData(url) {
+// 	let v;
+// 	try {
+// 		v = await downloadData(url);
+// 	} catch (e) {
+// 		v = await downloadFallbackData(url);
+// 	}
+// 	return processDataInWorker(v);
+// }
+
+// async function getProcessedData(url) {
+// 	const v = await downloadData(url).catch((e) => downloadFallbackData(url));
+// 	return processDataInWorker(v);
+// }
