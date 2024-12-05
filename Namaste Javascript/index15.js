@@ -243,3 +243,16 @@ const p1 = new Promise((resolve, reject) => {
 // 	const v = await downloadData(url).catch((e) => downloadFallbackData(url));
 // 	return processDataInWorker(v);
 // }
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+console.log("Start");
+
+const promise1 = new Promise((resolve, reject) => {
+	console.log(1);
+	resolve(2);
+	console.log(3);
+});
+
+promise1.then((res) => console.log(res));
+console.log("End");

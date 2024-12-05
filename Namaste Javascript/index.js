@@ -54,3 +54,35 @@
 // for (var [key, value] of myObject) {
 // 	console.log(key, value);
 // }
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// obj = {
+// 	name: 123,
+// };
+
+// const ob1 = { a: 3 };
+// const ob2 = { b: 6 };
+
+// obj[ob1] = 123;
+// obj[ob2] = 456;
+
+// /* 
+// dynamic index are converted to String
+// ob1.toString() -> [object Object]
+
+// when we do obj[ob1] = 123;
+// obj = {
+//   name: 123,
+//   [object Object]: 123
+// }
+
+// when we do obj[ob2] = 456, same property has been referenced
+// obj = {
+//   name: 123,
+//   [object Object]: 456
+// } 
+// */
+
+// console.log(ob1.toString());
+// console.log(obj[ob1]); //obj.[object Object] which is 456
