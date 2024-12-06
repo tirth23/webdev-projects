@@ -132,3 +132,21 @@
 // console.log(isPasswordValid("short")); // false
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// function sum(initialValue) {
+// 	let total = initialValue;
+
+// 	function adder(nextValue) {
+// 		if (nextValue === undefined) return total;
+// 		total += nextValue;
+// 		return adder;
+// 	}
+
+// 	return adder;
+// }
+
+// // Example usage
+// console.log(sum(1)(2)()); // Output: 3
+// console.log(sum(5)(10)(15)()); // Output: 30
+// console.log(sum(0)()); // Output: 0
+
