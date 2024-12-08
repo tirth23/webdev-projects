@@ -11,13 +11,13 @@ If the Promise is rejected, an error is thrown, which you can handle with try...
 */
 
 /* timer starts from where promise is declared */
-const p1 = new Promise((resolve, reject) => {
-	console.log("p1");
-	setTimeout(() => {
-		console.log("inside p1 timeout");
-		resolve("Promise1 Resolved");
-	}, 5000);
-});
+// const p1 = new Promise((resolve, reject) => {
+// 	console.log("p1");
+// 	setTimeout(() => {
+// 		console.log("inside p1 timeout");
+// 		resolve("Promise1 Resolved");
+// 	}, 5000);
+// });
 
 // const p2 = new Promise((resolve, reject) => {
 // 	console.log("p2");
