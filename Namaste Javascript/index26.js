@@ -21,6 +21,6 @@
 // const sum = (a, b) => {
 // 	console.log("Sum " + (a + b));
 // };
-// // module.exports = sum;
+// module.exports = sum;
 // // module.exports = { sum };
-// module.exports = [sum];
+// // module.exports = [sum];

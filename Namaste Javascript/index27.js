@@ -24,7 +24,7 @@
 // node index27
 // Sum 18
 // */
-// // const sum = require("./index26");
-// // const { sum } = require("./index26");
-// const [sum] = require("./index26");
-// sum(10, 8);
+// const Add = require("./index26");
+// // const { sum: Add } = require("./index26");
+// // const [Add] = require("./index26");
+// Add(10, 8);
