@@ -92,3 +92,82 @@
 // /* remove duplicate */
 // console.log(new Set("aaabbbccc"));
 // console.log([...new Set("aaabbbccc")].join(''));
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// if (!Array.prototype.sort) {
+// 	Array.prototype.sort = function (compareFunction) {
+// 		// If no compareFunction is provided, default to lexicographical order
+// 		compareFunction =
+// 			compareFunction ||
+// 			function (a, b) {
+// 				a = String(a);
+// 				b = String(b);
+// 				return a < b ? -1 : a > b ? 1 : 0;
+// 			};
+
+// 		// Simple insertion sort for demonstration
+// 		for (let i = 1; i < this.length; i++) {
+// 			let currentValue = this[i];
+// 			let j = i - 1;
+
+// 			while (j >= 0 && compareFunction(this[j], currentValue) > 0) {
+// 				this[j + 1] = this[j];
+// 				j--;
+// 			}
+// 			this[j + 1] = currentValue;
+// 		}
+
+// 		return this; // Return the sorted array
+// 	};
+// }
+
+// // Example Usage
+// const numbers = [4, 2, 5, 1, 3];
+// numbers.sort((a, b) => a - b);
+// console.log(numbers); // Output: [1, 2, 3, 4, 5]
+
+// const words = ["banana", "apple", "cherry"];
+// words.sort();
+// console.log(words); // Output: ["apple", "banana", "cherry"]
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// const obj = [
+// 	{ name: "Tir", age: 30 },
+// 	{ name: "Pat", age: 40 },
+// 	{ name: "Tir", age: 30 },
+// ];
+
+// const uniqueObj = obj.reduce((acc, current) => {
+// 	if (!acc.find((item) => JSON.stringify(item) === JSON.stringify(current))) {
+// 		acc.push(current);
+// 	}
+// 	return acc;
+// }, []);
+
+// console.log(uniqueObj);
+// Output: [ { name: 'Tir', age: 30 }, { name: 'Pat', age: 40 } ]
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// const obj = [
+// 	{ name: "Tir", age: 30 },
+// 	{ name: "Pat", age: 40 },
+// 	{ name: "Tir", age: 30 },
+// ];
+
+// const uniqueObj = Array.from(
+// 	new Set(obj.map(JSON.stringify)) // Convert objects to JSON strings
+// ).map(JSON.parse); // Convert them back to objects
+
+// console.log(uniqueObj);
+// // Output: [ { name: 'Tir', age: 30 }, { name: 'Pat', age: 40 } ]
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// const array1 = [5, 12, 8, 130, 44];
+
+// const found = array1.find((element) => element > 180);
+
+// console.log(found);

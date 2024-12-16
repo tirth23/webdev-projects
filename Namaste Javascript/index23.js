@@ -80,6 +80,9 @@
 // console.log(NaN == NaN);
 // console.log(NaN === NaN);
 
+// console.log([] == [])
+// console.log(!(undefined));
+
 /* ----------------------------------------------------------------------------------------------------------------------- */
 
 // console.log([1, 2] == "1,2"); //Conversion of Array to String [1, 2] to '1,2'
@@ -119,10 +122,10 @@
 // /* if obj.first is nullish value then it doesnot check second value */
 // // const nestedProp = obj.first && obj.second;
 
-// /* 
-// obj.first is not null or undefined before attempting to access obj.first.second. 
-// If obj.first is null or undefined, the expression automatically short-circuits, 
-// returning undefined 
+// /*
+// obj.first is not null or undefined before attempting to access obj.first.second.
+// If obj.first is null or undefined, the expression automatically short-circuits,
+// returning undefined
 // */
 // const nestedProp = obj.first?.second;
 
@@ -132,3 +135,5 @@
 // //   temp === null || temp === undefined ? undefined : temp.second;
 
 // console.log(nestedProp);
+
+/* ----------------------------------------------------------------------------------------------------------------------- */

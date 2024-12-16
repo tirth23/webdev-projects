@@ -274,3 +274,35 @@
 // myObjCopy.address.city = "changed";
 // console.log(myObjCopy);
 // console.log(myObj);
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+// const target = { a: 1, b: 2, nested: { rank: "first" } };
+// const source = { b: 4, c: 5, nested: { rank: "first" } };
+
+// // shallow copy similar to spread operator
+// const returnedTarget = Object.assign(target, source);
+// console.log(returnedTarget);
+// console.log(target);
+// console.log(returnedTarget === target);
+
+// target.b = 10;
+// target.nested.rank = "Changed";
+// console.log(target);
+// console.log(source);
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+// const target = { a: 1, b: 2, nested: { rank: "first" } };
+// const source = { b: 4, c: 5, nested: { rank: "first" } };
+
+// console.log({...target, ...source});
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+// const target = { a: 1, b: 2, nested: { rank: "first" } };
+// const source = { b: 4, c: 5, nested: { rank: "first" } };
+
+// const deepCopy = structuredClone(source);
+
+/* ----------------------------------------------------------------------------------------------------------------------- */

@@ -163,12 +163,12 @@ lexical environment of GEC is null
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
-// /* 
-// the variable b is declared with var inside the function a(), which makes it a local variable to the function a(). 
-// When b = 30 is set inside the function c(), it is modifying the local b variable in a() 
+// /*
+// the variable b is declared with var inside the function a(), which makes it a local variable to the function a().
+// When b = 30 is set inside the function c(), it is modifying the local b variable in a()
 // (due to lexical scoping in JavaScript), not creating a global variable.
-// Since b is declared inside a(), it only exists within the scope of a() and its inner functions. 
-// When you try to access b outside of a(), it’s not accessible and thus throws a ReferenceError: b is not defined 
+// Since b is declared inside a(), it only exists within the scope of a() and its inner functions.
+// When you try to access b outside of a(), it’s not accessible and thus throws a ReferenceError: b is not defined
 // */
 // function a() {
 // 	c();
@@ -208,3 +208,50 @@ lexical environment of GEC is null
 // }
 // a();
 // console.log(b + " in global");
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// console.log(d);
+// console.log(d());
+// function d() {
+// 	return "Hi";
+// }
+// /* re-assigning d to 100 */
+// d = 100;
+// console.log(d);
+// console.log(d());
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// var a = 1;
+// function b() {
+// 	a = 10;
+// 	return;
+// }
+// b();
+// console.log(a);
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// /* 
+// function a() {} declaration is hoisted to the top of the function scope. This means it is treated as if it is declared 
+// before any other code in the function b. 
+
+// In Memory:-
+// function b() {
+//   function a() {} // Hoisted function declaration
+//   a = 10;         // Assigning 10 to the local `a` (not the global `a`)
+//   return;
+// }
+// */
+// var a = 1;
+// function b() {
+// 	a = 10;
+// 	return;
+// 	function a() {}
+// }
+// b();
+// console.log(a);
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
