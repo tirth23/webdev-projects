@@ -50,7 +50,7 @@
     //     if(timerId) return;
     //     timerId = setTimeout(() => {
     //       func.apply(this, arguments);
-    //       timerId = null;
+    //       clearTimeout(timerId);
     //     }, limit);
     //   }
     // }
@@ -68,7 +68,7 @@
     //     if (timer) return;
     //     timer = setTimeout(() => {
     //       func(...args);
-    //       timer = null;
+    //       clearTimeout(timer);
     //     }, delay);
     //   }
     // }
