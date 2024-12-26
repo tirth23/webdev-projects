@@ -70,7 +70,7 @@
 // console.log(obj.name);
 // console.log(obj[arr1]);
 // console.log(obj["name"]);
-// console.log(obj[name]);
+// // console.log(obj[name]);
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
 

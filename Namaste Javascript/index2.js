@@ -233,9 +233,9 @@ lexical environment of GEC is null
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
-// /* 
-// function a() {} declaration is hoisted to the top of the function scope. This means it is treated as if it is declared 
-// before any other code in the function b. 
+// /*
+// function a() {} declaration is hoisted to the top of the function scope. This means it is treated as if it is declared
+// before any other code in the function b.
 
 // In Memory:-
 // function b() {
@@ -255,3 +255,37 @@ lexical environment of GEC is null
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
 
+// const a = fun();
+// let name = "Namaste";
+// console.log("first");
+// function fun() {
+//   console.log("second");
+// 	return `my ${name}`;
+// }
+// var b = 20;
+// console.log(a);
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// (function test() {
+// 	var a = 1;
+// 	function test() {
+// 		if (!a) {
+// 			var a = 10;
+// 		}
+// 		console.log(a);
+// 	}
+// 	test();
+// 	console.log(a);
+// })();
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// (function test() {
+//   console.log(
+//     {}.constructor === arguments.constructor,
+//     [].constructor === arguments.constructor,
+//   )
+// })()
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */

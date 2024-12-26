@@ -38,10 +38,10 @@ used with functions and objects.
 
 /* ----------------------------------------------------------------------------------------------------------------- */
 
-// /* 
-// Class in JavaScript, it's just syntactic sugar over the older function-based approach to creating objects and prototypes. 
-// This means that a class is really a function with some extra features that make it easier to create objects, 
-// use inheritance, and manage prototypes. 
+// /*
+// Class in JavaScript, it's just syntactic sugar over the older function-based approach to creating objects and prototypes.
+// This means that a class is really a function with some extra features that make it easier to create objects,
+// use inheritance, and manage prototypes.
 
 // JavaScript interprets this as:
 
@@ -150,3 +150,49 @@ used with functions and objects.
 // MyClass.myStaticMethod();
 // const ob = new MyClass();
 // ob.myStaticMethod();
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+// class MyEventTarget {
+// 	constructor() {
+// 		this.listeners = {};
+// 	}
+
+// 	addEventListener(event, callback) {
+// 		if (!this.listeners[event]) {
+// 			this.listeners[event] = [];
+// 		}
+// 		this.listeners[event].push(callback);
+// 	}
+
+// 	removeEventListener(event, callback) {
+// 		if (!this.listeners[event]) return;
+// 		this.listeners[event] = this.listeners[event].filter(
+// 			(listener) => listener !== callback
+// 		);
+// 	}
+
+// 	dispatchEvent(event) {
+// 		if (!this.listeners[event]) return;
+// 		for (const callback of this.listeners[event]) {
+// 			callback();
+// 		}
+// 	}
+// }
+
+// // Example usage
+// const target = new MyEventTarget();
+// const logHello = () => console.log("hello");
+// const logWorld = () => console.log("world");
+// const logHello2 = () => console.log("log 2");
+
+// target.addEventListener("hello", logHello);
+// target.addEventListener("hello", logHello2);
+// target.addEventListener("world", logWorld);
+
+// target.dispatchEvent("hello"); // hello, log 2
+// target.dispatchEvent("world"); // world
+
+// target.removeEventListener("hello", logHello);
+// target.dispatchEvent("hello"); // log 2
+// target.dispatchEvent("world"); // world

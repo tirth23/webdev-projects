@@ -86,3 +86,16 @@
 // console.log(genObj3.return(10)); //it exist from generator function
 // console.log(genObj3.next());
 // // console.log(genObj3.throw(new Error("error"))); //throws error
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+// function* number() {
+//   for(let i = 0; i < 5; i++) {
+//     console.log(i);
+//     yield i;
+//   }
+// }
+// const y = number();
+// number().next();
+// number().next();
+// number().next();
