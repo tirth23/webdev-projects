@@ -289,3 +289,14 @@ lexical environment of GEC is null
 // })()
 
 /* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+// var foo = 'global';
+
+// function showName() {
+//   foo = 'local';
+//   return;
+//   function foo () {}
+// }
+
+// showName();
+// console.log(foo); // global
